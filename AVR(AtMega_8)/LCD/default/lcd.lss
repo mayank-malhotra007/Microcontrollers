@@ -1,0 +1,354 @@
+
+lcd.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000154  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  000001a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 00000033  00000000  00000000  000001c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   000004cf  00000000  00000000  000001fb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 00000173  00000000  00000000  000006ca  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   0000032f  00000000  00000000  0000083d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000050  00000000  00000000  00000b6c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    000000c6  00000000  00000000  00000bbc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    00000136  00000000  00000000  00000c82  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 000000c0  00000000  00000000  00000db8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+  32:	43 d0       	rcall	.+134    	; 0xba <main>
+  34:	8d c0       	rjmp	.+282    	; 0x150 <_exit>
+
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+
+00000038 <cmd>:
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  38:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  3a:	84 e0       	ldi	r24, 0x04	; 4
+  3c:	85 bb       	out	0x15, r24	; 21
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  3e:	84 ed       	ldi	r24, 0xD4	; 212
+  40:	90 e3       	ldi	r25, 0x30	; 48
+  42:	01 97       	sbiw	r24, 0x01	; 1
+  44:	f1 f7       	brne	.-4      	; 0x42 <__SREG__+0x3>
+	_delay_ms(50);
+	PORTC=0x00;
+  46:	15 ba       	out	0x15, r1	; 21
+}
+  48:	08 95       	ret
+
+0000004a <dat>:
+
+void dat( unsigned char c )
+{
+	PORTD=c;
+  4a:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x05;
+  4c:	85 e0       	ldi	r24, 0x05	; 5
+  4e:	85 bb       	out	0x15, r24	; 21
+  50:	84 ed       	ldi	r24, 0xD4	; 212
+  52:	90 e3       	ldi	r25, 0x30	; 48
+  54:	01 97       	sbiw	r24, 0x01	; 1
+  56:	f1 f7       	brne	.-4      	; 0x54 <dat+0xa>
+	_delay_ms(50);
+	PORTC=0x01;
+  58:	81 e0       	ldi	r24, 0x01	; 1
+  5a:	85 bb       	out	0x15, r24	; 21
+}
+  5c:	08 95       	ret
+
+0000005e <lcd>:
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  5e:	88 e3       	ldi	r24, 0x38	; 56
+  60:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  62:	94 e0       	ldi	r25, 0x04	; 4
+  64:	95 bb       	out	0x15, r25	; 21
+  66:	44 ed       	ldi	r20, 0xD4	; 212
+  68:	50 e3       	ldi	r21, 0x30	; 48
+  6a:	fa 01       	movw	r30, r20
+  6c:	31 97       	sbiw	r30, 0x01	; 1
+  6e:	f1 f7       	brne	.-4      	; 0x6c <lcd+0xe>
+	_delay_ms(50);
+	PORTC=0x00;
+  70:	15 ba       	out	0x15, r1	; 21
+  72:	20 e5       	ldi	r18, 0x50	; 80
+  74:	33 ec       	ldi	r19, 0xC3	; 195
+  76:	f9 01       	movw	r30, r18
+  78:	31 97       	sbiw	r30, 0x01	; 1
+  7a:	f1 f7       	brne	.-4      	; 0x78 <lcd+0x1a>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  7c:	81 e0       	ldi	r24, 0x01	; 1
+  7e:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  80:	95 bb       	out	0x15, r25	; 21
+  82:	fa 01       	movw	r30, r20
+  84:	31 97       	sbiw	r30, 0x01	; 1
+  86:	f1 f7       	brne	.-4      	; 0x84 <lcd+0x26>
+	_delay_ms(50);
+	PORTC=0x00;
+  88:	15 ba       	out	0x15, r1	; 21
+  8a:	f9 01       	movw	r30, r18
+  8c:	31 97       	sbiw	r30, 0x01	; 1
+  8e:	f1 f7       	brne	.-4      	; 0x8c <lcd+0x2e>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  90:	8e e0       	ldi	r24, 0x0E	; 14
+  92:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  94:	95 bb       	out	0x15, r25	; 21
+  96:	fa 01       	movw	r30, r20
+  98:	31 97       	sbiw	r30, 0x01	; 1
+  9a:	f1 f7       	brne	.-4      	; 0x98 <lcd+0x3a>
+	_delay_ms(50);
+	PORTC=0x00;
+  9c:	15 ba       	out	0x15, r1	; 21
+  9e:	f9 01       	movw	r30, r18
+  a0:	31 97       	sbiw	r30, 0x01	; 1
+  a2:	f1 f7       	brne	.-4      	; 0xa0 <lcd+0x42>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  a4:	80 e8       	ldi	r24, 0x80	; 128
+  a6:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  a8:	95 bb       	out	0x15, r25	; 21
+  aa:	ca 01       	movw	r24, r20
+  ac:	01 97       	sbiw	r24, 0x01	; 1
+  ae:	f1 f7       	brne	.-4      	; 0xac <lcd+0x4e>
+	_delay_ms(50);
+	PORTC=0x00;
+  b0:	15 ba       	out	0x15, r1	; 21
+  b2:	c9 01       	movw	r24, r18
+  b4:	01 97       	sbiw	r24, 0x01	; 1
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <lcd+0x56>
+	cmd(0x0e);
+	_delay_ms(200);
+	cmd(0x80);
+	_delay_ms(200);
+	
+}
+  b8:	08 95       	ret
+
+000000ba <main>:
+
+int main()
+{
+  ba:	cf 92       	push	r12
+  bc:	df 92       	push	r13
+  be:	ef 92       	push	r14
+  c0:	ff 92       	push	r15
+  c2:	0f 93       	push	r16
+  c4:	1f 93       	push	r17
+  c6:	df 93       	push	r29
+  c8:	cf 93       	push	r28
+  ca:	00 d0       	rcall	.+0      	; 0xcc <main+0x12>
+  cc:	00 d0       	rcall	.+0      	; 0xce <main+0x14>
+  ce:	00 d0       	rcall	.+0      	; 0xd0 <main+0x16>
+  d0:	cd b7       	in	r28, 0x3d	; 61
+  d2:	de b7       	in	r29, 0x3e	; 62
+  int i;
+  DDRD=0xff;
+  d4:	8f ef       	ldi	r24, 0xFF	; 255
+  d6:	81 bb       	out	0x11, r24	; 17
+  DDRC=0xff;
+  d8:	84 bb       	out	0x14, r24	; 20
+  lcd();
+  da:	c1 df       	rcall	.-126    	; 0x5e <lcd>
+  char arr[6]={'H','E','L','L','O'};
+  dc:	fe 01       	movw	r30, r28
+  de:	31 96       	adiw	r30, 0x01	; 1
+  e0:	86 e0       	ldi	r24, 0x06	; 6
+  e2:	df 01       	movw	r26, r30
+  e4:	1d 92       	st	X+, r1
+  e6:	8a 95       	dec	r24
+  e8:	e9 f7       	brne	.-6      	; 0xe4 <main+0x2a>
+  ea:	88 e4       	ldi	r24, 0x48	; 72
+  ec:	89 83       	std	Y+1, r24	; 0x01
+  ee:	85 e4       	ldi	r24, 0x45	; 69
+  f0:	8a 83       	std	Y+2, r24	; 0x02
+  f2:	8c e4       	ldi	r24, 0x4C	; 76
+  f4:	8b 83       	std	Y+3, r24	; 0x03
+  f6:	8c 83       	std	Y+4, r24	; 0x04
+  f8:	8f e4       	ldi	r24, 0x4F	; 79
+  fa:	8d 83       	std	Y+5, r24	; 0x05
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  fc:	20 e8       	ldi	r18, 0x80	; 128
+  fe:	c2 2e       	mov	r12, r18
+	PORTC=0x04;
+ 100:	94 e0       	ldi	r25, 0x04	; 4
+ 102:	d9 2e       	mov	r13, r25
+ 104:	24 ed       	ldi	r18, 0xD4	; 212
+ 106:	30 e3       	ldi	r19, 0x30	; 48
+	_delay_ms(50);
+	PORTC=0x00;
+ 108:	8f 01       	movw	r16, r30
+ 10a:	69 e1       	ldi	r22, 0x19	; 25
+ 10c:	70 e0       	ldi	r23, 0x00	; 0
+  lcd();
+  char arr[6]={'H','E','L','L','O'};
+  while(1)
+         {
+		   cmd(0x80);
+		   for(i=0;i<5;i++)
+ 10e:	ae 01       	movw	r20, r28
+ 110:	4a 5f       	subi	r20, 0xFA	; 250
+ 112:	5f 4f       	sbci	r21, 0xFF	; 255
+}
+
+void dat( unsigned char c )
+{
+	PORTD=c;
+	PORTC=0x05;
+ 114:	85 e0       	ldi	r24, 0x05	; 5
+ 116:	e8 2e       	mov	r14, r24
+	_delay_ms(50);
+	PORTC=0x01;
+ 118:	ff 24       	eor	r15, r15
+ 11a:	f3 94       	inc	r15
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+ 11c:	c2 ba       	out	0x12, r12	; 18
+	PORTC=0x04;
+ 11e:	d5 ba       	out	0x15, r13	; 21
+ 120:	c9 01       	movw	r24, r18
+ 122:	01 97       	sbiw	r24, 0x01	; 1
+ 124:	f1 f7       	brne	.-4      	; 0x122 <main+0x68>
+	_delay_ms(50);
+	PORTC=0x00;
+ 126:	15 ba       	out	0x15, r1	; 21
+ 128:	f8 01       	movw	r30, r16
+  while(1)
+         {
+		   cmd(0x80);
+		   for(i=0;i<5;i++)
+		     {
+			     dat(arr[i]);
+ 12a:	80 81       	ld	r24, Z
+	PORTC=0x00;
+}
+
+void dat( unsigned char c )
+{
+	PORTD=c;
+ 12c:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x05;
+ 12e:	e5 ba       	out	0x15, r14	; 21
+ 130:	c9 01       	movw	r24, r18
+ 132:	01 97       	sbiw	r24, 0x01	; 1
+ 134:	f1 f7       	brne	.-4      	; 0x132 <main+0x78>
+	_delay_ms(50);
+	PORTC=0x01;
+ 136:	f5 ba       	out	0x15, r15	; 21
+ 138:	88 e8       	ldi	r24, 0x88	; 136
+ 13a:	93 e1       	ldi	r25, 0x13	; 19
+ 13c:	db 01       	movw	r26, r22
+ 13e:	11 97       	sbiw	r26, 0x01	; 1
+ 140:	f1 f7       	brne	.-4      	; 0x13e <main+0x84>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 142:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 144:	d9 f7       	brne	.-10     	; 0x13c <main+0x82>
+ 146:	31 96       	adiw	r30, 0x01	; 1
+  lcd();
+  char arr[6]={'H','E','L','L','O'};
+  while(1)
+         {
+		   cmd(0x80);
+		   for(i=0;i<5;i++)
+ 148:	e4 17       	cp	r30, r20
+ 14a:	f5 07       	cpc	r31, r21
+ 14c:	71 f7       	brne	.-36     	; 0x12a <main+0x70>
+ 14e:	e6 cf       	rjmp	.-52     	; 0x11c <main+0x62>
+
+00000150 <_exit>:
+ 150:	f8 94       	cli
+
+00000152 <__stop_program>:
+ 152:	ff cf       	rjmp	.-2      	; 0x152 <__stop_program>

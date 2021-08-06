@@ -1,0 +1,24 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Mayank\Desktop\Kiel_projects\8051\Tx-Rx\rxx\rx.uvproj
+Project File Date:  03/09/2016
+
+<h2>Output:</h2>
+compiling rx.c...
+rx.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD?RX
+Program Size: data=9.0 xdata=0 code=116
+creating hex file from "rx"...
+"rx" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling rx.c...
+linking...
+Program Size: data=9.0 xdata=0 code=122
+creating hex file from "rx"...
+"rx" - 0 Error(s), 0 Warning(s).

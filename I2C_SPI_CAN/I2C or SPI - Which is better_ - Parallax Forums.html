@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://forums.parallax.com/discussion/145731/i2c-or-spi-which-is-better -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>I2C  or SPI  - Which is better? - Parallax Forums</title>
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/spoilers.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/tag.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/signature.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/emotify.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/buttonbar.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/fileupload.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/custom.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/voting.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/colorbox.css" media="all">
+<link rel="stylesheet" type="text/css" href="./I2C or SPI - Which is better_ - Parallax Forums_files/flagging.css" media="all">
+<link rel="shortcut icon" href="http://forums.parallax.com/uploads/favicon_9d4a4106aae67082.ico" type="image/x-icon">
+<link rel="canonical" href="http://forums.parallax.com/discussion/145731/i2c-or-spi-which-is-better">
+<meta property="og:type" content="article">
+<meta content="I2C  or SPI  - Which is better?" property="og:title">
+<meta content="http://forums.parallax.com//discussion/145731/i2c-or-spi-which-is-better" property="og:url">
+<meta content="Parallax Forums" property="og:site_name">
+<meta content="article" property="og:type">
+<meta property="og:site_name" content="Parallax Forums">
+<meta property="og:title" itemprop="name" content="I2C  or SPI  - Which is better?">
+<meta property="og:url" content="http://forums.parallax.com/discussion/145731/i2c-or-spi-which-is-better">
+<meta name="description" property="og:description" itemprop="description" content="When using the Propeller USB project board which is better / easier to use:  I2C  or SPI ?">
+<script type="text/javascript" src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.min.js"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.livequery.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.form.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.popup.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.gardenhandleajaxform.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/global.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.autogrow.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/discussion.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/autosave.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/fileupload.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/all.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/emotify.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/quotes.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/spoilers.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/voting.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.colorbox.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/colorbox.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/buttonbar.js" type="text/javascript"></script>
+<script src="./I2C or SPI - Which is better_ - Parallax Forums_files/jquery.hotkeys.js" type="text/javascript"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body id="vanilla_discussion_index" class="Vanilla Discussion Index  Section-Discussion Section-Category-general-discussion">
+<div id="Frame">
+  <div class="Top">
+    <div class="Row">
+      <div class="TopMenu">
+          <ul>
+              <li><a href="http://forums.parallax.com/" class="">Home</a></li>
+              <li><a rel="nofollow" target="_blank" href="http://www.parallax.com/">Store</a></li>
+              <li><a rel="nofollow" target="_blank" href="http://learn.parallax.com/">Learn</a></li>
+              <li><a rel="nofollow" target="_blank" href="http://obex.parallax.com/">OBEX</a></li>
+          </ul>
+        <!-- Top Menu Links -->
+      </div>
+   </div>
+  </div>
+  <div class="Banner">
+    <div class="Row">
+      <strong class="SiteTitle"><a href="http://forums.parallax.com/"> </a></strong>
+      <!-- <div class="AdSpace">Advertising Space</div> -->
+    </div>
+  </div>
+  <div id="Head">
+    <div class="Row">
+      <div class="SiteSearch"><form method="get" action="http://forums.parallax.com/search">
+<div>
+<input type="text" id="Form_Search" name="Search" value="" placeholder="Search" class="InputBox"><input type="submit" id="Form_Go" value="Go" class="Button">
+</div>
+</form></div>
+      <ul class="SiteMenu">
+       
+       <li><a href="http://forums.parallax.com/discussions" class="">Discussions</a></li>
+       
+       <!--[inbox_link]-->
+       
+       
+       <li><a href="http://forums.parallax.com/entry/signin" rel="nofollow" class="SignInPopup">Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="BreadcrumbsWrapper">
+    <div class="Row">
+     <span class="Breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="CrumbLabel HomeCrumb"><a href="http://forums.parallax.com/" itemprop="url"><span itemprop="title">Home</span></a></span> <span itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span class="Crumb">›</span> <span class="Category-general-discussion"><a href="http://forums.parallax.com/categories/general-discussion" itemprop="url"><span itemprop="title">General Discussion</span></a></span> </span></span>
+    </div>
+  </div>
+  <div id="Body">
+    <div class="Row clearfix">
+      <div class="Column PanelColumn" id="Panel">
+         <div class="MeBox MeBox-SignIn"><div class="SignInLinks"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class=" SignInPopup" rel="nofollow">Sign In</a> <span class="Bullet">•</span> <a href="http://forums.parallax.com/entry/register?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="ApplyButton" rel="nofollow">Register</a> </div> <div class="SignInIcons"></div></div>
+         <div class="Box GuestBox">
+   <h4>Equip your Genius</h4>
+   <p>Welcome to the Parallax Discussion Forums, sign-up to participate.</p>
+      
+   <div class="P"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="Button Primary SignInPopup" rel="nofollow">Sign In</a> <a href="http://forums.parallax.com/entry/register?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="Button ApplyButton" rel="nofollow">Register</a></div>   </div><div class="BoxFilter BoxDiscussionFilter">
+   <ul class="FilterMenu">
+      <li class="AllCategories"><a href="http://forums.parallax.com/categories"><span class="Sprite SpAllCategories"></span> Categories</a></li>       <li class="Discussions"><a href="http://forums.parallax.com/discussions" class=""><span class="Sprite SpDiscussions"></span> Recent Discussions</a></li>
+               </ul>
+</div><div class="Box BoxCategories">
+   <h4>Categories</h4>
+   <ul class="PanelInfo PanelCategories">
+   <li><a href="http://forums.parallax.com/categories" class="ItemLink">All Categories <span class="Aside"><span class="Count"><span title="93,357 discussions" class="Number">93.4K</span></span></span></a></li><li class="ClearFix Depth1 Category-announcements-announcements"><a href="http://forums.parallax.com/categories/announcements-announcements" class="ItemLink">Announcements <span class="Aside"><span class="Count"><span title="733 discussions" class="Number">733</span></span></span></a></li>
+<li class="ClearFix Depth1 Category-microcontrollers"><a href="http://forums.parallax.com/categories/microcontrollers" class="ItemLink">Microcontrollers <span class="Aside"><span class="Count"><span title="61,645 discussions" class="Number">61.6K</span></span></span></a></li>
+<li class="ClearFix Depth2 Category-propeller-1-multicore-microcontroller"><a href="http://forums.parallax.com/categories/propeller-1-multicore-microcontroller" class="ItemLink">Propeller 1 <span class="Aside"><span class="Count"><span title="25,612 discussions" class="Number">25.6K</span></span></span></a></li>
+<li class="ClearFix Depth2 Category-propeller-2-multicore-microcontroller"><a href="http://forums.parallax.com/categories/propeller-2-multicore-microcontroller" class="ItemLink">Propeller 2 <span class="Aside"><span class="Count"><span title="685 discussions" class="Number">685</span></span></span></a></li>
+<li class="ClearFix Depth2 Category-basic-stamp"><a href="http://forums.parallax.com/categories/basic-stamp" class="ItemLink">BASIC Stamp <span class="Aside"><span class="Count"><span title="18,351 discussions" class="Number">18.4K</span></span></span></a></li>
+<li class="ClearFix Depth1 Category-learn"><a href="http://forums.parallax.com/categories/learn" class="ItemLink">Learn <span class="Aside"><span class="Count"><span title="1,770 discussions" class="Number">1.8K</span></span></span></a></li>
+<li class="ClearFix Depth1 Category-robotics"><a href="http://forums.parallax.com/categories/robotics" class="ItemLink">Robotics <span class="Aside"><span class="Count"><span title="7,341 discussions" class="Number">7.3K</span></span></span></a></li>
+<li class="ClearFix Depth1 Category-sensors"><a href="http://forums.parallax.com/categories/sensors" class="ItemLink">Accessories <span class="Aside"><span class="Count"><span title="3,047 discussions" class="Number">3K</span></span></span></a></li>
+<li class="ClearFix Depth1 Active Category-general-discussion"><a href="http://forums.parallax.com/categories/general-discussion" class="ItemLink">General Discussion <span class="Aside"><span class="Count"><span title="19,047 discussions" class="Number">19K</span></span></span></a></li>
+   </ul>
+</div>
+   
+      </div>
+      <div class="Column ContentColumn" id="Content">
+          <div class="DismissMessage InfoMessage"><a href="http://forums.parallax.com/discussion/134682/forum-rules-and-guidelines">The Parallax Discussion Forum Rules &amp; Guidelines have changed. Click here to view them.</a></div><div class="MessageList Discussion"><!-- Page Title -->
+<div id="Item_0" class="PageTitle"><div class="Options"></div><h1>I2C  or SPI  - Which is better?</h1></div>
+
+<div id="Discussion_145731" class="Item ItemDiscussion">
+   <div class="Discussion">
+      <div class="Item-Header DiscussionHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="PropGuy2" href="http://forums.parallax.com/profile/64996/PropGuy2" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar.php" alt="PropGuy2" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/64996/PropGuy2" class="Username">PropGuy2</a>            </span>
+            <span class="AuthorInfo">
+               <span class="MItem PostCount">Posts: <b>122</b></span>            </span>
+         </div>
+         <div class="Meta DiscussionMeta">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/145731/i2c-or-spi-which-is-better" class="Permalink" rel="nofollow"><time title="January 31, 2013 12:58PM" datetime="2013-01-31T12:58:42+00:00">January 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by PropGuy2 on March 27, 2013  5:19AM." class="DateUpdated">edited March 2013</span> </span>             <span class="MItem Category"> in <a href="http://forums.parallax.com/categories/general-discussion">General Discussion</a></span> <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+            <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">   
+               When using the Propeller USB project board which is better / easier to use:  I2C  or SPI ?    I have used both and each has advantages / disadvantages - But I would like to use one or the other to reduce the code size of my project(s) and still get reasonable performance.   Does the Propeller chip hardware and / or Spin language favor  I2C  or SPI  ?            </div>
+            <div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</div>
+</div><div class="CommentsWrap"><span class="BeforeCommentHeading"></span><div class="DataBox DataBox-Comments"><h2 class="CommentHeading">Comments</h2><ul class="MessageList DataList Comments">
+			<li class="Item">
+			<div class="VotingSort">
+			<strong>13 Comments</strong> sorted by <a href="http://forums.parallax.com/discussion/145731/i2c-or-spi-which-is-better?Sort=date" rel="nofollow" class="Active">Date Added</a> <a href="http://forums.parallax.com/discussion/145731/i2c-or-spi-which-is-better?Sort=popular" rel="nofollow">Votes</a>			</div>
+		</li>
+		<li class="Item Alt ItemComment" id="Comment_1160960">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="Leon" href="http://forums.parallax.com/profile/41238/Leon" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar(1).php" alt="Leon" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/41238/Leon" class="Username">Leon</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>7,546</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1160960/#Comment_1160960" class="Permalink" name="Item_1" rel="nofollow"><time title="January 31, 2013  1:13PM" datetime="2013-01-31T13:13:20+00:00">January 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by Leon on January 31, 2013  1:13PM." class="DateUpdated">edited January 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               SPI is faster and the software is a lot simpler. I2C uses fewer pins - only two even if you have several devices to interface.            </div>
+            <div class="Signature UserSignature ">Leon Heller&lt;br&gt;G1HSM<!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item ItemComment" id="Comment_1160966">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="Mark_T" href="http://forums.parallax.com/profile/64292/Mark_T" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar(2).php" alt="Mark_T" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/64292/Mark_T" class="Username">Mark_T</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>1,522</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1160966/#Comment_1160966" class="Permalink" name="Item_2" rel="nofollow"><time title="January 31, 2013  1:33PM" datetime="2013-01-31T13:33:12+00:00">January 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by Mark_T on January 31, 2013  1:33PM." class="DateUpdated">edited January 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               Its not a very meaningful question - either can be better for a particular purpose.  They have many aspects so there is no<br>
+simple "better than" relation that can be defined.  I2C allows many devices to share a fixed 2 pin bus, SPI allows<br>
+simpler software/hardware support and can go faster, but takes 3+N pins to talk to N devices (and many devices<br>
+are "not quite SPI").<br>
+<br>
+SPI is bad in that without pull-up resistors on every CS line you can't guarantee clean power-up behaviour, yet<br>
+pull-up resistors are not specified and hardly ever used.  I2C specifies pull-up resistors on both SDA and SCL<br>
+but not everyone suggests the same values (or even uses them, Parallax).  Doing I2C properly can mean 5V<br>
+and 3.3V devices can share the same bus in some circumstances, SPI needs level translation.            </div>
+            <div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item Alt ItemComment" id="Comment_1160972">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="SRLM" href="http://forums.parallax.com/profile/53784/SRLM" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar(3).php" alt="SRLM" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/53784/SRLM" class="Username">SRLM</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>5,032</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1160972/#Comment_1160972" class="Permalink" name="Item_3" rel="nofollow"><time title="January 31, 2013  2:09PM" datetime="2013-01-31T14:09:03+00:00">January 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by SRLM on January 31, 2013  2:09PM." class="DateUpdated">edited January 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               
+<blockquote class="Quote UserQuote">
+<div class="QuoteAuthor"><a href="http://forums.parallax.com/profile/64292/Mark_T">Mark_T</a> wrote: <a href="http://forums.parallax.com/discussion/comment/1160966#Comment_1160966" class="QuoteLink"><span class="ArrowLink">»</span></a></div>
+<div class="QuoteText">...(and many devices are "not quite SPI").</div>
+</blockquote>
+<br>
+And to expand on what Mark_T said, many I2C devices are "not quite I2C". For I2C, all devices share the following concepts*:<br>
+1. Start and stop signals<br>
+2. First byte after a start is an address, with the lowest bit indicating read/write<br>
+3. For each slave, if the first byte isn't "my" address then ignore everything until stop.<br>
+4. Each byte is acknowledged (either by the slave or master).<br>
+*For the normal 7 bit addressing in single master, without all those I2C extensions that I've never used...<br>
+<br>
+After that, it's a free for all. Most devices follow the "register" concept, with a very similar series of bytes to do an operation. I call this the ST I2C standard. But some devices deviate, such as:<br>
+1) MS5611 barometer (it doesn't use a register protocol).<br>
+2) EEPROMs (it uses a 2 byte address, and 128 byte pages).<br>
+3) PCF8523 (it requires a stop condition before the repeated start condition when reading bytes).<br>
+<br>
+I can't speak for SPI, since I haven't really used it that much.            </div>
+            <div class="Signature UserSignature "><a href="http://srlm.io/" target="_blank" rel="nofollow">http://srlm.io</a><!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item ItemComment" id="Comment_1161024">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="bee_man" href="http://forums.parallax.com/profile/61865/bee_man" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar(4).php" alt="bee_man" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/61865/bee_man" class="Username">bee_man</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>109</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161024/#Comment_1161024" class="Permalink" name="Item_4" rel="nofollow"><time title="January 31, 2013  7:49PM" datetime="2013-01-31T19:49:52+00:00">January 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by bee_man on January 31, 2013  7:49PM." class="DateUpdated">edited January 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               I prefer I2C since the prop already has 2 pins dedicated to that use.  As said earlier, If you use SPI it is 2+N pins plus the 2 I2C for the EEPROM, so you are limited to the number of devices you can use.  To answer your question, I would say the hardware favors I2C.            </div>
+            <div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item Alt ItemComment" id="Comment_1161050">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="LoopyByteloose" href="http://forums.parallax.com/profile/41167/LoopyByteloose" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/nC57NMH1BTW54.gif" alt="LoopyByteloose" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/41167/LoopyByteloose" class="Username">LoopyByteloose</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>12,537</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161050/#Comment_1161050" class="Permalink" name="Item_5" rel="nofollow"><time title="January 31, 2013 11:37PM" datetime="2013-01-31T23:37:56+00:00">January 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by LoopyByteloose on January 31, 2013 11:37PM." class="DateUpdated">edited January 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               From the new learner's point of view, SPI is the older and more generic interface.  I2C is owned by Phillips.  They are both related to simple shift register output and input.  Try to consider the group as one topic - synchronous serial i/o.<br>
+<br>
+So if you want to read or learn assembler code, start with SPI where the input and output wires are not shared.  Then you can read the I2C and learn to deal with all the problems of toggling our i/o pin from output to input.  That is also why SPI is simply faster... less to manage.<br>
+<br>
+You are always going to run into the odd device that refuses to pay an I2C royalty and requires SPI.  And it might even create its own modified SPI that uses one i/o pin, but does not follow I2C standards.  So one needs to learn to be comfortable with both.            </div>
+            <div class="Signature UserSignature ">Hwang Xian Shen, Puddleby-on-the-Marsh.<br>
+All things considered, I can live and thrive without Microsoft products. LINUX is just fine.<!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item ItemComment" id="Comment_1161126">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="Bits" href="http://forums.parallax.com/profile/65414/Bits" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar(5).php" alt="Bits" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/65414/Bits" class="Username">Bits</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>414</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161126/#Comment_1161126" class="Permalink" name="Item_6" rel="nofollow"><time title="February  1, 2013 11:12AM" datetime="2013-02-01T11:12:40+00:00">February 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by Bits on February  1, 2013 11:12AM." class="DateUpdated">edited February 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               
+<blockquote class="Quote UserQuote">
+<div class="QuoteAuthor"><a href="http://forums.parallax.com/profile/61865/bee_man">bee_man</a> wrote: <a href="http://forums.parallax.com/discussion/comment/1161024#Comment_1161024" class="QuoteLink"><span class="ArrowLink">»</span></a></div>
+<div class="QuoteText">I prefer I2C since the prop already has 2 pins dedicated to that use.  As said earlier, If you use SPI it is 2+N pins plus the 2 I2C for the EEPROM, so you are limited to the number of devices you can use.  To answer your question, I would say the hardware favors I2C.</div>
+</blockquote>
+<br>
+I would not state this so bluntly - the propeller has no dedicated i2c pins that I am aware of seeing how any one of the pins work as an i2c protocol.<br>
+<br>
+I also prefer the i2c over SPI, but really depends on a multitude of factors.            </div>
+            <div class="Signature UserSignature ">[h=2]<span style="font-size:.67em"><u><span style="font-family:&#39;comic sans ms&#39;">I would love to change the world, but they won't give me the source code!</span></u></span>[/h]<!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item Alt ItemComment" id="Comment_1161152">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="Duane C. Johnson" href="http://forums.parallax.com/profile/57982/Duane%20C.%20Johnson" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar(6).php" alt="Duane C. Johnson" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/57982/Duane%20C.%20Johnson" class="Username">Duane C. Johnson</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>955</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161152/#Comment_1161152" class="Permalink" name="Item_7" rel="nofollow"><time title="February  1, 2013  1:10PM" datetime="2013-02-01T13:10:02+00:00">February 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by Duane C. Johnson on February  1, 2013  1:10PM." class="DateUpdated">edited February 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               Hi Bee
+<blockquote class="Quote UserQuote">
+<div class="QuoteAuthor"><a href="http://forums.parallax.com/profile/61865/bee_man">bee_man</a> wrote: <a href="http://forums.parallax.com/discussion/comment/1161024#Comment_1161024" class="QuoteLink"><span class="ArrowLink">»</span></a></div>
+<div class="QuoteText">I prefer I2C since the prop already has 2 pins dedicated to that use.  As said earlier, If you use SPI it is 2+N pins plus the 2 I2C for the EEPROM, so you are limited to the number of devices you can use.  To answer your question, I would say the hardware favors I2C.</div>
+</blockquote>
+Technically the prop doesn't have "dedicated" I2C pins.<br>
+However, most use Pins[28..29] for use with EEProms.<br>
+So, this is like no extra pins are consumed for I2C devices other than those already used.<br>
+<br>
+Duane J            </div>
+            <div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item ItemComment" id="Comment_1161170">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="User Name" href="http://forums.parallax.com/profile/60751/User%20Name" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/nRW4ZY55AZWBI.jpg" alt="User Name" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/60751/User%20Name" class="Username">User Name</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>1,298</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161170/#Comment_1161170" class="Permalink" name="Item_8" rel="nofollow"><time title="February  1, 2013  4:22PM" datetime="2013-02-01T16:22:36+00:00">February 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by User Name on February  1, 2013  4:22PM." class="DateUpdated">edited February 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               On a recent project, I implemented a fast SPI and fast I2C port on the same Prop.  My experience was exactly as Leon mentioned above.  The SPI was done in no time, was really simple, and transferred data very quickly.  With I2C, the spec seemed ambiguous with respect to when to sample the data line.  Had to write the code and then empirically determine what clocking kept the slave happy.  Seemed a little rinky-dink.            </div>
+            <div class="Signature UserSignature ">Never far from a ski area,  NW USA.<!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item Alt ItemComment" id="Comment_1161174">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="davejames" href="http://forums.parallax.com/profile/52472/davejames" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/nZ2GD6713B1FA.jpg" alt="davejames" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/52472/davejames" class="Username">davejames</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>3,873</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161174/#Comment_1161174" class="Permalink" name="Item_9" rel="nofollow"><time title="February  1, 2013  4:37PM" datetime="2013-02-01T16:37:12+00:00">February 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by davejames on February  1, 2013  4:37PM." class="DateUpdated">edited February 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               ...interesting that this discussion pops up when I'm going through an evaluation of the two protocols in prep for building another customer training class.<br>
+<br>
+I'm familiar with I2C, but not SPI so I dug up the following that may help PropGuy2. In fact, on "page" 6 (toward the end), there is a topic "I2C vs SPI: Is There A Winner?"<br>
+<br>
+Enjoy!<br>
+<br>
+<a href="http://www.byteparadigm.com/kb/article/AA-00255/0/Introduction-to-SPI-and-IC-protocols.html" target="_blank" rel="nofollow" class="bbcode_url">http://www.byteparadigm.com/kb/article/AA-00255/0/Introduction-to-SPI-and-IC-protocols.html</a>            </div>
+            <div class="Signature UserSignature "><i><span style="color:#008000">Well-written documentation requires no explanation.</span><span style="color:#008000"></span></i><!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item ItemComment" id="Comment_1161176">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="localroger" href="http://forums.parallax.com/profile/55966/localroger" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/nRZZIFENC4BLB.jpg" alt="localroger" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/55966/localroger" class="Username">localroger</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>2,744</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1161176/#Comment_1161176" class="Permalink" name="Item_10" rel="nofollow"><time title="February  1, 2013  4:57PM" datetime="2013-02-01T16:57:16+00:00">February 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by localroger on February  1, 2013  4:57PM." class="DateUpdated">edited February 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               I have done PASM drivers for both interfaces, including an I2C slave.<br>
+<br>
+SPI is faster but gives no indication that anything is wrong until a whole block of data has been transferred.  SPI can be faster because it was designed for a fundamentally different challenge than I2C; SPI was never intended to transmit signals over distance, while I2C was designed to withstand some capacitance in wires taking the signal from the processor controlling your DVD player to the display panel in front.<br>
+<br>
+I2C gives instant warning that something isn't right as the receiving device must ACK (by pulling the signal line down itself) after each byte is transmitted.  (Some drivers ignore this but it's good practice to check, and impossible with SPI.)  It's already been mentioned that I2C needs only two pins for a bus serving many devices; SPI needs a separate enable pin for each device although the clock and signal pins can serve as a multi-device bus.<br>
+<br>
+Unless you're programming in PASM the speed difference is not a factor; you can't max out either interface in Spin.  (It could be a factor if you're using an object written by someone else.)  Unless you're implementing an external memory it's unlikely that the speed difference will be a factor even then.  I do consider it an advantage that two Prop pins are intended (if not required) for use by I2C; as with the programming serial pins it means that nearly every design ends up with I2C implemented on the EEPROM pins, and once the Prop is finished loading the EEPROM further use is a natural extension.            </div>
+            <div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item Alt ItemComment" id="Comment_1172327">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="PropGuy2" href="http://forums.parallax.com/profile/64996/PropGuy2" class="PhotoWrap"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/avatar.php" alt="PropGuy2" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/64996/PropGuy2" class="Username">PropGuy2</a>            </span>
+            <span class="AuthorInfo">
+                 <span class="MItem PostCount">Posts: <b>122</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1172327/#Comment_1172327" class="Permalink" name="Item_11" rel="nofollow"><time title="March 25, 2013  2:19PM" datetime="2013-03-25T14:19:18+00:00">March 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by PropGuy2 on March 25, 2013  2:19PM." class="DateUpdated">edited March 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               So - I have finished my project and I have to say SPI is definitely the way to go.   I used several SPI chips, ADC and RTC, along with the DataLogger module.  No problems - but read(understand) and then code to the Spec sheet(s) chip select and clock pulse sequence, for the device you are using.<br>
+<br>
+Kudos to SPI code examples by Beau Schwabe (Parallax)   Study this code and you will be a SPI expert in no time.            </div>
+            <div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+<li class="Item ItemComment Banned" id="Comment_1172758">
+   <div class="Comment">
+      
+            <div class="Options">
+               </div>
+            <div class="Item-Header CommentHeader">
+         <div class="AuthorWrap">
+            <span class="Author">
+               <a title="robin jack (Banned)" href="http://forums.parallax.com/profile/69647/robin%20jack" class="PhotoWrap Banned"><img src="./I2C or SPI - Which is better_ - Parallax Forums_files/banned_large.png" alt="robin jack" class="ProfilePhoto ProfilePhotoMedium"></a><a href="http://forums.parallax.com/profile/69647/robin%20jack" class="Username">robin jack</a>            </span>
+            <span class="AuthorInfo">
+                <span class="MItem AuthorTitle">Banned</span> <span class="MItem PostCount">Posts: <b>4</b></span>            </span>   
+         </div>
+         <div class="Meta CommentMeta CommentInfo">
+            <span class="MItem DateCreated">
+               <a href="http://forums.parallax.com/discussion/comment/1172758/#Comment_1172758" class="Permalink" name="Item_12" rel="nofollow"><time title="March 27, 2013  5:19AM" datetime="2013-03-27T05:19:21+00:00">March 2013</time></a>            </span>
+            <span class="MItem"> <span title="Edited by robin jack on March 27, 2013  5:19AM." class="DateUpdated">edited March 2013</span> </span>            <span class="Voter"><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteUp SignInPopup"><i class="ArrowSprite SpriteUp" rel="nofollow"><i>Vote Up</i></i></a><span>0</span><a href="http://forums.parallax.com/entry/signin?Target=discussion%2F145731%2Fi2c-or-spi-which-is-better" class="VoteDown SignInPopup"><i class="ArrowSprite SpriteDown" rel="nofollow"><i>Vote Down</i></i></a></span>         </div>
+      </div>
+      <div class="Item-BodyWrap">
+         <div class="Item-Body">
+            <div class="Message">
+               <span style="color:#333333"><span style="font-family:&#39;Arial&#39;">I think SPI is better for you because its a prettey easy and much simpler according to my experience on the other end I think </span></span><span style="color:#333333"><span style="font-family:&#39;Arial&#39;">I2C is also fine but comparing to SPI this is not good but any way you have a both option so I think you should tray SPI first. Its my personal suggestion for you.</span></span>            </div>
+            <div class="Signature UserSignature ">make your color<!-- BBCode --></div><div class="Reactions"></div>         </div>
+      </div>
+   </div>
+</li>
+</ul>
+</div><div class="P PagerWrap"></div></div>		<div class="Foot Closed">
+			<div class="Note Closed SignInOrRegister"><a href="http://forums.parallax.com/entry/signin?Target=%2Fdiscussion%2F145731%2Fi2c-or-spi-which-is-better" class="Popup">Sign In</a> or <a href="http://forums.parallax.com/entry/register?Target=%2Fdiscussion%2F145731%2Fi2c-or-spi-which-is-better">Register</a> to comment.         </div>
+					</div>
+		</div>
+    </div>
+  </div>
+  <div id="Foot">
+    <div class="Row">
+      <!-- Various definitions for Javascript //-->
+<script>
+var definitions = {
+'ImageResized' : "This image has been resized to fit in the page. Click to enlarge.",
+'DiscussionID' : "145731",
+'apcavailable' : false,
+'uploaderuniq' : "570c8fbed6831",
+'maxuploadsize' : 2097152,
+'Emoticons' : "eyI6aW5ub2NlbnQ6IjoiaW5ub2NlbnQiLCI6c21pbGU6Ijoic21pbGUiLCI6ZnJvd246IjoiZnJvd24iLCI6bG9sOiI6ImxvbCIsIjp0b25ndWU6IjoidG9uZ3VlIiwiOmNvb2w6IjoiY29vbCIsIjpuZXJkOiI6Im5lcmQiLCItXy0iOiJibGFuayIsIjp0aHVtYjoiOiJ0aHVtYnN1cCIsIjpjb2ZmZWU6IjoiY29mZmVlIiwiOmNvbmZ1c2VkOiI6ImNvbmZ1c2VkIiwiOmxvdmU6IjoibG92ZSIsIjpkZXByZXNzZWQ6IjoiZGVwcmVzc2VkIiwiOnN1cnByaXNlOiI6InN1cnByaXNlIiwiOnNpY2s6Ijoic2ljayIsIjphcnJvdzoiOiJhcnJvdyIsIjphcnJvd2w6IjoiYXJyb3dsIiwiOkQiOiJiaWdncmluIiwiOi1EIjoidG9vdGh5IiwiOi0qIjoia2lzcyIsIjp6b21iaWU6Ijoiem9tYmllIiwiPi4+Ijoic2hpZnR5IiwiOmJsdXNoOiI6ImVtYmFyYXNzZWQiLCI9Xi5ePSI6ImtpdHR5IiwiOnN3ZWFyOiI6InN3ZWFyaW5nIiwiOnNub290eToiOiJtb25vY2xlIiwiOykiOiJ3aW5rIiwiPjooIjoiYW5ncnkiLCI6Y2hpcDoiOiJjaGlwIiwiOmNsb3duOiI6ImNsb3duIiwiOmNyYXp5OiI6ImNyYXp5IiwieF94IjoiZGVhZCIsIjpvIjoiZWVrIiwiOnNrdWxsOiI6InNrdWxsIiwiOmFsaWVuOiI6ImFsaWVuIn0=",
+'AnalyticsTask' : "tick",
+'ButtonBarLinkUrl' : "Enter your URL:",
+'ButtonBarImageUrl' : "Enter image URL:",
+'ButtonBarYouTube' : "Enter YouTube Video ID:",
+'ButtonBarColor' : "Enter #Hex or Color Name:",
+'ButtonBarBBCodeHelpText' : "You can use <b>BBCode<\/b> in your post.",
+'InputFormat' : "BBCode",
+'LastCommentID' : 1172758,
+'TransportError' : "A fatal error occurred while processing the request.<br \/>The server returned the following response: %s",
+'TransientKey' : null,
+'WebRoot' : "http:\/\/forums.parallax.com\/",
+'UrlFormat' : "\/{Path}",
+'Path' : "discussion\/145731\/i2c-or-spi-which-is-better",
+'Args' : "",
+'ResolvedPath' : "vanilla\/discussion\/index",
+'ResolvedArgs' : "{\"DiscussionID\":\"145731\",\"DiscussionStub\":\"i2c-or-spi-which-is-better\",\"Page\":\"\"}",
+'SignedIn' : 0,
+'ConfirmHeading' : "Confirm",
+'ConfirmText' : "Are you sure you want to do that?",
+'Okay' : "Okay",
+'Cancel' : "Cancel",
+'Search' : "Search"}
+</script>
+    </div>
+  </div>
+</div>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./I2C or SPI - Which is better_ - Parallax Forums_files/xd_arbiter.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./I2C or SPI - Which is better_ - Parallax Forums_files/xd_arbiter(1).html" style="border: none;"></iframe></div></div></div></body></html>

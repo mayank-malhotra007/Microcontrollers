@@ -1,0 +1,179 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/24/2016  15:24:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE b.obj TO 2
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  b.obj (B)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  2 (B)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     001FH     UNIT         ?PR?_STRING?B
+            CODE    081FH     001BH     UNIT         ?PR?LCD?B
+            CODE    083AH     0019H     UNIT         ?C?LIB_CODE
+            CODE    0853H     0013H     UNIT         ?PR?MAIN?B
+            CODE    0866H     0012H     UNIT         ?PR?_DELAY?B
+            CODE    0878H     0012H     UNIT         ?PR?_CMD?B
+            CODE    088AH     0012H     UNIT         ?PR?_DAT?B
+            CODE    089CH     0012H     UNIT         ?CO?B
+            CODE    08AEH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   2 (B)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?B
+
+?PR?MAIN?B
+  +--> ?PR?LCD?B
+  +--> ?PR?_CMD?B
+  +--> ?CO?B
+  +--> ?PR?_STRING?B
+
+?PR?LCD?B
+  +--> ?PR?_DELAY?B
+  +--> ?PR?_CMD?B
+
+?PR?_DELAY?B
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2016  15:24:05  PAGE 2
+
+
+  +--> ?PR?_CMD?B
+
+?PR?_STRING?B
+  +--> ?PR?_DAT?B
+  +--> ?PR?_CMD?B
+  +--> ?PR?_DELAY?B
+
+?PR?_DAT?B
+  +--> ?PR?_DELAY?B
+
+
+
+SYMBOL TABLE OF MODULE:  2 (B)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        B
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:086DH         PUBLIC        _delay
+  C:0800H         PUBLIC        _string
+  C:0853H         PUBLIC        main
+  C:081FH         PUBLIC        lcd
+  C:0878H         PUBLIC        _cmd
+  C:088AH         PUBLIC        _dat
+  B:0090H.5       PUBLIC        e
+  B:0090H.4       PUBLIC        rs
+  B:0090H.0       PUBLIC        rw
+  C:0866H         SYMBOL        L?0015
+  -------         PROC          L?0014
+  -------         ENDPROC       L?0014
+  C:0866H         SYMBOL        L?0015
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        i
+  C:086DH         LINE#         7
+  C:086DH         LINE#         8
+  C:086DH         LINE#         9
+  C:0877H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          _CMD
+  D:0007H         SYMBOL        c
+  C:0878H         LINE#         11
+  C:0878H         LINE#         12
+  C:0878H         LINE#         13
+  C:087AH         LINE#         14
+  C:087CH         LINE#         15
+  C:087EH         LINE#         16
+  C:0880H         LINE#         17
+  C:0887H         LINE#         18
+  C:0889H         LINE#         19
+  -------         ENDPROC       _CMD
+  -------         PROC          _DAT
+  D:0007H         SYMBOL        c
+  C:088AH         LINE#         21
+  C:088AH         LINE#         22
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/24/2016  15:24:05  PAGE 3
+
+
+  C:088AH         LINE#         23
+  C:088CH         LINE#         24
+  C:088EH         LINE#         25
+  C:0890H         LINE#         26
+  C:0892H         LINE#         27
+  C:0899H         LINE#         28
+  C:089BH         LINE#         29
+  -------         ENDPROC       _DAT
+  -------         PROC          LCD
+  C:081FH         LINE#         31
+  C:081FH         LINE#         32
+  C:081FH         LINE#         33
+  C:0821H         LINE#         34
+  C:0824H         LINE#         35
+  C:0826H         LINE#         36
+  C:0829H         LINE#         37
+  C:082BH         LINE#         38
+  C:082EH         LINE#         39
+  C:0833H         LINE#         40
+  -------         ENDPROC       LCD
+  -------         PROC          _STRING
+  D:0001H         SYMBOL        p
+  C:0800H         LINE#         43
+  C:0800H         LINE#         44
+  C:0800H         LINE#         45
+  C:0806H         LINE#         46
+  C:0806H         LINE#         47
+  C:0809H         LINE#         48
+  C:080EH         LINE#         49
+  C:0815H         LINE#         50
+  C:081CH         LINE#         51
+  C:081EH         LINE#         52
+  -------         ENDPROC       _STRING
+  -------         PROC          MAIN
+  C:0853H         LINE#         53
+  C:0853H         LINE#         54
+  C:0853H         LINE#         55
+  C:0856H         LINE#         57
+  C:0856H         LINE#         58
+  C:0856H         LINE#         59
+  C:085BH         LINE#         60
+  C:0864H         LINE#         63
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        B
+
+  -------         MODULE        ?C?CLDPTR
+  C:083AH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0095H BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=189
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

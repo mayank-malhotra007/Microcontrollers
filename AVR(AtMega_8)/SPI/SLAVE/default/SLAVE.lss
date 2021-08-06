@@ -1,0 +1,261 @@
+
+SLAVE.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000e6  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  0000013a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 00000033  00000000  00000000  0000015a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   00000411  00000000  00000000  0000018d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 0000011b  00000000  00000000  0000059e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   000002b7  00000000  00000000  000006b9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000050  00000000  00000000  00000970  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    000000ce  00000000  00000000  000009c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    000000f6  00000000  00000000  00000a8e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000060  00000000  00000000  00000b84  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+  32:	43 d0       	rcall	.+134    	; 0xba <main>
+  34:	56 c0       	rjmp	.+172    	; 0xe2 <_exit>
+
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+
+00000038 <cmd>:
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  38:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  3a:	84 e0       	ldi	r24, 0x04	; 4
+  3c:	85 bb       	out	0x15, r24	; 21
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  3e:	84 ed       	ldi	r24, 0xD4	; 212
+  40:	90 e3       	ldi	r25, 0x30	; 48
+  42:	01 97       	sbiw	r24, 0x01	; 1
+  44:	f1 f7       	brne	.-4      	; 0x42 <__SREG__+0x3>
+	_delay_ms(50);
+	PORTC=0x00;
+  46:	15 ba       	out	0x15, r1	; 21
+}
+  48:	08 95       	ret
+
+0000004a <dat>:
+
+void dat( unsigned char c )
+{
+	PORTD=c;
+  4a:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x05;
+  4c:	85 e0       	ldi	r24, 0x05	; 5
+  4e:	85 bb       	out	0x15, r24	; 21
+  50:	84 ed       	ldi	r24, 0xD4	; 212
+  52:	90 e3       	ldi	r25, 0x30	; 48
+  54:	01 97       	sbiw	r24, 0x01	; 1
+  56:	f1 f7       	brne	.-4      	; 0x54 <dat+0xa>
+	_delay_ms(50);
+	PORTC=0x01;
+  58:	81 e0       	ldi	r24, 0x01	; 1
+  5a:	85 bb       	out	0x15, r24	; 21
+}
+  5c:	08 95       	ret
+
+0000005e <lcd>:
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  5e:	88 e3       	ldi	r24, 0x38	; 56
+  60:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  62:	94 e0       	ldi	r25, 0x04	; 4
+  64:	95 bb       	out	0x15, r25	; 21
+  66:	44 ed       	ldi	r20, 0xD4	; 212
+  68:	50 e3       	ldi	r21, 0x30	; 48
+  6a:	fa 01       	movw	r30, r20
+  6c:	31 97       	sbiw	r30, 0x01	; 1
+  6e:	f1 f7       	brne	.-4      	; 0x6c <lcd+0xe>
+	_delay_ms(50);
+	PORTC=0x00;
+  70:	15 ba       	out	0x15, r1	; 21
+  72:	28 ea       	ldi	r18, 0xA8	; 168
+  74:	31 e6       	ldi	r19, 0x61	; 97
+  76:	f9 01       	movw	r30, r18
+  78:	31 97       	sbiw	r30, 0x01	; 1
+  7a:	f1 f7       	brne	.-4      	; 0x78 <lcd+0x1a>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  7c:	81 e0       	ldi	r24, 0x01	; 1
+  7e:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  80:	95 bb       	out	0x15, r25	; 21
+  82:	fa 01       	movw	r30, r20
+  84:	31 97       	sbiw	r30, 0x01	; 1
+  86:	f1 f7       	brne	.-4      	; 0x84 <lcd+0x26>
+	_delay_ms(50);
+	PORTC=0x00;
+  88:	15 ba       	out	0x15, r1	; 21
+  8a:	f9 01       	movw	r30, r18
+  8c:	31 97       	sbiw	r30, 0x01	; 1
+  8e:	f1 f7       	brne	.-4      	; 0x8c <lcd+0x2e>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  90:	8e e0       	ldi	r24, 0x0E	; 14
+  92:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  94:	95 bb       	out	0x15, r25	; 21
+  96:	fa 01       	movw	r30, r20
+  98:	31 97       	sbiw	r30, 0x01	; 1
+  9a:	f1 f7       	brne	.-4      	; 0x98 <lcd+0x3a>
+	_delay_ms(50);
+	PORTC=0x00;
+  9c:	15 ba       	out	0x15, r1	; 21
+  9e:	f9 01       	movw	r30, r18
+  a0:	31 97       	sbiw	r30, 0x01	; 1
+  a2:	f1 f7       	brne	.-4      	; 0xa0 <lcd+0x42>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void cmd(unsigned char c)
+{
+	PORTD=c;
+  a4:	80 e8       	ldi	r24, 0x80	; 128
+  a6:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x04;
+  a8:	95 bb       	out	0x15, r25	; 21
+  aa:	ca 01       	movw	r24, r20
+  ac:	01 97       	sbiw	r24, 0x01	; 1
+  ae:	f1 f7       	brne	.-4      	; 0xac <lcd+0x4e>
+	_delay_ms(50);
+	PORTC=0x00;
+  b0:	15 ba       	out	0x15, r1	; 21
+  b2:	c9 01       	movw	r24, r18
+  b4:	01 97       	sbiw	r24, 0x01	; 1
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <lcd+0x56>
+	cmd(0x0e);
+	_delay_ms(100);
+	cmd(0x80);
+	_delay_ms(100);
+	
+}
+  b8:	08 95       	ret
+
+000000ba <main>:
+
+
+
+int main()
+{
+ DDRC=0xFF;
+  ba:	8f ef       	ldi	r24, 0xFF	; 255
+  bc:	84 bb       	out	0x14, r24	; 20
+ DDRD=0xFF;
+  be:	81 bb       	out	0x11, r24	; 17
+ //DDRB=0xFF;
+ SPCR = (1<<SPE);
+  c0:	80 e4       	ldi	r24, 0x40	; 64
+  c2:	8d b9       	out	0x0d, r24	; 13
+ lcd();
+  c4:	cc df       	rcall	.-104    	; 0x5e <lcd>
+}
+
+void dat( unsigned char c )
+{
+	PORTD=c;
+	PORTC=0x05;
+  c6:	55 e0       	ldi	r21, 0x05	; 5
+  c8:	24 ed       	ldi	r18, 0xD4	; 212
+  ca:	30 e3       	ldi	r19, 0x30	; 48
+	_delay_ms(50);
+	PORTC=0x01;
+  cc:	41 e0       	ldi	r20, 0x01	; 1
+ SPCR = (1<<SPE);
+ lcd();
+
+ while(1)
+   {
+    while( (SPSR&(1<<SPIF))==0);
+  ce:	77 9b       	sbis	0x0e, 7	; 14
+  d0:	fe cf       	rjmp	.-4      	; 0xce <main+0x14>
+	//PORTD=SPDR;
+	dat(SPDR);
+  d2:	8f b1       	in	r24, 0x0f	; 15
+	PORTC=0x00;
+}
+
+void dat( unsigned char c )
+{
+	PORTD=c;
+  d4:	82 bb       	out	0x12, r24	; 18
+	PORTC=0x05;
+  d6:	55 bb       	out	0x15, r21	; 21
+  d8:	c9 01       	movw	r24, r18
+  da:	01 97       	sbiw	r24, 0x01	; 1
+  dc:	f1 f7       	brne	.-4      	; 0xda <main+0x20>
+	_delay_ms(50);
+	PORTC=0x01;
+  de:	45 bb       	out	0x15, r20	; 21
+  e0:	f6 cf       	rjmp	.-20     	; 0xce <main+0x14>
+
+000000e2 <_exit>:
+  e2:	f8 94       	cli
+
+000000e4 <__stop_program>:
+  e4:	ff cf       	rjmp	.-2      	; 0xe4 <__stop_program>

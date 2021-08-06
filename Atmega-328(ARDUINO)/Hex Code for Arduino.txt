@@ -1,0 +1,9 @@
+To get hex code for ino file:-
+1. Goto start->Search->Type:
+   %temp%
+2.Click on build folder created.
+   (while Arduino IDE is running)
+3.Copy the HEX file and paste it in
+  your folder.
+4.Upload the file to Proteus.
+5.Done!!

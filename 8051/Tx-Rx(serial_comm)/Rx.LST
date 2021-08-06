@@ -1,0 +1,89 @@
+C51 COMPILER V9.02   RX                                                                    03/09/2016 15:01:33 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE RX
+OBJECT MODULE PLACED IN Rx.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Rx.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1             #include<reg51.h>
+   2          sbit rs=P1^0;
+   3          sbit rw=P1^1;
+   4          sbit e=P1^2;
+   5          
+   6          void delay(int t)
+   7          {
+   8   1       while(t--);
+   9   1       }
+  10          
+  11          
+  12           void cmd(char c)
+  13           {
+  14   1         P2=c;
+  15   1         rs=0;
+  16   1         rw=0;
+  17   1         e=1;
+  18   1         delay(50);
+  19   1         e=0;
+  20   1      }
+  21          
+  22           void dat(char c)
+  23           {
+  24   1         P2=c;
+  25   1         rs=1;
+  26   1         rw=0;
+  27   1         e=1;
+  28   1         delay(50);
+  29   1         e=0;
+  30   1      }
+  31          
+  32          
+  33          void lcd()
+  34          {
+  35   1      
+  36   1       cmd(0x38);
+  37   1       delay(200);
+  38   1       cmd(0x01);
+  39   1       delay(200);
+  40   1       cmd(0x0e);
+  41   1       delay(200);
+  42   1       cmd(0x80);
+  43   1       delay(200);
+  44   1      }
+  45          
+  46          
+  47          void main()
+  48          {
+  49   1      
+  50   1        TMOD=0x20;
+  51   1        TR1=1;
+  52   1        TH1=0xfd;
+  53   1        while(1)
+  54   1           {
+  55   2                 while (RI==0);
+C51 COMPILER V9.02   RX                                                                    03/09/2016 15:01:33 PAGE 2   
+
+  56   2                    {
+  57   3                           dat(SBUF);
+  58   3      
+  59   3                      }
+  60   2      
+  61   2            RI=0;
+  62   2              }
+  63   1      
+  64   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    101    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,1691 @@
+
+TRC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000626  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000010c  00800060  00000626  000006ba  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000001  0080016c  0080016c  000007c6  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  000007c6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000cb  00000000  00000000  000007e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000009f2  00000000  00000000  000008b1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000228  00000000  00000000  000012a3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000a42  00000000  00000000  000014cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000130  00000000  00000000  00001f10  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000011d  00000000  00000000  00002040  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000001f7  00000000  00000000  0000215d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1e c0       	rjmp	.+60     	; 0x3e <__ctors_end>
+   2:	38 c0       	rjmp	.+112    	; 0x74 <__bad_interrupt>
+   4:	37 c0       	rjmp	.+110    	; 0x74 <__bad_interrupt>
+   6:	36 c0       	rjmp	.+108    	; 0x74 <__bad_interrupt>
+   8:	35 c0       	rjmp	.+106    	; 0x74 <__bad_interrupt>
+   a:	34 c0       	rjmp	.+104    	; 0x74 <__bad_interrupt>
+   c:	33 c0       	rjmp	.+102    	; 0x74 <__bad_interrupt>
+   e:	32 c0       	rjmp	.+100    	; 0x74 <__bad_interrupt>
+  10:	31 c0       	rjmp	.+98     	; 0x74 <__bad_interrupt>
+  12:	30 c0       	rjmp	.+96     	; 0x74 <__bad_interrupt>
+  14:	2f c0       	rjmp	.+94     	; 0x74 <__bad_interrupt>
+  16:	2e c0       	rjmp	.+92     	; 0x74 <__bad_interrupt>
+  18:	2d c0       	rjmp	.+90     	; 0x74 <__bad_interrupt>
+  1a:	2c c0       	rjmp	.+88     	; 0x74 <__bad_interrupt>
+  1c:	2b c0       	rjmp	.+86     	; 0x74 <__bad_interrupt>
+  1e:	2a c0       	rjmp	.+84     	; 0x74 <__bad_interrupt>
+  20:	29 c0       	rjmp	.+82     	; 0x74 <__bad_interrupt>
+  22:	28 c0       	rjmp	.+80     	; 0x74 <__bad_interrupt>
+  24:	27 c0       	rjmp	.+78     	; 0x74 <__bad_interrupt>
+  26:	86 c2       	rjmp	.+1292   	; 0x534 <month+0x9a>
+  28:	88 c2       	rjmp	.+1296   	; 0x53a <month+0xa0>
+  2a:	8a c2       	rjmp	.+1300   	; 0x540 <month+0xa6>
+  2c:	8c c2       	rjmp	.+1304   	; 0x546 <month+0xac>
+  2e:	8e c2       	rjmp	.+1308   	; 0x54c <month+0xb2>
+  30:	90 c2       	rjmp	.+1312   	; 0x552 <month+0xb8>
+  32:	92 c2       	rjmp	.+1316   	; 0x558 <month+0xbe>
+  34:	94 c2       	rjmp	.+1320   	; 0x55e <month+0xc4>
+  36:	96 c2       	rjmp	.+1324   	; 0x564 <month+0xca>
+  38:	98 c2       	rjmp	.+1328   	; 0x56a <month+0xd0>
+  3a:	9a c2       	rjmp	.+1332   	; 0x570 <month+0xd6>
+  3c:	9c c2       	rjmp	.+1336   	; 0x576 <month+0xdc>
+
+0000003e <__ctors_end>:
+  3e:	11 24       	eor	r1, r1
+  40:	1f be       	out	0x3f, r1	; 63
+  42:	cf e5       	ldi	r28, 0x5F	; 95
+  44:	d4 e0       	ldi	r29, 0x04	; 4
+  46:	de bf       	out	0x3e, r29	; 62
+  48:	cd bf       	out	0x3d, r28	; 61
+
+0000004a <__do_copy_data>:
+  4a:	11 e0       	ldi	r17, 0x01	; 1
+  4c:	a0 e6       	ldi	r26, 0x60	; 96
+  4e:	b0 e0       	ldi	r27, 0x00	; 0
+  50:	e6 e2       	ldi	r30, 0x26	; 38
+  52:	f6 e0       	ldi	r31, 0x06	; 6
+  54:	02 c0       	rjmp	.+4      	; 0x5a <.do_copy_data_start>
+
+00000056 <.do_copy_data_loop>:
+  56:	05 90       	lpm	r0, Z+
+  58:	0d 92       	st	X+, r0
+
+0000005a <.do_copy_data_start>:
+  5a:	ac 36       	cpi	r26, 0x6C	; 108
+  5c:	b1 07       	cpc	r27, r17
+  5e:	d9 f7       	brne	.-10     	; 0x56 <.do_copy_data_loop>
+
+00000060 <__do_clear_bss>:
+  60:	11 e0       	ldi	r17, 0x01	; 1
+  62:	ac e6       	ldi	r26, 0x6C	; 108
+  64:	b1 e0       	ldi	r27, 0x01	; 1
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	ad 36       	cpi	r26, 0x6D	; 109
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	c9 d2       	rcall	.+1426   	; 0x604 <main>
+  72:	d7 c2       	rjmp	.+1454   	; 0x622 <_exit>
+
+00000074 <__bad_interrupt>:
+  74:	c5 cf       	rjmp	.-118    	; 0x0 <__vectors>
+
+00000076 <cmd>:
+unsigned char r;
+void cmd(unsigned char c)
+{
+unsigned int l,h;
+l=c &0X0F;
+h=c>>4;
+  76:	38 2f       	mov	r19, r24
+  78:	32 95       	swap	r19
+  7a:	3f 70       	andi	r19, 0x0F	; 15
+
+
+PORTD=h|0X40;
+  7c:	23 2f       	mov	r18, r19
+  7e:	20 64       	ori	r18, 0x40	; 64
+  80:	22 bb       	out	0x12, r18	; 18
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  82:	48 e8       	ldi	r20, 0x88	; 136
+  84:	53 e1       	ldi	r21, 0x13	; 19
+  86:	fa 01       	movw	r30, r20
+  88:	31 97       	sbiw	r30, 0x01	; 1
+  8a:	f1 f7       	brne	.-4      	; 0x88 <cmd+0x12>
+_delay_ms(20);
+PORTD=h|0X00;
+  8c:	32 bb       	out	0x12, r19	; 18
+
+PORTD=l|0X40;
+  8e:	90 e0       	ldi	r25, 0x00	; 0
+  90:	8f 70       	andi	r24, 0x0F	; 15
+  92:	90 70       	andi	r25, 0x00	; 0
+  94:	28 2f       	mov	r18, r24
+  96:	20 64       	ori	r18, 0x40	; 64
+  98:	22 bb       	out	0x12, r18	; 18
+  9a:	fa 01       	movw	r30, r20
+  9c:	31 97       	sbiw	r30, 0x01	; 1
+  9e:	f1 f7       	brne	.-4      	; 0x9c <cmd+0x26>
+_delay_ms(20);
+PORTD=l|0X00;
+  a0:	82 bb       	out	0x12, r24	; 18
+}
+  a2:	08 95       	ret
+
+000000a4 <dat>:
+
+void dat (unsigned char c)
+{
+unsigned int l,h;
+l=c &0X0F;
+h=c>>4;
+  a4:	28 2f       	mov	r18, r24
+  a6:	22 95       	swap	r18
+  a8:	2f 70       	andi	r18, 0x0F	; 15
+
+PORTD=h|0X50;	
+  aa:	92 2f       	mov	r25, r18
+  ac:	90 65       	ori	r25, 0x50	; 80
+  ae:	92 bb       	out	0x12, r25	; 18
+  b0:	48 e8       	ldi	r20, 0x88	; 136
+  b2:	53 e1       	ldi	r21, 0x13	; 19
+  b4:	fa 01       	movw	r30, r20
+  b6:	31 97       	sbiw	r30, 0x01	; 1
+  b8:	f1 f7       	brne	.-4      	; 0xb6 <dat+0x12>
+_delay_ms(20);				
+PORTD=h|0X10;
+  ba:	20 61       	ori	r18, 0x10	; 16
+  bc:	22 bb       	out	0x12, r18	; 18
+
+PORTD=l|0X50;
+  be:	8f 70       	andi	r24, 0x0F	; 15
+  c0:	98 2f       	mov	r25, r24
+  c2:	90 65       	ori	r25, 0x50	; 80
+  c4:	92 bb       	out	0x12, r25	; 18
+  c6:	fa 01       	movw	r30, r20
+  c8:	31 97       	sbiw	r30, 0x01	; 1
+  ca:	f1 f7       	brne	.-4      	; 0xc8 <dat+0x24>
+_delay_ms(20);
+PORTD=l|0X10;
+  cc:	80 61       	ori	r24, 0x10	; 16
+  ce:	82 bb       	out	0x12, r24	; 18
+}
+  d0:	08 95       	ret
+
+000000d2 <lcd_init>:
+
+
+void lcd_init()
+{
+  d2:	0f 93       	push	r16
+  d4:	1f 93       	push	r17
+cmd(0x02);
+  d6:	82 e0       	ldi	r24, 0x02	; 2
+  d8:	ce df       	rcall	.-100    	; 0x76 <cmd>
+  da:	04 ec       	ldi	r16, 0xC4	; 196
+  dc:	19 e0       	ldi	r17, 0x09	; 9
+  de:	c8 01       	movw	r24, r16
+  e0:	01 97       	sbiw	r24, 0x01	; 1
+  e2:	f1 f7       	brne	.-4      	; 0xe0 <lcd_init+0xe>
+_delay_ms(10);
+cmd(0x28);
+  e4:	88 e2       	ldi	r24, 0x28	; 40
+  e6:	c7 df       	rcall	.-114    	; 0x76 <cmd>
+  e8:	c8 01       	movw	r24, r16
+  ea:	01 97       	sbiw	r24, 0x01	; 1
+  ec:	f1 f7       	brne	.-4      	; 0xea <lcd_init+0x18>
+_delay_ms(10);
+cmd(0x01);
+  ee:	81 e0       	ldi	r24, 0x01	; 1
+  f0:	c2 df       	rcall	.-124    	; 0x76 <cmd>
+  f2:	c8 01       	movw	r24, r16
+  f4:	01 97       	sbiw	r24, 0x01	; 1
+  f6:	f1 f7       	brne	.-4      	; 0xf4 <lcd_init+0x22>
+_delay_ms(10);
+cmd(0x80);
+  f8:	80 e8       	ldi	r24, 0x80	; 128
+  fa:	bd df       	rcall	.-134    	; 0x76 <cmd>
+  fc:	c8 01       	movw	r24, r16
+  fe:	01 97       	sbiw	r24, 0x01	; 1
+ 100:	f1 f7       	brne	.-4      	; 0xfe <lcd_init+0x2c>
+_delay_ms(10);
+cmd(0x0c);
+ 102:	8c e0       	ldi	r24, 0x0C	; 12
+ 104:	b8 df       	rcall	.-144    	; 0x76 <cmd>
+ 106:	c8 01       	movw	r24, r16
+ 108:	01 97       	sbiw	r24, 0x01	; 1
+ 10a:	f1 f7       	brne	.-4      	; 0x108 <lcd_init+0x36>
+_delay_ms(10);
+}
+ 10c:	1f 91       	pop	r17
+ 10e:	0f 91       	pop	r16
+ 110:	08 95       	ret
+
+00000112 <string>:
+
+void string(unsigned char *p)
+{
+ 112:	cf 93       	push	r28
+ 114:	df 93       	push	r29
+ 116:	ec 01       	movw	r28, r24
+ 118:	02 c0       	rjmp	.+4      	; 0x11e <string+0xc>
+while(*p!='\0')
+{
+dat(*p);
+ 11a:	c4 df       	rcall	.-120    	; 0xa4 <dat>
+p++;
+ 11c:	21 96       	adiw	r28, 0x01	; 1
+_delay_ms(10);
+}
+
+void string(unsigned char *p)
+{
+while(*p!='\0')
+ 11e:	88 81       	ld	r24, Y
+ 120:	88 23       	and	r24, r24
+ 122:	d9 f7       	brne	.-10     	; 0x11a <string+0x8>
+{
+dat(*p);
+p++;
+}
+}
+ 124:	df 91       	pop	r29
+ 126:	cf 91       	pop	r28
+ 128:	08 95       	ret
+
+0000012a <start>:
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 12a:	84 ea       	ldi	r24, 0xA4	; 164
+ 12c:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 12e:	06 b6       	in	r0, 0x36	; 54
+ 130:	07 fe       	sbrs	r0, 7
+ 132:	fd cf       	rjmp	.-6      	; 0x12e <start+0x4>
+}
+ 134:	08 95       	ret
+
+00000136 <stop>:
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 136:	84 e9       	ldi	r24, 0x94	; 148
+ 138:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 13a:	06 b6       	in	r0, 0x36	; 54
+ 13c:	04 fc       	sbrc	r0, 4
+ 13e:	fd cf       	rjmp	.-6      	; 0x13a <stop+0x4>
+}
+ 140:	08 95       	ret
+
+00000142 <address>:
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 142:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 144:	84 e8       	ldi	r24, 0x84	; 132
+ 146:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 148:	06 b6       	in	r0, 0x36	; 54
+ 14a:	07 fe       	sbrs	r0, 7
+ 14c:	fd cf       	rjmp	.-6      	; 0x148 <address+0x6>
+}
+ 14e:	08 95       	ret
+
+00000150 <read>:
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 150:	84 e8       	ldi	r24, 0x84	; 132
+ 152:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 154:	06 b6       	in	r0, 0x36	; 54
+ 156:	07 fe       	sbrs	r0, 7
+ 158:	fd cf       	rjmp	.-6      	; 0x154 <read+0x4>
+return TWDR;
+ 15a:	83 b1       	in	r24, 0x03	; 3
+}
+ 15c:	08 95       	ret
+
+0000015e <write>:
+
+
+
+void write(unsigned char p)
+{
+ 15e:	98 2f       	mov	r25, r24
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 160:	84 ea       	ldi	r24, 0xA4	; 164
+ 162:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 164:	06 b6       	in	r0, 0x36	; 54
+ 166:	07 fe       	sbrs	r0, 7
+ 168:	fd cf       	rjmp	.-6      	; 0x164 <write+0x6>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 16a:	80 ed       	ldi	r24, 0xD0	; 208
+ 16c:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 16e:	84 e8       	ldi	r24, 0x84	; 132
+ 170:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 172:	06 b6       	in	r0, 0x36	; 54
+ 174:	07 fe       	sbrs	r0, 7
+ 176:	fd cf       	rjmp	.-6      	; 0x172 <write+0x14>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 178:	82 e0       	ldi	r24, 0x02	; 2
+ 17a:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 17c:	84 e8       	ldi	r24, 0x84	; 132
+ 17e:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 180:	06 b6       	in	r0, 0x36	; 54
+ 182:	07 fe       	sbrs	r0, 7
+ 184:	fd cf       	rjmp	.-6      	; 0x180 <write+0x22>
+void write(unsigned char p)
+{
+start();
+address(0XD0);
+address(0x02);
+TWDR=p;
+ 186:	93 b9       	out	0x03, r25	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 188:	84 e8       	ldi	r24, 0x84	; 132
+ 18a:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 18c:	06 b6       	in	r0, 0x36	; 54
+ 18e:	07 fe       	sbrs	r0, 7
+ 190:	fd cf       	rjmp	.-6      	; 0x18c <write+0x2e>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 192:	84 e9       	ldi	r24, 0x94	; 148
+ 194:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 196:	06 b6       	in	r0, 0x36	; 54
+ 198:	04 fc       	sbrc	r0, 4
+ 19a:	fd cf       	rjmp	.-6      	; 0x196 <write+0x38>
+address(0x02);
+TWDR=p;
+TWCR=(1<<TWINT)|(1<<TWEN);
+while((TWCR&(1<<TWINT))==0);
+stop();
+}
+ 19c:	08 95       	ret
+
+0000019e <repeated>:
+
+
+void repeated()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 19e:	84 ea       	ldi	r24, 0xA4	; 164
+ 1a0:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1a2:	06 b6       	in	r0, 0x36	; 54
+ 1a4:	07 fe       	sbrs	r0, 7
+ 1a6:	fd cf       	rjmp	.-6      	; 0x1a2 <repeated+0x4>
+}
+ 1a8:	08 95       	ret
+
+000001aa <hour>:
+
+
+
+
+void hour()
+{
+ 1aa:	0f 93       	push	r16
+ 1ac:	1f 93       	push	r17
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 1ae:	84 ea       	ldi	r24, 0xA4	; 164
+ 1b0:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1b2:	06 b6       	in	r0, 0x36	; 54
+ 1b4:	07 fe       	sbrs	r0, 7
+ 1b6:	fd cf       	rjmp	.-6      	; 0x1b2 <hour+0x8>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 1b8:	80 ed       	ldi	r24, 0xD0	; 208
+ 1ba:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 1bc:	84 e8       	ldi	r24, 0x84	; 132
+ 1be:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1c0:	06 b6       	in	r0, 0x36	; 54
+ 1c2:	07 fe       	sbrs	r0, 7
+ 1c4:	fd cf       	rjmp	.-6      	; 0x1c0 <hour+0x16>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 1c6:	82 e0       	ldi	r24, 0x02	; 2
+ 1c8:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 1ca:	84 e8       	ldi	r24, 0x84	; 132
+ 1cc:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1ce:	06 b6       	in	r0, 0x36	; 54
+ 1d0:	07 fe       	sbrs	r0, 7
+ 1d2:	fd cf       	rjmp	.-6      	; 0x1ce <hour+0x24>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 1d4:	84 ea       	ldi	r24, 0xA4	; 164
+ 1d6:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1d8:	06 b6       	in	r0, 0x36	; 54
+ 1da:	07 fe       	sbrs	r0, 7
+ 1dc:	fd cf       	rjmp	.-6      	; 0x1d8 <hour+0x2e>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 1de:	81 ed       	ldi	r24, 0xD1	; 209
+ 1e0:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 1e2:	84 e8       	ldi	r24, 0x84	; 132
+ 1e4:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1e6:	06 b6       	in	r0, 0x36	; 54
+ 1e8:	07 fe       	sbrs	r0, 7
+ 1ea:	fd cf       	rjmp	.-6      	; 0x1e6 <hour+0x3c>
+start();
+address(0xd0);
+address(0x02);
+start();
+address(0xd1);
+cmd(0xc2);
+ 1ec:	82 ec       	ldi	r24, 0xC2	; 194
+ 1ee:	43 df       	rcall	.-378    	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 1f0:	84 e8       	ldi	r24, 0x84	; 132
+ 1f2:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 1f4:	06 b6       	in	r0, 0x36	; 54
+ 1f6:	07 fe       	sbrs	r0, 7
+ 1f8:	fd cf       	rjmp	.-6      	; 0x1f4 <hour+0x4a>
+return TWDR;
+ 1fa:	03 b1       	in	r16, 0x03	; 3
+address(0x02);
+start();
+address(0xd1);
+cmd(0xc2);
+
+hr1=read();
+ 1fc:	10 e0       	ldi	r17, 0x00	; 0
+
+
+hr2=hr1 &0X0F;
+//hr3=(hr1>>4)&0x01;
+hr3=((hr1)&0x10)>>4;
+dat(48+hr3);
+ 1fe:	c8 01       	movw	r24, r16
+ 200:	80 71       	andi	r24, 0x10	; 16
+ 202:	90 70       	andi	r25, 0x00	; 0
+ 204:	24 e0       	ldi	r18, 0x04	; 4
+ 206:	96 95       	lsr	r25
+ 208:	87 95       	ror	r24
+ 20a:	2a 95       	dec	r18
+ 20c:	e1 f7       	brne	.-8      	; 0x206 <hour+0x5c>
+ 20e:	80 5d       	subi	r24, 0xD0	; 208
+ 210:	49 df       	rcall	.-366    	; 0xa4 <dat>
+
+dat(48+hr2);
+ 212:	c8 01       	movw	r24, r16
+ 214:	8f 70       	andi	r24, 0x0F	; 15
+ 216:	90 70       	andi	r25, 0x00	; 0
+ 218:	80 5d       	subi	r24, 0xD0	; 208
+ 21a:	44 df       	rcall	.-376    	; 0xa4 <dat>
+
+cmd(0xcb);
+ 21c:	8b ec       	ldi	r24, 0xCB	; 203
+ 21e:	2b df       	rcall	.-426    	; 0x76 <cmd>
+if(hr1&0x20)
+ 220:	05 ff       	sbrs	r16, 5
+ 222:	03 c0       	rjmp	.+6      	; 0x22a <hour+0x80>
+string("PM");
+ 224:	80 e6       	ldi	r24, 0x60	; 96
+ 226:	90 e0       	ldi	r25, 0x00	; 0
+ 228:	02 c0       	rjmp	.+4      	; 0x22e <hour+0x84>
+else
+string("AM");
+ 22a:	83 e6       	ldi	r24, 0x63	; 99
+ 22c:	90 e0       	ldi	r25, 0x00	; 0
+ 22e:	71 df       	rcall	.-286    	; 0x112 <string>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 230:	84 e9       	ldi	r24, 0x94	; 148
+ 232:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 234:	06 b6       	in	r0, 0x36	; 54
+ 236:	04 fc       	sbrc	r0, 4
+ 238:	fd cf       	rjmp	.-6      	; 0x234 <hour+0x8a>
+string("PM");
+else
+string("AM");
+
+stop();
+}
+ 23a:	1f 91       	pop	r17
+ 23c:	0f 91       	pop	r16
+ 23e:	08 95       	ret
+
+00000240 <minute>:
+
+
+
+void minute()
+{
+ 240:	0f 93       	push	r16
+ 242:	1f 93       	push	r17
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 244:	84 ea       	ldi	r24, 0xA4	; 164
+ 246:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 248:	06 b6       	in	r0, 0x36	; 54
+ 24a:	07 fe       	sbrs	r0, 7
+ 24c:	fd cf       	rjmp	.-6      	; 0x248 <minute+0x8>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 24e:	80 ed       	ldi	r24, 0xD0	; 208
+ 250:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 252:	84 e8       	ldi	r24, 0x84	; 132
+ 254:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 256:	06 b6       	in	r0, 0x36	; 54
+ 258:	07 fe       	sbrs	r0, 7
+ 25a:	fd cf       	rjmp	.-6      	; 0x256 <minute+0x16>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 25c:	81 e0       	ldi	r24, 0x01	; 1
+ 25e:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 260:	84 e8       	ldi	r24, 0x84	; 132
+ 262:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 264:	06 b6       	in	r0, 0x36	; 54
+ 266:	07 fe       	sbrs	r0, 7
+ 268:	fd cf       	rjmp	.-6      	; 0x264 <minute+0x24>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 26a:	84 ea       	ldi	r24, 0xA4	; 164
+ 26c:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 26e:	06 b6       	in	r0, 0x36	; 54
+ 270:	07 fe       	sbrs	r0, 7
+ 272:	fd cf       	rjmp	.-6      	; 0x26e <minute+0x2e>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 274:	81 ed       	ldi	r24, 0xD1	; 209
+ 276:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 278:	84 e8       	ldi	r24, 0x84	; 132
+ 27a:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 27c:	06 b6       	in	r0, 0x36	; 54
+ 27e:	07 fe       	sbrs	r0, 7
+ 280:	fd cf       	rjmp	.-6      	; 0x27c <minute+0x3c>
+address(0xd0);
+address(0x01);
+
+start();
+address(0xd1);
+cmd(0xc5);
+ 282:	85 ec       	ldi	r24, 0xC5	; 197
+ 284:	f8 de       	rcall	.-528    	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 286:	84 e8       	ldi	r24, 0x84	; 132
+ 288:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 28a:	06 b6       	in	r0, 0x36	; 54
+ 28c:	07 fe       	sbrs	r0, 7
+ 28e:	fd cf       	rjmp	.-6      	; 0x28a <minute+0x4a>
+return TWDR;
+ 290:	03 b1       	in	r16, 0x03	; 3
+address(0x01);
+
+start();
+address(0xd1);
+cmd(0xc5);
+i=read();
+ 292:	10 e0       	ldi	r17, 0x00	; 0
+j=i &0X0F;
+k=i>>4;
+dat(48+k);
+ 294:	c8 01       	movw	r24, r16
+ 296:	34 e0       	ldi	r19, 0x04	; 4
+ 298:	96 95       	lsr	r25
+ 29a:	87 95       	ror	r24
+ 29c:	3a 95       	dec	r19
+ 29e:	e1 f7       	brne	.-8      	; 0x298 <minute+0x58>
+ 2a0:	80 5d       	subi	r24, 0xD0	; 208
+ 2a2:	00 df       	rcall	.-512    	; 0xa4 <dat>
+dat(48+j);
+ 2a4:	0f 70       	andi	r16, 0x0F	; 15
+ 2a6:	10 70       	andi	r17, 0x00	; 0
+ 2a8:	80 2f       	mov	r24, r16
+ 2aa:	80 5d       	subi	r24, 0xD0	; 208
+ 2ac:	fb de       	rcall	.-522    	; 0xa4 <dat>
+
+cmd(0xc4);
+ 2ae:	84 ec       	ldi	r24, 0xC4	; 196
+ 2b0:	e2 de       	rcall	.-572    	; 0x76 <cmd>
+string(":");
+ 2b2:	86 e6       	ldi	r24, 0x66	; 102
+ 2b4:	90 e0       	ldi	r25, 0x00	; 0
+ 2b6:	2d df       	rcall	.-422    	; 0x112 <string>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 2b8:	84 e9       	ldi	r24, 0x94	; 148
+ 2ba:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 2bc:	06 b6       	in	r0, 0x36	; 54
+ 2be:	04 fc       	sbrc	r0, 4
+ 2c0:	fd cf       	rjmp	.-6      	; 0x2bc <minute+0x7c>
+
+cmd(0xc4);
+string(":");
+
+stop();
+}
+ 2c2:	1f 91       	pop	r17
+ 2c4:	0f 91       	pop	r16
+ 2c6:	08 95       	ret
+
+000002c8 <second>:
+
+
+
+
+void second()
+{
+ 2c8:	0f 93       	push	r16
+ 2ca:	1f 93       	push	r17
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 2cc:	84 ea       	ldi	r24, 0xA4	; 164
+ 2ce:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 2d0:	06 b6       	in	r0, 0x36	; 54
+ 2d2:	07 fe       	sbrs	r0, 7
+ 2d4:	fd cf       	rjmp	.-6      	; 0x2d0 <second+0x8>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 2d6:	80 ed       	ldi	r24, 0xD0	; 208
+ 2d8:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 2da:	84 e8       	ldi	r24, 0x84	; 132
+ 2dc:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 2de:	06 b6       	in	r0, 0x36	; 54
+ 2e0:	07 fe       	sbrs	r0, 7
+ 2e2:	fd cf       	rjmp	.-6      	; 0x2de <second+0x16>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 2e4:	13 b8       	out	0x03, r1	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 2e6:	84 e8       	ldi	r24, 0x84	; 132
+ 2e8:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 2ea:	06 b6       	in	r0, 0x36	; 54
+ 2ec:	07 fe       	sbrs	r0, 7
+ 2ee:	fd cf       	rjmp	.-6      	; 0x2ea <second+0x22>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 2f0:	84 ea       	ldi	r24, 0xA4	; 164
+ 2f2:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 2f4:	06 b6       	in	r0, 0x36	; 54
+ 2f6:	07 fe       	sbrs	r0, 7
+ 2f8:	fd cf       	rjmp	.-6      	; 0x2f4 <second+0x2c>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 2fa:	81 ed       	ldi	r24, 0xD1	; 209
+ 2fc:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 2fe:	84 e8       	ldi	r24, 0x84	; 132
+ 300:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 302:	06 b6       	in	r0, 0x36	; 54
+ 304:	07 fe       	sbrs	r0, 7
+ 306:	fd cf       	rjmp	.-6      	; 0x302 <second+0x3a>
+start();
+address(0xd0);
+address(0x00);
+start();
+address(0xd1);
+cmd(0xc8);
+ 308:	88 ec       	ldi	r24, 0xC8	; 200
+ 30a:	b5 de       	rcall	.-662    	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 30c:	84 e8       	ldi	r24, 0x84	; 132
+ 30e:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 310:	06 b6       	in	r0, 0x36	; 54
+ 312:	07 fe       	sbrs	r0, 7
+ 314:	fd cf       	rjmp	.-6      	; 0x310 <second+0x48>
+return TWDR;
+ 316:	03 b1       	in	r16, 0x03	; 3
+address(0xd0);
+address(0x00);
+start();
+address(0xd1);
+cmd(0xc8);
+x=read();
+ 318:	10 e0       	ldi	r17, 0x00	; 0
+y=x &0X0F;
+z=x>>4;
+dat(48+z);
+ 31a:	c8 01       	movw	r24, r16
+ 31c:	44 e0       	ldi	r20, 0x04	; 4
+ 31e:	96 95       	lsr	r25
+ 320:	87 95       	ror	r24
+ 322:	4a 95       	dec	r20
+ 324:	e1 f7       	brne	.-8      	; 0x31e <second+0x56>
+ 326:	80 5d       	subi	r24, 0xD0	; 208
+ 328:	bd de       	rcall	.-646    	; 0xa4 <dat>
+dat(48+y);
+ 32a:	0f 70       	andi	r16, 0x0F	; 15
+ 32c:	10 70       	andi	r17, 0x00	; 0
+ 32e:	80 2f       	mov	r24, r16
+ 330:	80 5d       	subi	r24, 0xD0	; 208
+ 332:	b8 de       	rcall	.-656    	; 0xa4 <dat>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 334:	84 e9       	ldi	r24, 0x94	; 148
+ 336:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 338:	06 b6       	in	r0, 0x36	; 54
+ 33a:	04 fc       	sbrc	r0, 4
+ 33c:	fd cf       	rjmp	.-6      	; 0x338 <second+0x70>
+y=x &0X0F;
+z=x>>4;
+dat(48+z);
+dat(48+y);
+stop();
+}
+ 33e:	1f 91       	pop	r17
+ 340:	0f 91       	pop	r16
+ 342:	08 95       	ret
+
+00000344 <day>:
+
+
+
+
+void day()
+{
+ 344:	cf 93       	push	r28
+ 346:	df 93       	push	r29
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 348:	84 ea       	ldi	r24, 0xA4	; 164
+ 34a:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 34c:	06 b6       	in	r0, 0x36	; 54
+ 34e:	07 fe       	sbrs	r0, 7
+ 350:	fd cf       	rjmp	.-6      	; 0x34c <day+0x8>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 352:	80 ed       	ldi	r24, 0xD0	; 208
+ 354:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 356:	84 e8       	ldi	r24, 0x84	; 132
+ 358:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 35a:	06 b6       	in	r0, 0x36	; 54
+ 35c:	07 fe       	sbrs	r0, 7
+ 35e:	fd cf       	rjmp	.-6      	; 0x35a <day+0x16>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 360:	83 e0       	ldi	r24, 0x03	; 3
+ 362:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 364:	84 e8       	ldi	r24, 0x84	; 132
+ 366:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 368:	06 b6       	in	r0, 0x36	; 54
+ 36a:	07 fe       	sbrs	r0, 7
+ 36c:	fd cf       	rjmp	.-6      	; 0x368 <day+0x24>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 36e:	84 ea       	ldi	r24, 0xA4	; 164
+ 370:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 372:	06 b6       	in	r0, 0x36	; 54
+ 374:	07 fe       	sbrs	r0, 7
+ 376:	fd cf       	rjmp	.-6      	; 0x372 <day+0x2e>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 378:	81 ed       	ldi	r24, 0xD1	; 209
+ 37a:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 37c:	84 e8       	ldi	r24, 0x84	; 132
+ 37e:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 380:	06 b6       	in	r0, 0x36	; 54
+ 382:	07 fe       	sbrs	r0, 7
+ 384:	fd cf       	rjmp	.-6      	; 0x380 <day+0x3c>
+start();
+address(0xd0);
+address(0x03);
+start();
+address(0xd1);
+cmd(0x8e);
+ 386:	8e e8       	ldi	r24, 0x8E	; 142
+ 388:	76 de       	rcall	.-788    	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 38a:	84 e8       	ldi	r24, 0x84	; 132
+ 38c:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 38e:	06 b6       	in	r0, 0x36	; 54
+ 390:	07 fe       	sbrs	r0, 7
+ 392:	fd cf       	rjmp	.-6      	; 0x38e <day+0x4a>
+return TWDR;
+ 394:	83 b1       	in	r24, 0x03	; 3
+address(0x03);
+start();
+address(0xd1);
+cmd(0x8e);
+d1=read();
+d2=d1 &0X0F;
+ 396:	c8 2f       	mov	r28, r24
+ 398:	d0 e0       	ldi	r29, 0x00	; 0
+ 39a:	cf 70       	andi	r28, 0x0F	; 15
+ 39c:	d0 70       	andi	r29, 0x00	; 0
+string("WeekDay->");
+ 39e:	88 e6       	ldi	r24, 0x68	; 104
+ 3a0:	90 e0       	ldi	r25, 0x00	; 0
+ 3a2:	b7 de       	rcall	.-658    	; 0x112 <string>
+dat(48+d2);
+ 3a4:	9e 01       	movw	r18, r28
+ 3a6:	20 5d       	subi	r18, 0xD0	; 208
+ 3a8:	82 2f       	mov	r24, r18
+ 3aa:	7c de       	rcall	.-776    	; 0xa4 <dat>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 3ac:	84 e9       	ldi	r24, 0x94	; 148
+ 3ae:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 3b0:	06 b6       	in	r0, 0x36	; 54
+ 3b2:	04 fc       	sbrc	r0, 4
+ 3b4:	fd cf       	rjmp	.-6      	; 0x3b0 <day+0x6c>
+d1=read();
+d2=d1 &0X0F;
+string("WeekDay->");
+dat(48+d2);
+stop();
+switch(d2)
+ 3b6:	c4 30       	cpi	r28, 0x04	; 4
+ 3b8:	d1 05       	cpc	r29, r1
+ 3ba:	f1 f0       	breq	.+60     	; 0x3f8 <day+0xb4>
+ 3bc:	c5 30       	cpi	r28, 0x05	; 5
+ 3be:	d1 05       	cpc	r29, r1
+ 3c0:	48 f4       	brcc	.+18     	; 0x3d4 <day+0x90>
+ 3c2:	c2 30       	cpi	r28, 0x02	; 2
+ 3c4:	d1 05       	cpc	r29, r1
+ 3c6:	91 f0       	breq	.+36     	; 0x3ec <day+0xa8>
+ 3c8:	c3 30       	cpi	r28, 0x03	; 3
+ 3ca:	d1 05       	cpc	r29, r1
+ 3cc:	90 f4       	brcc	.+36     	; 0x3f2 <day+0xae>
+ 3ce:	21 97       	sbiw	r28, 0x01	; 1
+ 3d0:	f9 f4       	brne	.+62     	; 0x410 <day+0xcc>
+ 3d2:	09 c0       	rjmp	.+18     	; 0x3e6 <day+0xa2>
+ 3d4:	c6 30       	cpi	r28, 0x06	; 6
+ 3d6:	d1 05       	cpc	r29, r1
+ 3d8:	a9 f0       	breq	.+42     	; 0x404 <day+0xc0>
+ 3da:	c6 30       	cpi	r28, 0x06	; 6
+ 3dc:	d1 05       	cpc	r29, r1
+ 3de:	78 f0       	brcs	.+30     	; 0x3fe <day+0xba>
+ 3e0:	27 97       	sbiw	r28, 0x07	; 7
+ 3e2:	b1 f4       	brne	.+44     	; 0x410 <day+0xcc>
+ 3e4:	12 c0       	rjmp	.+36     	; 0x40a <day+0xc6>
+{
+case 1 : string("     SUNDAY");
+ 3e6:	82 e7       	ldi	r24, 0x72	; 114
+ 3e8:	90 e0       	ldi	r25, 0x00	; 0
+ 3ea:	14 c0       	rjmp	.+40     	; 0x414 <day+0xd0>
+break;
+case 2 : string("     MONDAY");
+ 3ec:	8e e7       	ldi	r24, 0x7E	; 126
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	11 c0       	rjmp	.+34     	; 0x414 <day+0xd0>
+break;
+case 3 : string("     TUESDAY");
+ 3f2:	8a e8       	ldi	r24, 0x8A	; 138
+ 3f4:	90 e0       	ldi	r25, 0x00	; 0
+ 3f6:	0e c0       	rjmp	.+28     	; 0x414 <day+0xd0>
+break;
+case 4 : string("     WEDNESDAY");
+ 3f8:	87 e9       	ldi	r24, 0x97	; 151
+ 3fa:	90 e0       	ldi	r25, 0x00	; 0
+ 3fc:	0b c0       	rjmp	.+22     	; 0x414 <day+0xd0>
+break;
+case 5 : string("     THURSDAY");
+ 3fe:	86 ea       	ldi	r24, 0xA6	; 166
+ 400:	90 e0       	ldi	r25, 0x00	; 0
+ 402:	08 c0       	rjmp	.+16     	; 0x414 <day+0xd0>
+break;
+case 6 : string("     FRIDAY");
+ 404:	84 eb       	ldi	r24, 0xB4	; 180
+ 406:	90 e0       	ldi	r25, 0x00	; 0
+ 408:	05 c0       	rjmp	.+10     	; 0x414 <day+0xd0>
+break;
+case 7 : string("     SATURDAY");
+ 40a:	80 ec       	ldi	r24, 0xC0	; 192
+ 40c:	90 e0       	ldi	r25, 0x00	; 0
+ 40e:	02 c0       	rjmp	.+4      	; 0x414 <day+0xd0>
+break;
+default : string("     SUNDAY ");
+ 410:	8e ec       	ldi	r24, 0xCE	; 206
+ 412:	90 e0       	ldi	r25, 0x00	; 0
+ 414:	7e de       	rcall	.-772    	; 0x112 <string>
+break;
+}
+}
+ 416:	df 91       	pop	r29
+ 418:	cf 91       	pop	r28
+ 41a:	08 95       	ret
+
+0000041c <date>:
+
+
+void date()
+{
+ 41c:	0f 93       	push	r16
+ 41e:	1f 93       	push	r17
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 420:	84 ea       	ldi	r24, 0xA4	; 164
+ 422:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 424:	06 b6       	in	r0, 0x36	; 54
+ 426:	07 fe       	sbrs	r0, 7
+ 428:	fd cf       	rjmp	.-6      	; 0x424 <date+0x8>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 42a:	80 ed       	ldi	r24, 0xD0	; 208
+ 42c:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 42e:	84 e8       	ldi	r24, 0x84	; 132
+ 430:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 432:	06 b6       	in	r0, 0x36	; 54
+ 434:	07 fe       	sbrs	r0, 7
+ 436:	fd cf       	rjmp	.-6      	; 0x432 <date+0x16>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 438:	84 e0       	ldi	r24, 0x04	; 4
+ 43a:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 43c:	84 e8       	ldi	r24, 0x84	; 132
+ 43e:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 440:	06 b6       	in	r0, 0x36	; 54
+ 442:	07 fe       	sbrs	r0, 7
+ 444:	fd cf       	rjmp	.-6      	; 0x440 <date+0x24>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 446:	84 ea       	ldi	r24, 0xA4	; 164
+ 448:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 44a:	06 b6       	in	r0, 0x36	; 54
+ 44c:	07 fe       	sbrs	r0, 7
+ 44e:	fd cf       	rjmp	.-6      	; 0x44a <date+0x2e>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 450:	81 ed       	ldi	r24, 0xD1	; 209
+ 452:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 454:	84 e8       	ldi	r24, 0x84	; 132
+ 456:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 458:	06 b6       	in	r0, 0x36	; 54
+ 45a:	07 fe       	sbrs	r0, 7
+ 45c:	fd cf       	rjmp	.-6      	; 0x458 <date+0x3c>
+start();
+address(0xd0);
+address(0x04);
+start();
+address(0xd1);
+cmd(0x80);
+ 45e:	80 e8       	ldi	r24, 0x80	; 128
+ 460:	0a de       	rcall	.-1004   	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 462:	84 e8       	ldi	r24, 0x84	; 132
+ 464:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 466:	06 b6       	in	r0, 0x36	; 54
+ 468:	07 fe       	sbrs	r0, 7
+ 46a:	fd cf       	rjmp	.-6      	; 0x466 <__stack+0x7>
+return TWDR;
+ 46c:	03 b1       	in	r16, 0x03	; 3
+address(0xd0);
+address(0x04);
+start();
+address(0xd1);
+cmd(0x80);
+dt1=read();
+ 46e:	10 e0       	ldi	r17, 0x00	; 0
+dt2=dt1 &0X0F;
+dt3=dt1>>4;
+dat(48+dt3);
+ 470:	c8 01       	movw	r24, r16
+ 472:	54 e0       	ldi	r21, 0x04	; 4
+ 474:	96 95       	lsr	r25
+ 476:	87 95       	ror	r24
+ 478:	5a 95       	dec	r21
+ 47a:	e1 f7       	brne	.-8      	; 0x474 <__stack+0x15>
+ 47c:	80 5d       	subi	r24, 0xD0	; 208
+ 47e:	12 de       	rcall	.-988    	; 0xa4 <dat>
+dat(48+dt2);
+ 480:	0f 70       	andi	r16, 0x0F	; 15
+ 482:	10 70       	andi	r17, 0x00	; 0
+ 484:	80 2f       	mov	r24, r16
+ 486:	80 5d       	subi	r24, 0xD0	; 208
+ 488:	0d de       	rcall	.-998    	; 0xa4 <dat>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 48a:	84 e9       	ldi	r24, 0x94	; 148
+ 48c:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 48e:	06 b6       	in	r0, 0x36	; 54
+ 490:	04 fc       	sbrc	r0, 4
+ 492:	fd cf       	rjmp	.-6      	; 0x48e <__stack+0x2f>
+dt2=dt1 &0X0F;
+dt3=dt1>>4;
+dat(48+dt3);
+dat(48+dt2);
+stop();
+}
+ 494:	1f 91       	pop	r17
+ 496:	0f 91       	pop	r16
+ 498:	08 95       	ret
+
+0000049a <month>:
+
+
+void month()
+{
+ 49a:	0f 93       	push	r16
+ 49c:	1f 93       	push	r17
+ 49e:	cf 93       	push	r28
+ 4a0:	df 93       	push	r29
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 4a2:	84 ea       	ldi	r24, 0xA4	; 164
+ 4a4:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 4a6:	06 b6       	in	r0, 0x36	; 54
+ 4a8:	07 fe       	sbrs	r0, 7
+ 4aa:	fd cf       	rjmp	.-6      	; 0x4a6 <month+0xc>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 4ac:	80 ed       	ldi	r24, 0xD0	; 208
+ 4ae:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 4b0:	84 e8       	ldi	r24, 0x84	; 132
+ 4b2:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 4b4:	06 b6       	in	r0, 0x36	; 54
+ 4b6:	07 fe       	sbrs	r0, 7
+ 4b8:	fd cf       	rjmp	.-6      	; 0x4b4 <month+0x1a>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 4ba:	85 e0       	ldi	r24, 0x05	; 5
+ 4bc:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 4be:	84 e8       	ldi	r24, 0x84	; 132
+ 4c0:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 4c2:	06 b6       	in	r0, 0x36	; 54
+ 4c4:	07 fe       	sbrs	r0, 7
+ 4c6:	fd cf       	rjmp	.-6      	; 0x4c2 <month+0x28>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 4c8:	84 ea       	ldi	r24, 0xA4	; 164
+ 4ca:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 4cc:	06 b6       	in	r0, 0x36	; 54
+ 4ce:	07 fe       	sbrs	r0, 7
+ 4d0:	fd cf       	rjmp	.-6      	; 0x4cc <month+0x32>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 4d2:	81 ed       	ldi	r24, 0xD1	; 209
+ 4d4:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 4d6:	84 e8       	ldi	r24, 0x84	; 132
+ 4d8:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 4da:	06 b6       	in	r0, 0x36	; 54
+ 4dc:	07 fe       	sbrs	r0, 7
+ 4de:	fd cf       	rjmp	.-6      	; 0x4da <month+0x40>
+start();
+address(0xd0);
+address(0x05);
+start();
+address(0xd1);
+cmd(0x83);
+ 4e0:	83 e8       	ldi	r24, 0x83	; 131
+ 4e2:	c9 dd       	rcall	.-1134   	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 4e4:	84 e8       	ldi	r24, 0x84	; 132
+ 4e6:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 4e8:	06 b6       	in	r0, 0x36	; 54
+ 4ea:	07 fe       	sbrs	r0, 7
+ 4ec:	fd cf       	rjmp	.-6      	; 0x4e8 <month+0x4e>
+return TWDR;
+ 4ee:	83 b1       	in	r24, 0x03	; 3
+address(0xd0);
+address(0x05);
+start();
+address(0xd1);
+cmd(0x83);
+m1=read();
+ 4f0:	90 e0       	ldi	r25, 0x00	; 0
+m2=m1 &0X0F;
+ 4f2:	8c 01       	movw	r16, r24
+ 4f4:	0f 70       	andi	r16, 0x0F	; 15
+ 4f6:	10 70       	andi	r17, 0x00	; 0
+m3=m1>>4;
+ 4f8:	ec 01       	movw	r28, r24
+ 4fa:	64 e0       	ldi	r22, 0x04	; 4
+ 4fc:	d6 95       	lsr	r29
+ 4fe:	c7 95       	ror	r28
+ 500:	6a 95       	dec	r22
+ 502:	e1 f7       	brne	.-8      	; 0x4fc <month+0x62>
+
+dat(48+m3);
+ 504:	9e 01       	movw	r18, r28
+ 506:	20 5d       	subi	r18, 0xD0	; 208
+ 508:	82 2f       	mov	r24, r18
+ 50a:	cc dd       	rcall	.-1128   	; 0xa4 <dat>
+dat(48+m2);
+ 50c:	80 2f       	mov	r24, r16
+ 50e:	80 5d       	subi	r24, 0xD0	; 208
+ 510:	c9 dd       	rcall	.-1134   	; 0xa4 <dat>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 512:	84 e9       	ldi	r24, 0x94	; 148
+ 514:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 516:	06 b6       	in	r0, 0x36	; 54
+ 518:	04 fc       	sbrc	r0, 4
+ 51a:	fd cf       	rjmp	.-6      	; 0x516 <month+0x7c>
+
+dat(48+m3);
+dat(48+m2);
+
+stop();
+cmd(0xce);
+ 51c:	8e ec       	ldi	r24, 0xCE	; 206
+ 51e:	ab dd       	rcall	.-1194   	; 0x76 <cmd>
+
+switch(m2|m3)
+ 520:	fe 01       	movw	r30, r28
+ 522:	e0 2b       	or	r30, r16
+ 524:	f1 2b       	or	r31, r17
+ 526:	31 97       	sbiw	r30, 0x01	; 1
+ 528:	ec 30       	cpi	r30, 0x0C	; 12
+ 52a:	f1 05       	cpc	r31, r1
+ 52c:	38 f5       	brcc	.+78     	; 0x57c <month+0xe2>
+ 52e:	ed 5e       	subi	r30, 0xED	; 237
+ 530:	ff 4f       	sbci	r31, 0xFF	; 255
+ 532:	09 94       	ijmp
+{
+case 1 : string("     JANUARY");
+ 534:	8b ed       	ldi	r24, 0xDB	; 219
+ 536:	90 e0       	ldi	r25, 0x00	; 0
+ 538:	20 c0       	rjmp	.+64     	; 0x57a <month+0xe0>
+break;
+
+case 2 : string("     FEBRUARY");
+ 53a:	88 ee       	ldi	r24, 0xE8	; 232
+ 53c:	90 e0       	ldi	r25, 0x00	; 0
+ 53e:	1d c0       	rjmp	.+58     	; 0x57a <month+0xe0>
+break;
+
+case 3 : string("     MARCH");
+ 540:	86 ef       	ldi	r24, 0xF6	; 246
+ 542:	90 e0       	ldi	r25, 0x00	; 0
+ 544:	1a c0       	rjmp	.+52     	; 0x57a <month+0xe0>
+break;
+
+case 4 : string("    APRIL");
+ 546:	81 e0       	ldi	r24, 0x01	; 1
+ 548:	91 e0       	ldi	r25, 0x01	; 1
+ 54a:	17 c0       	rjmp	.+46     	; 0x57a <month+0xe0>
+break;
+
+case 5 : string("     MAY");
+ 54c:	8b e0       	ldi	r24, 0x0B	; 11
+ 54e:	91 e0       	ldi	r25, 0x01	; 1
+ 550:	14 c0       	rjmp	.+40     	; 0x57a <month+0xe0>
+break;
+
+case 6 : string("     JUNE");
+ 552:	84 e1       	ldi	r24, 0x14	; 20
+ 554:	91 e0       	ldi	r25, 0x01	; 1
+ 556:	11 c0       	rjmp	.+34     	; 0x57a <month+0xe0>
+break;
+
+case 7 : string("     JULY");
+ 558:	8e e1       	ldi	r24, 0x1E	; 30
+ 55a:	91 e0       	ldi	r25, 0x01	; 1
+ 55c:	0e c0       	rjmp	.+28     	; 0x57a <month+0xe0>
+break;
+
+case 8 : string("     AUGUST");
+ 55e:	88 e2       	ldi	r24, 0x28	; 40
+ 560:	91 e0       	ldi	r25, 0x01	; 1
+ 562:	0b c0       	rjmp	.+22     	; 0x57a <month+0xe0>
+break;
+
+case 9 : string("     SEPTEMBER");
+ 564:	84 e3       	ldi	r24, 0x34	; 52
+ 566:	91 e0       	ldi	r25, 0x01	; 1
+ 568:	08 c0       	rjmp	.+16     	; 0x57a <month+0xe0>
+break;
+
+case 10 : string("     OCTOBER");
+ 56a:	83 e4       	ldi	r24, 0x43	; 67
+ 56c:	91 e0       	ldi	r25, 0x01	; 1
+ 56e:	05 c0       	rjmp	.+10     	; 0x57a <month+0xe0>
+break;
+
+case 11: string("     NOVEMBER");
+ 570:	80 e5       	ldi	r24, 0x50	; 80
+ 572:	91 e0       	ldi	r25, 0x01	; 1
+ 574:	02 c0       	rjmp	.+4      	; 0x57a <month+0xe0>
+break;
+
+case 12 : string("     DECEMBER");
+ 576:	8e e5       	ldi	r24, 0x5E	; 94
+ 578:	91 e0       	ldi	r25, 0x01	; 1
+ 57a:	cb dd       	rcall	.-1130   	; 0x112 <string>
+break;
+
+}
+
+
+}
+ 57c:	df 91       	pop	r29
+ 57e:	cf 91       	pop	r28
+ 580:	1f 91       	pop	r17
+ 582:	0f 91       	pop	r16
+ 584:	08 95       	ret
+
+00000586 <year>:
+
+
+void year()
+{
+ 586:	0f 93       	push	r16
+ 588:	1f 93       	push	r17
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 58a:	84 ea       	ldi	r24, 0xA4	; 164
+ 58c:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 58e:	06 b6       	in	r0, 0x36	; 54
+ 590:	07 fe       	sbrs	r0, 7
+ 592:	fd cf       	rjmp	.-6      	; 0x58e <year+0x8>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 594:	80 ed       	ldi	r24, 0xD0	; 208
+ 596:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 598:	84 e8       	ldi	r24, 0x84	; 132
+ 59a:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 59c:	06 b6       	in	r0, 0x36	; 54
+ 59e:	07 fe       	sbrs	r0, 7
+ 5a0:	fd cf       	rjmp	.-6      	; 0x59c <year+0x16>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 5a2:	86 e0       	ldi	r24, 0x06	; 6
+ 5a4:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 5a6:	84 e8       	ldi	r24, 0x84	; 132
+ 5a8:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 5aa:	06 b6       	in	r0, 0x36	; 54
+ 5ac:	07 fe       	sbrs	r0, 7
+ 5ae:	fd cf       	rjmp	.-6      	; 0x5aa <year+0x24>
+
+
+
+void start()
+{
+TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 5b0:	84 ea       	ldi	r24, 0xA4	; 164
+ 5b2:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 5b4:	06 b6       	in	r0, 0x36	; 54
+ 5b6:	07 fe       	sbrs	r0, 7
+ 5b8:	fd cf       	rjmp	.-6      	; 0x5b4 <year+0x2e>
+}
+
+
+void address(unsigned char t)
+{
+TWDR=t;
+ 5ba:	81 ed       	ldi	r24, 0xD1	; 209
+ 5bc:	83 b9       	out	0x03, r24	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 5be:	84 e8       	ldi	r24, 0x84	; 132
+ 5c0:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 5c2:	06 b6       	in	r0, 0x36	; 54
+ 5c4:	07 fe       	sbrs	r0, 7
+ 5c6:	fd cf       	rjmp	.-6      	; 0x5c2 <year+0x3c>
+start();
+address(0xd0);
+address(0x06);
+start();
+address(0xd1);
+cmd(0x86);
+ 5c8:	86 e8       	ldi	r24, 0x86	; 134
+ 5ca:	55 dd       	rcall	.-1366   	; 0x76 <cmd>
+while((TWCR&(1<<TWINT))==0);
+}
+
+char read()
+{
+TWCR=(1<<TWINT)|(1<<TWEN);
+ 5cc:	84 e8       	ldi	r24, 0x84	; 132
+ 5ce:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);
+ 5d0:	06 b6       	in	r0, 0x36	; 54
+ 5d2:	07 fe       	sbrs	r0, 7
+ 5d4:	fd cf       	rjmp	.-6      	; 0x5d0 <year+0x4a>
+return TWDR;
+ 5d6:	03 b1       	in	r16, 0x03	; 3
+address(0xd0);
+address(0x06);
+start();
+address(0xd1);
+cmd(0x86);
+y1=read();
+ 5d8:	10 e0       	ldi	r17, 0x00	; 0
+y2=y1 &0X0F;
+y3=y1>>4;
+dat(48+y3);
+ 5da:	c8 01       	movw	r24, r16
+ 5dc:	74 e0       	ldi	r23, 0x04	; 4
+ 5de:	96 95       	lsr	r25
+ 5e0:	87 95       	ror	r24
+ 5e2:	7a 95       	dec	r23
+ 5e4:	e1 f7       	brne	.-8      	; 0x5de <year+0x58>
+ 5e6:	80 5d       	subi	r24, 0xD0	; 208
+ 5e8:	5d dd       	rcall	.-1350   	; 0xa4 <dat>
+dat(48+y2);
+ 5ea:	0f 70       	andi	r16, 0x0F	; 15
+ 5ec:	10 70       	andi	r17, 0x00	; 0
+ 5ee:	80 2f       	mov	r24, r16
+ 5f0:	80 5d       	subi	r24, 0xD0	; 208
+ 5f2:	58 dd       	rcall	.-1360   	; 0xa4 <dat>
+while((TWCR&(1<<TWINT))==0);
+}
+
+void stop()
+{
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 5f4:	84 e9       	ldi	r24, 0x94	; 148
+ 5f6:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));
+ 5f8:	06 b6       	in	r0, 0x36	; 54
+ 5fa:	04 fc       	sbrc	r0, 4
+ 5fc:	fd cf       	rjmp	.-6      	; 0x5f8 <year+0x72>
+y2=y1 &0X0F;
+y3=y1>>4;
+dat(48+y3);
+dat(48+y2);
+stop();
+}
+ 5fe:	1f 91       	pop	r17
+ 600:	0f 91       	pop	r16
+ 602:	08 95       	ret
+
+00000604 <main>:
+
+
+
+
+void main()
+{
+ 604:	1f 93       	push	r17
+DDRD=0XFF;
+ 606:	1f ef       	ldi	r17, 0xFF	; 255
+ 608:	11 bb       	out	0x11, r17	; 17
+lcd_init();
+ 60a:	63 dd       	rcall	.-1338   	; 0xd2 <lcd_init>
+TWBR=255;
+ 60c:	10 b9       	out	0x00, r17	; 0
+write(0x62); ///---60 FOR 12:PM-------------62 for 2:PM-----------68 for 8:PM.
+ 60e:	82 e6       	ldi	r24, 0x62	; 98
+ 610:	a6 dd       	rcall	.-1204   	; 0x15e <write>
+//string("H :M :S DD/MM/YY");
+ 
+
+while(1)
+{
+hour();
+ 612:	cb dd       	rcall	.-1130   	; 0x1aa <hour>
+
+minute();
+ 614:	15 de       	rcall	.-982    	; 0x240 <minute>
+
+second();
+ 616:	58 de       	rcall	.-848    	; 0x2c8 <second>
+
+date();
+ 618:	01 df       	rcall	.-510    	; 0x41c <date>
+
+month();
+ 61a:	3f df       	rcall	.-386    	; 0x49a <month>
+
+year();
+ 61c:	b4 df       	rcall	.-152    	; 0x586 <year>
+
+day();
+ 61e:	92 de       	rcall	.-732    	; 0x344 <day>
+ 620:	f8 cf       	rjmp	.-16     	; 0x612 <main+0xe>
+
+00000622 <_exit>:
+ 622:	f8 94       	cli
+
+00000624 <__stop_program>:
+ 624:	ff cf       	rjmp	.-2      	; 0x624 <__stop_program>

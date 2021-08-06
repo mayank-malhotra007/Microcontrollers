@@ -1,0 +1,109 @@
+.EmotifyDropdown span,
+.Emoticon span { display: none; }
+.EmotifyDropdown,
+.Emoticon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 18px;
+    width: 18px;
+    vertical-align: top;
+}
+.Emoticonsmile { background-image: url('images/smile.gif'); width: 20px; }
+.Emoticonfrown { background-image: url('images/frown.gif'); width: 20px; }
+.Emoticonlol { background-image: url('images/lol.gif'); width: 20px; }
+.Emoticontongue { background-image: url('images/tongue.gif'); width: 20px; }
+.Emoticoncool { background-image: url('images/cool.gif'); width: 20px; }
+.Emoticonnerd { background-image: url('images/nerd.gif'); width: 20px; }
+.Emoticonblank { background-image: url('images/blank.gif'); width: 20px; }
+.Emoticonthumbsup { background-image: url('images/thumbsup.gif'); width: 20px; }
+.Emoticoninnocent { background-image: url('images/innocent.gif'); width: 20px; }
+.Emoticoncoffee { background-image: url('images/coffee.gif'); width: 20px; }
+.Emoticonconfused { background-image: url('images/confused.gif'); width: 20px; }
+.Emoticonlove { background-image: url('images/love.gif'); width: 20px; }
+.Emoticondepressed { background-image: url('images/depressed.gif'); width: 20px; }
+.Emoticonsurprise { background-image: url('images/surprise.gif'); width: 20px; }
+.Emoticonsick { background-image: url('images/sick.gif'); width: 20px; }
+.Emoticonarrow { background-image: url('images/arrow.gif'); width: 20px; }
+.Emoticonarrowl { background-image: url('images/arrowl.gif'); width: 20px; }
+.Emoticonbiggrin { background-image: url('images/biggrin.gif'); width: 20px; }
+.Emoticontoothy { background-image: url('images/toothy.gif'); width: 20px; }
+.Emoticonkiss { background-image: url('images/kiss.gif'); width: 20px; }
+.Emoticonzombie { background-image: url('images/zombie.gif'); width: 20px; }
+.Emoticondead { background-image: url('images/dead.gif'); width: 20px; }
+.Emoticonembarassed { background-image: url('images/embarassed.gif'); width: 20px; }
+.Emoticonshifty { background-image: url('images/shifty.gif'); width: 20px; }
+.Emoticonkitty { background-image: url('images/kitty.gif'); width: 20px; }
+.Emoticonclown { background-image: url('images/clown.gif'); width: 20px; }
+.Emoticonalien { background-image: url('images/alien.gif'); width: 20px; }
+.Emoticonangry { background-image: url('images/angry.gif'); width: 20px; }
+.Emoticonchip { background-image: url('images/chip.gif'); width: 20px; }
+.Emoticoneek { background-image: url('images/eek.gif'); width: 20px; }
+.Emoticonswearing { background-image: url('images/swearing.gif'); width: 20px; }
+.Emoticonskull { background-image: url('images/skull.gif'); width: 20px; }
+.Emoticoncrazy { background-image: url('images/crazy.gif'); width: 20px; }
+.Emoticonmonocle{ background-image: url('images/monocle.gif'); width: 20px; }
+.Emoticonwink{ background-image: url('images/wink.png'); width: 20px; }
+
+.EmotifyWrapper {
+    text-align: right;
+    position: relative;
+}
+.EmotifyDropdown {
+    display: block;
+    height: 23px;
+    width: 29px;
+    background: url('images/arrow.png') 0 0 no-repeat;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.EmbedCommentForm .EmotifyDropdown {
+   top: -29px;
+}
+
+.EmotifyDropdownActive {
+    background-color: #eee;
+}
+.EmoticonContainer {
+    position: absolute;
+    top: 23px;
+    right: 0;
+    border: 1px solid #aaa;
+    border-bottom: 0;
+    border-right: 0;
+    width: 391px;
+    text-align: left;
+    float: right;
+    box-shadow: 2px 2px 4px #777;
+    -moz-box-shadow: 2px 2px 4px #777;
+    -webkit-box-shadow: 2px 2px 4px #777;
+    z-index: 1000;
+	 background: #eee;
+}
+.EmoticonBox {
+    background-color: #fff;
+    background-position: center center;
+    border: 1px solid #aaa;
+    border-top: 0;
+    border-left: 0;
+    display: block;
+    float: left;
+    height: 22px;
+    width: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.EmoticonBox:hover {
+   width: 42px;
+   height: 32px;
+   margin: -5px -10px;
+   z-index: 10;
+   border-radius: 2px;
+   box-shadow: 0 2px 7px #000;
+}

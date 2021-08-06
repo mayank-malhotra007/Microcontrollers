@@ -1,0 +1,129 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Mayank\Desktop\Kiel_projects\Traffic_light\traffic_light.uvproj
+Project File Date:  02/28/2016
+
+<h2>Output:</h2>
+compiling traffic_light.c...
+TRAFFIC_LIGHT.C(14): error C141: syntax error near '--', expected ')'
+TRAFFIC_LIGHT.C(83): error C141: syntax error near 'int'
+TRAFFIC_LIGHT.C(83): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(84): error C141: syntax error near 'int'
+TRAFFIC_LIGHT.C(84): error C202: 'arr': undefined identifier
+TRAFFIC_LIGHT.C(84): error C141: syntax error near '{'
+TRAFFIC_LIGHT.C(84): error C141: syntax error near '}'
+TRAFFIC_LIGHT.C(91): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(94): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(97): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(101): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(104): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(108): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(112): error C202: 'i': undefined identifier
+TRAFFIC_LIGHT.C(115): error C202: 'i': undefined identifier
+traffic_light.c - 15 Error(s), 0 Warning(s).
+compiling traffic_light.c...
+TRAFFIC_LIGHT.C(14): error C141: syntax error near '--', expected ')'
+traffic_light.c - 1 Error(s), 0 Warning(s).
+compiling traffic_light.c...
+traffic_light.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=35.0 xdata=0 code=956
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=35.0 xdata=0 code=956
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+compiling traffic_light.c...
+traffic_light.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=35.0 xdata=0 code=953
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=35.0 xdata=0 code=953
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+compiling traffic_light.c...
+traffic_light.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=928
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=928
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=938
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=938
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+compiling traffic_light.c...
+traffic_light.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=941
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=941
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=916
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling traffic_light.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_NUM?TRAFFIC_LIGHT
+Program Size: data=33.0 xdata=0 code=920
+creating hex file from "traffic_light"...
+"traffic_light" - 0 Error(s), 1 Warning(s).

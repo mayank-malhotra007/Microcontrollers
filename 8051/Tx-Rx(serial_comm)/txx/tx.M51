@@ -1,0 +1,115 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/09/2016  15:22:15  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE tx.obj TO tx
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  tx.obj (TX)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  tx (TX)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001DH     UNIT         ?PR?_STRING?TX
+            CODE    0020H     0019H     UNIT         ?C?LIB_CODE
+            CODE    0039H     0016H     UNIT         ?PR?MAIN?TX
+            CODE    004FH     000CH     UNIT         ?C_C51STARTUP
+            CODE    005BH     000BH     UNIT         ?PR?_DELAY?TX
+            CODE    0066H     0003H     UNIT         ?CO?TX
+
+
+
+OVERLAY MAP OF MODULE:   tx (TX)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TX
+
+?PR?MAIN?TX
+  +--> ?CO?TX
+  +--> ?PR?_STRING?TX
+
+?PR?_STRING?TX
+  +--> ?PR?_DELAY?TX
+
+
+
+SYMBOL TABLE OF MODULE:  tx (TX)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TX
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/09/2016  15:22:15  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:005BH         PUBLIC        _delay
+  C:0003H         PUBLIC        _string
+  B:0098H.1       PUBLIC        TI
+  C:0039H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  C:005BH         LINE#         2
+  C:005BH         LINE#         3
+  C:005BH         LINE#         4
+  C:0065H         LINE#         5
+  -------         ENDPROC       _DELAY
+  -------         PROC          _STRING
+  D:0001H         SYMBOL        p
+  C:0003H         LINE#         6
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0008H         LINE#         9
+  C:0008H         LINE#         11
+  C:000AH         LINE#         12
+  C:000DH         LINE#         13
+  C:000FH         LINE#         14
+  C:0016H         LINE#         15
+  C:001DH         LINE#         17
+  C:001FH         LINE#         18
+  -------         ENDPROC       _STRING
+  -------         PROC          MAIN
+  C:0039H         LINE#         20
+  C:0039H         LINE#         21
+  C:0039H         LINE#         23
+  C:003CH         LINE#         24
+  C:003EH         LINE#         25
+  C:0041H         LINE#         26
+  C:0044H         LINE#         28
+  C:0044H         LINE#         29
+  C:0044H         LINE#         30
+  C:004DH         LINE#         31
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TX
+
+  -------         MODULE        ?C?CLDPTR
+  C:0020H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=9.0 xdata=0 code=105
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
