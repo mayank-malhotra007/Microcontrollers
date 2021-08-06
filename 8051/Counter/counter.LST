@@ -1,0 +1,46 @@
+C51 COMPILER V9.02   COUNTER                                                               03/02/2016 15:57:36 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE COUNTER
+OBJECT MODULE PLACED IN counter.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE counter.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          
+   4          void main()
+   5          {
+   6   1      
+   7   1       TMOD=0x50;                        //counter 16 bit
+   8   1       TR1=1;
+   9   1       TH1=0;
+  10   1       TL1=0;
+  11   1       P2=0x00;
+  12   1       P1=0x00;
+  13   1       while(1)
+  14   1            {
+  15   2                  while(TF1==1);        // for counter
+  16   2              
+  17   2      
+  18   2                      P2=TL1;
+  19   2                      P1=TH1;
+  20   2                  TF1=0;
+  21   2               }
+  22   1      
+  23   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     27    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

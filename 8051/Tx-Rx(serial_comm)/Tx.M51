@@ -1,0 +1,102 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/09/2016  15:05:36  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Tx.obj TO Tx
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Tx.obj (TX)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  Tx (TX)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0019H     UNIT         ?C?LIB_CODE
+            CODE    001CH     0016H     UNIT         ?PR?_STRING?TX
+            CODE    0032H     0016H     UNIT         ?PR?MAIN?TX
+            CODE    0048H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0054H     0003H     UNIT         ?CO?TX
+
+
+
+OVERLAY MAP OF MODULE:   Tx (TX)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TX
+
+?PR?MAIN?TX
+  +--> ?CO?TX
+  +--> ?PR?_STRING?TX
+
+
+
+SYMBOL TABLE OF MODULE:  Tx (TX)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:001CH         PUBLIC        _string
+  B:0098H.1       PUBLIC        TI
+  C:0032H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/09/2016  15:05:36  PAGE 2
+
+
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          _STRING
+  D:0001H         SYMBOL        p
+  C:001CH         LINE#         2
+  C:001CH         LINE#         3
+  C:001CH         LINE#         4
+  C:0021H         LINE#         5
+  C:0021H         LINE#         7
+  C:0023H         LINE#         8
+  C:0026H         LINE#         9
+  C:0028H         LINE#         10
+  C:002FH         LINE#         12
+  C:0031H         LINE#         13
+  -------         ENDPROC       _STRING
+  -------         PROC          MAIN
+  C:0032H         LINE#         15
+  C:0032H         LINE#         16
+  C:0032H         LINE#         18
+  C:0035H         LINE#         19
+  C:0037H         LINE#         20
+  C:003AH         LINE#         21
+  C:003DH         LINE#         23
+  C:003DH         LINE#         24
+  C:003DH         LINE#         25
+  C:0046H         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TX
+
+  -------         MODULE        ?C?CLDPTR
+  C:0003H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=9.0 xdata=0 code=87
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

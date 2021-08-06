@@ -1,0 +1,95 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/02/2016  15:24:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE timer_gate.obj TO timer_gate
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  timer_gate.obj (TIMER_GATE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  timer_gate (TIMER_GATE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001AH     UNIT         ?PR?MAIN?TIMER_GATE
+            CODE    001DH     000CH     UNIT         ?PR?WAIT?TIMER_GATE
+            CODE    0029H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   timer_gate (TIMER_GATE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TIMER_GATE
+
+?PR?MAIN?TIMER_GATE
+  +--> ?PR?WAIT?TIMER_GATE
+
+
+
+SYMBOL TABLE OF MODULE:  timer_gate (TIMER_GATE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TIMER_GATE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0003H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  C:001DH         PUBLIC        wait
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2016  15:24:08  PAGE 2
+
+
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          WAIT
+  C:001DH         LINE#         2
+  C:001DH         LINE#         3
+  C:001DH         LINE#         4
+  C:0020H         LINE#         5
+  C:0023H         LINE#         6
+  C:0026H         LINE#         7
+  C:0028H         LINE#         9
+  -------         ENDPROC       WAIT
+  -------         PROC          MAIN
+  C:0003H         LINE#         13
+  C:0003H         LINE#         14
+  C:0003H         LINE#         16
+  C:0006H         LINE#         17
+  C:0008H         LINE#         18
+  C:000BH         LINE#         19
+  C:000DH         LINE#         20
+  C:000FH         LINE#         21
+  C:000FH         LINE#         22
+  C:000FH         LINE#         23
+  C:0012H         LINE#         24
+  C:0015H         LINE#         25
+  C:0018H         LINE#         26
+  C:001BH         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TIMER_GATE
+
+Program Size: data=9.0 xdata=0 code=53
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

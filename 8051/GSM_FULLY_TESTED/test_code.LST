@@ -1,0 +1,211 @@
+C51 COMPILER V9.03   TEST_CODE                                                             12/16/2015 00:53:21 PAGE 1   
+
+
+C51 COMPILER V9.03, COMPILATION OF MODULE TEST_CODE
+OBJECT MODULE PLACED IN test_code.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE test_code.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          sbit rs = P1^0;
+   4          sbit rw = P1^1;
+   5          sbit e = P1^2;
+   6          
+   7          sbit gas=P1^3;
+   8          sbit temp=P1^4;
+   9          
+  10          sbit fan=P3^2;
+  11          sbit motor_pump=P3^3;
+  12          
+  13          
+  14          
+  15          void serial_cmm_init()
+  16          {
+  17   1      TMOD=0x20;
+  18   1      TH1=0xfd;
+  19   1      SCON=0x50;
+  20   1      TR1=1;
+  21   1      }
+  22          
+  23          
+  24          void delay(unsigned int i)
+  25          {
+  26   1      while(i--);
+  27   1      }
+  28          
+  29          void cmd(unsigned char c)
+  30          { 
+  31   1      P2=c;
+  32   1      rs=0;
+  33   1      rw=0;
+  34   1      e=1;
+  35   1      delay(50);
+  36   1      e=0;
+  37   1      }
+  38          
+  39          void dat(unsigned char c)
+  40          { 
+  41   1      P2=c;
+  42   1      rs=1;
+  43   1      rw=0;
+  44   1      e=1;
+  45   1      delay(50);
+  46   1      e=0;
+  47   1      }
+  48          
+  49          void string(unsigned char *p)
+  50          {
+  51   1              while(*p != '\0')
+  52   1              {
+  53   2                      dat(*p);
+  54   2                      p++;
+  55   2                      delay(30);
+C51 COMPILER V9.03   TEST_CODE                                                             12/16/2015 00:53:21 PAGE 2   
+
+  56   2              }
+  57   1      }
+  58          
+  59          void lcd()
+  60          {
+  61   1              cmd(0x38);
+  62   1              delay(200);
+  63   1              cmd(0x01);
+  64   1              delay(200);
+  65   1              cmd(0x0e);
+  66   1              delay(200);
+  67   1              cmd(0x80);
+  68   1              delay(200);
+  69   1      }
+  70          
+  71           
+  72          
+  73                    void send(unsigned char *p)
+  74                    {
+  75   1                while(*p!='\0')
+  76   1                {
+  77   2                SBUF=*p;
+  78   2                p++;
+  79   2                while(TI==0);
+  80   2                TI=0;
+  81   2                }
+  82   1                }
+  83          
+  84                  void msg ()
+  85                  {
+  86   1              send("AT\r\n");
+  87   1      delay(50000);
+  88   1      delay(50000);
+  89   1      delay(50000);
+  90   1      delay(50000);
+  91   1      delay(50000);
+  92   1      delay(50000);
+  93   1      delay(50000);
+  94   1      
+  95   1      send("AT+CMGF=1\r\n");
+  96   1      delay(50000);
+  97   1      delay(50000);
+  98   1      delay(50000);
+  99   1      delay(50000);
+ 100   1      delay(50000);
+ 101   1      delay(50000);
+ 102   1      delay(50000);
+ 103   1      
+ 104   1      
+ 105   1      send("AT+CMGS=\"+919765415053\"\r\n");
+ 106   1      delay(50000);
+ 107   1      delay(50000);
+ 108   1      delay(50000);
+ 109   1      delay(50000);
+ 110   1      delay(50000);
+ 111   1      delay(50000);
+ 112   1      delay(50000);
+ 113   1      delay(50000);
+ 114   1      
+ 115   1      }
+ 116          
+ 117          
+C51 COMPILER V9.03   TEST_CODE                                                             12/16/2015 00:53:21 PAGE 3   
+
+ 118                  void main()
+ 119                  {
+ 120   1      
+ 121   1              serial_cmm_init();
+ 122   1              lcd();
+ 123   1               gas=0;
+ 124   1               temp=0;
+ 125   1              fan=0;
+ 126   1              motor_pump=0;
+ 127   1      
+ 128   1              while(1)
+ 129   1              {
+ 130   2               
+ 131   2               if(gas==1)
+ 132   2               {
+ 133   3               fan=1;
+ 134   3               msg();
+ 135   3               send("GAS IN UR HOUSE");
+ 136   3              
+ 137   3              SBUF=0X1A;
+ 138   3              while(TI==0);
+ 139   3              TI=0;
+ 140   3      delay(50000);
+ 141   3      delay(50000);
+ 142   3      delay(50000);
+ 143   3      delay(50000);
+ 144   3      delay(50000);
+ 145   3      delay(50000);
+ 146   3      delay(50000);
+ 147   3      delay(50000);
+ 148   3      
+ 149   3      cmd(0x80);
+ 150   3      string("GAS SENSOR");
+ 151   3      cmd(0xc0);
+ 152   3      string("  DETECTED  ");
+ 153   3               }
+ 154   2      
+ 155   2              
+ 156   2               if(temp==1)
+ 157   2               {
+ 158   3               motor_pump=1;
+ 159   3               msg();
+ 160   3               send("FIRE IN UR HOUSE");
+ 161   3              
+ 162   3              SBUF=0X1A;
+ 163   3              while(TI==0);
+ 164   3              TI=0;
+ 165   3      delay(50000);
+ 166   3      delay(50000);
+ 167   3      delay(50000);
+ 168   3      delay(50000);
+ 169   3      delay(50000);
+ 170   3      delay(50000);
+ 171   3      delay(50000);
+ 172   3      delay(50000);
+ 173   3      
+ 174   3      cmd(0x80);
+ 175   3      string("TEMP SENSOR");
+ 176   3      cmd(0xc0);
+ 177   3      string("  DETECTED  ");
+ 178   3               }
+ 179   2      
+C51 COMPILER V9.03   TEST_CODE                                                             12/16/2015 00:53:21 PAGE 4   
+
+ 180   2              }
+ 181   1              }
+ 182          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    351    ----
+   CONSTANT SIZE    =    112    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,101 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/02/2016  14:48:45  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE timer2.obj TO timer2
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  timer2.obj (TIMER2)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  timer2 (TIMER2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?WAIT?TIMER2
+            CODE    0023H     0018H     UNIT         ?PR?MAIN?TIMER2
+            CODE    003BH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   timer2 (TIMER2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TIMER2
+
+?PR?MAIN?TIMER2
+  +--> ?PR?WAIT?TIMER2
+
+
+
+SYMBOL TABLE OF MODULE:  timer2 (TIMER2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TIMER2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0023H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  C:0003H         PUBLIC        wait
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/02/2016  14:48:45  PAGE 2
+
+
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          WAIT
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         5
+  C:0007H         LINE#         6
+  C:0007H         LINE#         7
+  C:000AH         LINE#         8
+  C:000CH         LINE#         10
+  C:0017H         LINE#         11
+  C:001AH         LINE#         12
+  C:001DH         LINE#         13
+  C:0020H         LINE#         14
+  C:0022H         LINE#         16
+  -------         ENDPROC       WAIT
+  -------         PROC          MAIN
+  C:0023H         LINE#         20
+  C:0023H         LINE#         21
+  C:0023H         LINE#         23
+  C:0026H         LINE#         24
+  C:0028H         LINE#         25
+  C:002BH         LINE#         26
+  C:002DH         LINE#         27
+  C:002DH         LINE#         28
+  C:002DH         LINE#         29
+  C:0030H         LINE#         30
+  C:0033H         LINE#         31
+  C:0036H         LINE#         32
+  C:0039H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TIMER2
+
+Program Size: data=9.0 xdata=0 code=71
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

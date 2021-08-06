@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/28/2016  13:04:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE interfacing 7_seg.obj TO interfacing 7_seg
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  interfacing 7_seg.obj (INTERFACING_7_SEG)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  interfacing 7_seg (INTERFACING_7_SEG)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0016H     UNIT         _DATA_GROUP_
+            IDATA   001EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    00F9H     007DH     UNIT         ?PR?MAIN?INTERFACING_7_SEG
+            CODE    0176H     0014H     UNIT         ?CO?INTERFACING_7_SEG
+            CODE    018AH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0196H     000BH     UNIT         ?PR?_DELAY?INTERFACING_7_SEG
+
+
+
+OVERLAY MAP OF MODULE:   interfacing 7_seg (INTERFACING_7_SEG)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?INTERFACING_7_SEG
+
+?PR?MAIN?INTERFACING_7_SEG           0008H    0016H
+  +--> ?CO?INTERFACING_7_SEG
+  +--> ?PR?_DELAY?INTERFACING_7_SEG
+
+
+
+SYMBOL TABLE OF MODULE:  interfacing 7_seg (INTERFACING_7_SEG)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        INTERFACING_7_SEG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/28/2016  13:04:21  PAGE 2
+
+
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0196H         PUBLIC        _delay
+  C:00F9H         PUBLIC        main
+  C:0176H         SYMBOL        _?ix1000
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  C:0196H         LINE#         4
+  C:0196H         LINE#         5
+  C:0196H         LINE#         6
+  C:01A0H         LINE#         7
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  D:0082H         SYMBOL        k
+  D:000AH         SYMBOL        arr
+  -------         ENDDO         
+  C:00F9H         LINE#         9
+  C:00F9H         LINE#         11
+  C:00F9H         LINE#         13
+  C:010CH         LINE#         14
+  C:010FH         LINE#         15
+  C:0111H         LINE#         16
+  C:0113H         LINE#         18
+  C:0118H         LINE#         19
+  C:0118H         LINE#         20
+  C:0123H         LINE#         22
+  C:0127H         LINE#         23
+  C:0127H         LINE#         24
+  C:0131H         LINE#         26
+  C:0134H         LINE#         27
+  C:0134H         LINE#         28
+  C:0140H         LINE#         29
+  C:0147H         LINE#         30
+  C:0159H         LINE#         31
+  C:0164H         LINE#         32
+  C:0175H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        INTERFACING_7_SEG
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+Program Size: data=31.0 xdata=0 code=417
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,238 @@
+C51 COMPILER V9.02   KEYPAD                                                                02/29/2016 16:43:38 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE KEYPAD
+OBJECT MODULE PLACED IN keypad.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE keypad.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<string.h>
+   3           sbit rs = P3^0;
+   4           sbit rw = P3^1;
+   5           sbit e =  P3^2;
+   6          void delay(int t)
+   7          {
+   8   1        while(t--);
+   9   1      }
+  10          
+  11          void cmd(char c)
+  12          {
+  13   1        P2=c;
+  14   1        rs=0;
+  15   1        rw=0;
+  16   1        e=1;
+  17   1        delay(50);
+  18   1        e=0;
+  19   1      }
+  20          
+  21          void dat(char c)
+  22          {
+  23   1        P2=c;
+  24   1        rs=1;
+  25   1        rw=0;
+  26   1        e=1;
+  27   1        delay(50);
+  28   1        e=0;
+  29   1      }
+  30          void lcd()
+  31          {
+  32   1       cmd(0x01);
+  33   1       delay(50);
+  34   1       cmd(0x38);
+  35   1       delay(50);
+  36   1       cmd(0x0e);
+  37   1       delay(50);
+  38   1       cmd(0x80);
+  39   1       delay(50);
+  40   1      }
+  41          void string(char *p)
+  42          {
+  43   1       while(*p!='\0')
+  44   1         {
+  45   2            dat(*p);
+  46   2             p++;
+  47   2             delay(9000);
+  48   2         }
+  49   1      }
+  50          
+  51          void num(unsigned int p)
+  52          {
+  53   1       unsigned int k,w,b=1;
+  54   1       k=p;
+  55   1       while(k>=10)
+C51 COMPILER V9.02   KEYPAD                                                                02/29/2016 16:43:38 PAGE 2   
+
+  56   1         {
+  57   2           b=b*10;
+  58   2               k=k/10;
+  59   2         }
+  60   1       while(b>=1)
+  61   1         {
+  62   2           w=p/b;
+  63   2               p=p%b;
+  64   2               b=b/10;
+  65   2               dat(w+48);
+  66   2              }
+  67   1      }
+  68          
+  69          void main()
+  70          {
+  71   1       
+  72   1       int a,b,c;
+  73   1       int j;
+  74   1      // char arr[]="1234";
+  75   1       int ent[4];
+  76   1       lcd();
+  77   1       string("enter pass");
+  78   1       delay(9000);
+  79   1       cmd(0x01);
+  80   1       cmd(0x80);
+  81   1       while(1)
+  82   1         {
+  83   2      
+  84   2               for(j=0;j<4;j++)
+  85   2               {
+  86   3             P1=0x0f;
+  87   3             while(P1==0x0f);
+  88   3               
+  89   3                   a=P1;
+  90   3                       P1=0xf0;
+  91   3                        while(P1==0xf0);
+  92   3                        
+  93   3                           b=P1;
+  94   3                               while(P1!=0xf0);
+  95   3                               c=a|b;
+  96   3                               
+  97   3                               
+  98   3                         ent[j]=c;
+  99   3      
+ 100   3      
+ 101   3      
+ 102   3                              if(c==0xe7)
+ 103   3                                 {
+ 104   4                                   cmd(0x80);
+ 105   4                                   num(0);
+ 106   4                                      }
+ 107   3                               if(c==0xeb)
+ 108   3                                  {
+ 109   4                                        cmd(0x80);
+ 110   4                                        dat('1');
+ 111   4                                       }
+ 112   3                              if(c==0xed)
+ 113   3                                 {
+ 114   4                                  cmd(0x80);
+ 115   4                                      dat('2');
+ 116   4                                 }
+ 117   3                                 
+C51 COMPILER V9.02   KEYPAD                                                                02/29/2016 16:43:38 PAGE 3   
+
+ 118   3                               if(c==0xee)
+ 119   3                                 {
+ 120   4                                   cmd(0x80);
+ 121   4                                       dat('3');
+ 122   4                                      }
+ 123   3                                      
+ 124   3                              if(c==0xd7)
+ 125   3                                {
+ 126   4                                  cmd(0x80);
+ 127   4                                      dat('4');
+ 128   4                                }     
+ 129   3                              if(c==0xdb)
+ 130   3                                {
+ 131   4                                  cmd(0x80);
+ 132   4                                      dat('5');
+ 133   4                                }
+ 134   3                               if(c==0xdd)
+ 135   3                               {
+ 136   4                         cmd(0x80);
+ 137   4                                 dat('6');
+ 138   4                                }
+ 139   3                               if(c==0xde)
+ 140   3                                 {
+ 141   4                                    cmd(0x80);
+ 142   4                                        dat('7');
+ 143   4                                      }
+ 144   3                                      
+ 145   3                            if(c==0xb7)
+ 146   3                                 {
+ 147   4                                    cmd(0x80);
+ 148   4                                        dat('8');
+ 149   4                                      }
+ 150   3                                if(c==0xbb)
+ 151   3                                  {
+ 152   4                                        cmd(0x80);
+ 153   4                                        num(9);
+ 154   4                                       }
+ 155   3                                if(c==0xbd)
+ 156   3                                  {
+ 157   4                                        cmd(0x80);
+ 158   4                                        num(10);
+ 159   4                                       }
+ 160   3                                if(c==0xbe)
+ 161   3                                  {
+ 162   4                                        cmd(0x80);
+ 163   4                                        num(11);
+ 164   4                                       }  
+ 165   3                                if(c==0x77)
+ 166   3                                  {
+ 167   4                                         cmd(0x80);
+ 168   4                                         num(12);
+ 169   4                                       }
+ 170   3                               if(c==0x7b)
+ 171   3                                {
+ 172   4                                  cmd(0x80);
+ 173   4                                      num(13);
+ 174   4                                 }
+ 175   3                                 
+ 176   3                               if(c==0x7d)
+ 177   3                               {
+ 178   4                                 cmd(0x80);
+ 179   4                                 num(14);
+C51 COMPILER V9.02   KEYPAD                                                                02/29/2016 16:43:38 PAGE 4   
+
+ 180   4                                }
+ 181   3                                
+ 182   3                                if(c==0x7e)
+ 183   3                                {
+ 184   4                                  cmd(0x80);
+ 185   4                                      num(15);
+ 186   4                                } 
+ 187   3                              
+ 188   3                        
+ 189   3                      }
+ 190   2      
+ 191   2                  delay(9000);
+ 192   2                      cmd(0x01);
+ 193   2                      if(ent[0]==0xe7 && ent[1]==0xeb && ent[2]==0xed && ent[3]==0xee)
+ 194   2                                {
+ 195   3                                   string("      OK      ");
+ 196   3                                }
+ 197   2      
+ 198   2                 else
+ 199   2                       {
+ 200   3                                  string("    wrong passcode    ");
+ 201   3                               }
+ 202   2      
+ 203   2      
+ 204   2                               
+ 205   2                                                
+ 206   2                              }
+ 207   1                              
+ 208   1                      }
+ 209                  
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    685    ----
+   CONSTANT SIZE    =     49    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
