@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\rec.o"
+--strict --scatter ".\REC.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\REC.map" -o .\REC.axf

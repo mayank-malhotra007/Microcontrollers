@@ -1,0 +1,481 @@
+
+i2c.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000198  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000008  00800060  00000198  0000020c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .debug_aranges 00000020  00000000  00000000  00000214  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 00000051  00000000  00000000  00000234  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   0000031e  00000000  00000000  00000285  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 00000164  00000000  00000000  000005a3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000335  00000000  00000000  00000707  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000070  00000000  00000000  00000a3c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000000fb  00000000  00000000  00000aac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    000000d0  00000000  00000000  00000ba7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000048  00000000  00000000  00000c77  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	24 c0       	rjmp	.+72     	; 0x4c <__bad_interrupt>
+   4:	23 c0       	rjmp	.+70     	; 0x4c <__bad_interrupt>
+   6:	22 c0       	rjmp	.+68     	; 0x4c <__bad_interrupt>
+   8:	21 c0       	rjmp	.+66     	; 0x4c <__bad_interrupt>
+   a:	20 c0       	rjmp	.+64     	; 0x4c <__bad_interrupt>
+   c:	1f c0       	rjmp	.+62     	; 0x4c <__bad_interrupt>
+   e:	1e c0       	rjmp	.+60     	; 0x4c <__bad_interrupt>
+  10:	1d c0       	rjmp	.+58     	; 0x4c <__bad_interrupt>
+  12:	1c c0       	rjmp	.+56     	; 0x4c <__bad_interrupt>
+  14:	1b c0       	rjmp	.+54     	; 0x4c <__bad_interrupt>
+  16:	1a c0       	rjmp	.+52     	; 0x4c <__bad_interrupt>
+  18:	19 c0       	rjmp	.+50     	; 0x4c <__bad_interrupt>
+  1a:	18 c0       	rjmp	.+48     	; 0x4c <__bad_interrupt>
+  1c:	17 c0       	rjmp	.+46     	; 0x4c <__bad_interrupt>
+  1e:	16 c0       	rjmp	.+44     	; 0x4c <__bad_interrupt>
+  20:	15 c0       	rjmp	.+42     	; 0x4c <__bad_interrupt>
+  22:	14 c0       	rjmp	.+40     	; 0x4c <__bad_interrupt>
+  24:	13 c0       	rjmp	.+38     	; 0x4c <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_copy_data>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	e8 e9       	ldi	r30, 0x98	; 152
+  3a:	f1 e0       	ldi	r31, 0x01	; 1
+  3c:	02 c0       	rjmp	.+4      	; 0x42 <.do_copy_data_start>
+
+0000003e <.do_copy_data_loop>:
+  3e:	05 90       	lpm	r0, Z+
+  40:	0d 92       	st	X+, r0
+
+00000042 <.do_copy_data_start>:
+  42:	a8 36       	cpi	r26, 0x68	; 104
+  44:	b1 07       	cpc	r27, r17
+  46:	d9 f7       	brne	.-10     	; 0x3e <.do_copy_data_loop>
+  48:	80 d0       	rcall	.+256    	; 0x14a <main>
+  4a:	a4 c0       	rjmp	.+328    	; 0x194 <_exit>
+
+0000004c <__bad_interrupt>:
+  4c:	d9 cf       	rjmp	.-78     	; 0x0 <__vectors>
+
+0000004e <error>:
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+  4e:	82 bb       	out	0x12, r24	; 18
+  50:	ff cf       	rjmp	.-2      	; 0x50 <error+0x2>
+
+00000052 <string>:
+while(1);
+}
+
+
+void string(unsigned char *p)
+{
+  52:	fc 01       	movw	r30, r24
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  54:	48 ea       	ldi	r20, 0xA8	; 168
+  56:	51 e6       	ldi	r21, 0x61	; 97
+while(*p!='\0')
+{
+_delay_ms(100);
+TWDR=*p;
+TWCR=(1<<TWINT)|(1<<TWEN);
+  58:	34 e8       	ldi	r19, 0x84	; 132
+  5a:	10 c0       	rjmp	.+32     	; 0x7c <string+0x2a>
+  5c:	ca 01       	movw	r24, r20
+  5e:	01 97       	sbiw	r24, 0x01	; 1
+  60:	f1 f7       	brne	.-4      	; 0x5e <string+0xc>
+void string(unsigned char *p)
+{
+while(*p!='\0')
+{
+_delay_ms(100);
+TWDR=*p;
+  62:	23 b9       	out	0x03, r18	; 3
+TWCR=(1<<TWINT)|(1<<TWEN);
+  64:	36 bf       	out	0x36, r19	; 54
+while((TWCR&(1<<TWINT))==0);
+  66:	06 b6       	in	r0, 0x36	; 54
+  68:	07 fe       	sbrs	r0, 7
+  6a:	fd cf       	rjmp	.-6      	; 0x66 <string+0x14>
+p++;
+if((TWSR & 0XF8)!=0X28)
+  6c:	81 b1       	in	r24, 0x01	; 1
+  6e:	88 7f       	andi	r24, 0xF8	; 248
+  70:	88 32       	cpi	r24, 0x28	; 40
+  72:	19 f0       	breq	.+6      	; 0x7a <string+0x28>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+  74:	83 e0       	ldi	r24, 0x03	; 3
+  76:	82 bb       	out	0x12, r24	; 18
+  78:	ff cf       	rjmp	.-2      	; 0x78 <string+0x26>
+{
+_delay_ms(100);
+TWDR=*p;
+TWCR=(1<<TWINT)|(1<<TWEN);
+while((TWCR&(1<<TWINT))==0);
+p++;
+  7a:	31 96       	adiw	r30, 0x01	; 1
+}
+
+
+void string(unsigned char *p)
+{
+while(*p!='\0')
+  7c:	20 81       	ld	r18, Z
+  7e:	22 23       	and	r18, r18
+  80:	69 f7       	brne	.-38     	; 0x5c <string+0xa>
+while((TWCR&(1<<TWINT))==0);
+p++;
+if((TWSR & 0XF8)!=0X28)
+error(3);
+}
+}
+  82:	08 95       	ret
+
+00000084 <slave1>:
+
+void slave1()
+{
+  TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);  //start  
+  84:	84 ea       	ldi	r24, 0xA4	; 164
+  86:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);          //poll
+  88:	06 b6       	in	r0, 0x36	; 54
+  8a:	07 fe       	sbrs	r0, 7
+  8c:	fd cf       	rjmp	.-6      	; 0x88 <slave1+0x4>
+if((TWSR & 0XF8)!=0X08)
+  8e:	81 b1       	in	r24, 0x01	; 1
+  90:	88 7f       	andi	r24, 0xF8	; 248
+  92:	88 30       	cpi	r24, 0x08	; 8
+  94:	19 f0       	breq	.+6      	; 0x9c <slave1+0x18>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+  96:	81 e0       	ldi	r24, 0x01	; 1
+  98:	82 bb       	out	0x12, r24	; 18
+  9a:	ff cf       	rjmp	.-2      	; 0x9a <slave1+0x16>
+if((TWSR & 0XF8)!=0X08)
+{
+error(1);
+}
+
+TWDR=0X50;                     //address
+  9c:	80 e5       	ldi	r24, 0x50	; 80
+  9e:	83 b9       	out	0x03, r24	; 3
+//TWCR=(1<<TWINT)|(1<<TWEN);     
+while((TWCR&(1<<TWINT))==0);  //poll
+  a0:	06 b6       	in	r0, 0x36	; 54
+  a2:	07 fe       	sbrs	r0, 7
+  a4:	fd cf       	rjmp	.-6      	; 0xa0 <slave1+0x1c>
+if((TWSR & 0XF8)!=0X18)
+  a6:	81 b1       	in	r24, 0x01	; 1
+  a8:	88 7f       	andi	r24, 0xF8	; 248
+  aa:	88 31       	cpi	r24, 0x18	; 24
+  ac:	19 f0       	breq	.+6      	; 0xb4 <slave1+0x30>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+  ae:	82 e0       	ldi	r24, 0x02	; 2
+  b0:	82 bb       	out	0x12, r24	; 18
+  b2:	ff cf       	rjmp	.-2      	; 0xb2 <slave1+0x2e>
+if((TWSR & 0XF8)!=0X18)
+{
+error(2);
+}
+
+string("Mayank");  //data
+  b4:	80 e6       	ldi	r24, 0x60	; 96
+  b6:	90 e0       	ldi	r25, 0x00	; 0
+  b8:	cc df       	rcall	.-104    	; 0x52 <string>
+
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);   //stop
+  ba:	84 e9       	ldi	r24, 0x94	; 148
+  bc:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));             //poll
+  be:	06 b6       	in	r0, 0x36	; 54
+  c0:	04 fc       	sbrc	r0, 4
+  c2:	fd cf       	rjmp	.-6      	; 0xbe <slave1+0x3a>
+
+}
+  c4:	08 95       	ret
+
+000000c6 <slave2>:
+
+
+void slave2()
+{
+  TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);  //start  
+  c6:	84 ea       	ldi	r24, 0xA4	; 164
+  c8:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);          //poll
+  ca:	06 b6       	in	r0, 0x36	; 54
+  cc:	07 fe       	sbrs	r0, 7
+  ce:	fd cf       	rjmp	.-6      	; 0xca <slave2+0x4>
+if((TWSR & 0XF8)!=0X08)
+  d0:	81 b1       	in	r24, 0x01	; 1
+  d2:	88 7f       	andi	r24, 0xF8	; 248
+  d4:	88 30       	cpi	r24, 0x08	; 8
+  d6:	19 f0       	breq	.+6      	; 0xde <slave2+0x18>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+  d8:	81 e0       	ldi	r24, 0x01	; 1
+  da:	82 bb       	out	0x12, r24	; 18
+  dc:	ff cf       	rjmp	.-2      	; 0xdc <slave2+0x16>
+if((TWSR & 0XF8)!=0X08)
+{
+error(1);
+}
+
+TWDR=0X60;                     //address
+  de:	80 e6       	ldi	r24, 0x60	; 96
+  e0:	83 b9       	out	0x03, r24	; 3
+//TWCR=(1<<TWINT)|(1<<TWEN);     
+while((TWCR&(1<<TWINT))==0);  //poll
+  e2:	06 b6       	in	r0, 0x36	; 54
+  e4:	07 fe       	sbrs	r0, 7
+  e6:	fd cf       	rjmp	.-6      	; 0xe2 <slave2+0x1c>
+if((TWSR & 0XF8)!=0X18)
+  e8:	81 b1       	in	r24, 0x01	; 1
+  ea:	88 7f       	andi	r24, 0xF8	; 248
+  ec:	88 31       	cpi	r24, 0x18	; 24
+  ee:	19 f0       	breq	.+6      	; 0xf6 <slave2+0x30>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+  f0:	82 e0       	ldi	r24, 0x02	; 2
+  f2:	82 bb       	out	0x12, r24	; 18
+  f4:	ff cf       	rjmp	.-2      	; 0xf4 <slave2+0x2e>
+if((TWSR & 0XF8)!=0X18)
+{
+error(2);
+}
+
+string("Mayank");  //data
+  f6:	80 e6       	ldi	r24, 0x60	; 96
+  f8:	90 e0       	ldi	r25, 0x00	; 0
+  fa:	ab df       	rcall	.-170    	; 0x52 <string>
+
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);   //stop
+  fc:	84 e9       	ldi	r24, 0x94	; 148
+  fe:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));             //poll
+ 100:	06 b6       	in	r0, 0x36	; 54
+ 102:	04 fc       	sbrc	r0, 4
+ 104:	fd cf       	rjmp	.-6      	; 0x100 <slave2+0x3a>
+
+}
+ 106:	08 95       	ret
+
+00000108 <slave3>:
+
+
+void slave3()
+{
+  TWCR=(1<<TWINT)|(1<<TWSTA)|(1<<TWEN);  //start  
+ 108:	84 ea       	ldi	r24, 0xA4	; 164
+ 10a:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWINT))==0);          //poll
+ 10c:	06 b6       	in	r0, 0x36	; 54
+ 10e:	07 fe       	sbrs	r0, 7
+ 110:	fd cf       	rjmp	.-6      	; 0x10c <slave3+0x4>
+if((TWSR & 0XF8)!=0X08)
+ 112:	81 b1       	in	r24, 0x01	; 1
+ 114:	88 7f       	andi	r24, 0xF8	; 248
+ 116:	88 30       	cpi	r24, 0x08	; 8
+ 118:	19 f0       	breq	.+6      	; 0x120 <slave3+0x18>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+ 11a:	81 e0       	ldi	r24, 0x01	; 1
+ 11c:	82 bb       	out	0x12, r24	; 18
+ 11e:	ff cf       	rjmp	.-2      	; 0x11e <slave3+0x16>
+if((TWSR & 0XF8)!=0X08)
+{
+error(1);
+}
+
+TWDR=0X70;                     //address
+ 120:	80 e7       	ldi	r24, 0x70	; 112
+ 122:	83 b9       	out	0x03, r24	; 3
+//TWCR=(1<<TWINT)|(1<<TWEN);     
+while((TWCR&(1<<TWINT))==0);  //poll
+ 124:	06 b6       	in	r0, 0x36	; 54
+ 126:	07 fe       	sbrs	r0, 7
+ 128:	fd cf       	rjmp	.-6      	; 0x124 <slave3+0x1c>
+if((TWSR & 0XF8)!=0X18)
+ 12a:	81 b1       	in	r24, 0x01	; 1
+ 12c:	88 7f       	andi	r24, 0xF8	; 248
+ 12e:	88 31       	cpi	r24, 0x18	; 24
+ 130:	19 f0       	breq	.+6      	; 0x138 <slave3+0x30>
+#include<avr/io.h>
+#include<util/delay.h>
+
+void error(unsigned char a)
+{
+PORTD=a;
+ 132:	82 e0       	ldi	r24, 0x02	; 2
+ 134:	82 bb       	out	0x12, r24	; 18
+ 136:	ff cf       	rjmp	.-2      	; 0x136 <slave3+0x2e>
+if((TWSR & 0XF8)!=0X18)
+{
+error(2);
+}
+
+string("Mayank");  //data
+ 138:	80 e6       	ldi	r24, 0x60	; 96
+ 13a:	90 e0       	ldi	r25, 0x00	; 0
+ 13c:	8a df       	rcall	.-236    	; 0x52 <string>
+
+TWCR=(1<<TWINT)|(1<<TWEN)|(1<<TWSTO);   //stop
+ 13e:	84 e9       	ldi	r24, 0x94	; 148
+ 140:	86 bf       	out	0x36, r24	; 54
+while((TWCR&(1<<TWSTO)));             //poll
+ 142:	06 b6       	in	r0, 0x36	; 54
+ 144:	04 fc       	sbrc	r0, 4
+ 146:	fd cf       	rjmp	.-6      	; 0x142 <slave3+0x3a>
+
+}
+ 148:	08 95       	ret
+
+0000014a <main>:
+
+
+
+int main()
+{
+  DDRD=0XFF;
+ 14a:	8f ef       	ldi	r24, 0xFF	; 255
+ 14c:	81 bb       	out	0x11, r24	; 17
+ 14e:	80 e1       	ldi	r24, 0x10	; 16
+ 150:	97 e2       	ldi	r25, 0x27	; 39
+ 152:	29 e1       	ldi	r18, 0x19	; 25
+ 154:	30 e0       	ldi	r19, 0x00	; 0
+ 156:	f9 01       	movw	r30, r18
+ 158:	31 97       	sbiw	r30, 0x01	; 1
+ 15a:	f1 f7       	brne	.-4      	; 0x158 <main+0xe>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 15c:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 15e:	d9 f7       	brne	.-10     	; 0x156 <main+0xc>
+
+  _delay_ms(1000);
+  TWBR=255;                     //bit rate
+ 160:	8f ef       	ldi	r24, 0xFF	; 255
+ 162:	80 b9       	out	0x00, r24	; 0
+  slave1();
+ 164:	8f df       	rcall	.-226    	; 0x84 <slave1>
+ 166:	80 e1       	ldi	r24, 0x10	; 16
+ 168:	97 e2       	ldi	r25, 0x27	; 39
+ 16a:	29 e1       	ldi	r18, 0x19	; 25
+ 16c:	30 e0       	ldi	r19, 0x00	; 0
+ 16e:	f9 01       	movw	r30, r18
+ 170:	31 97       	sbiw	r30, 0x01	; 1
+ 172:	f1 f7       	brne	.-4      	; 0x170 <main+0x26>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 174:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 176:	d9 f7       	brne	.-10     	; 0x16e <main+0x24>
+  _delay_ms(1000);
+  slave2();
+ 178:	a6 df       	rcall	.-180    	; 0xc6 <slave2>
+ 17a:	80 e1       	ldi	r24, 0x10	; 16
+ 17c:	97 e2       	ldi	r25, 0x27	; 39
+ 17e:	29 e1       	ldi	r18, 0x19	; 25
+ 180:	30 e0       	ldi	r19, 0x00	; 0
+ 182:	f9 01       	movw	r30, r18
+ 184:	31 97       	sbiw	r30, 0x01	; 1
+ 186:	f1 f7       	brne	.-4      	; 0x184 <main+0x3a>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 188:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 18a:	d9 f7       	brne	.-10     	; 0x182 <main+0x38>
+  _delay_ms(1000);
+  slave3();
+ 18c:	bd df       	rcall	.-134    	; 0x108 <slave3>
+}
+ 18e:	80 e0       	ldi	r24, 0x00	; 0
+ 190:	90 e0       	ldi	r25, 0x00	; 0
+ 192:	08 95       	ret
+
+00000194 <_exit>:
+ 194:	f8 94       	cli
+
+00000196 <__stop_program>:
+ 196:	ff cf       	rjmp	.-2      	; 0x196 <__stop_program>

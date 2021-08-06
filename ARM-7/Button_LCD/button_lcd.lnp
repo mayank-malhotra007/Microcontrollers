@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\button_lcd.o"
+--strict --scatter ".\button_lcd.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\button_lcd.map" -o .\button_lcd.axf

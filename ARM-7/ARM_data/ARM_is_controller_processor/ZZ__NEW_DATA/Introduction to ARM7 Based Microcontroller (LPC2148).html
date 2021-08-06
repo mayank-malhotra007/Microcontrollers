@@ -1,0 +1,2419 @@
+
+<!-- saved from url=(0087)http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/cb=gapi.loaded_2" async=""></script><script src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/cb=gapi.loaded_1" async=""></script><script type="text/javascript" charset="utf-8" async="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/button.71000885400e222c3c0eec823f8f93f0.js"></script><script src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/pubads_impl_84.js" async=""></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head><body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-59096 node-type-arm tb-purity fluid-grid grid-24-based bf-tahoma snf-tahoma ssf-tahoma ptf-tahoma ntf-tahoma ctf-tahoma btf-tahoma fs-smallest">m	
+
+  
+    
+<link rel="shortcut icon" href="http://www.engineersgarage.com/sites/default/files/eg_favicon.gif" type="image/gif">
+<meta name="abstract" content="EngineersGarage">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<meta name="rights" content="Copyright@EngineersGarage">
+<link rel="canonical" href="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148">
+<link rel="shortlink" href="http://www.engineersgarage.com/node/59096">
+<meta name="dcterms.title" content="Introduction to ARM7 Based Microcontroller (LPC2148)">
+<meta name="dcterms.creator" content="Manish">
+<meta name="dcterms.contributor" content="EngineersGarage">
+<meta name="dcterms.date" content="2013-12-17T17:19+05:30">
+<meta name="dcterms.modified" content="2014-03-04T11:08+05:30">
+<meta name="dcterms.type" content="Text">
+<meta name="dcterms.format" content="text/html">
+<meta name="dcterms.identifier" content="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148">
+<meta name="dcterms.language" content="und">
+    <title>Introduction to ARM7 Based Microcontroller (LPC2148)</title>
+    <link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_G8UiL8W4VsmbxQlCce0YboItibPU3Yh891VRMDWtZns.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_dHO2SJbPbn-ZkSYZGQBs5Sou4zSUr3v5SFtX9CGhcJQ.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_Uc90Dr77bRjnhB5f2JfgxVFDt2SeVjVgcyhVNY3uWuA.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_2vLNnT9VhuJHYxjR9QgdJvcw7NdkIXHVGch6bcBu_lY.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_nsU0sRN43D7Lz6bD2PgKCeZ0qmH3YeXpciQk1MfhFyM.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_sdr2--NNWjdkyfY217TDFiH5NPr7xqgwMY0RMDsuKpI.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_rR-ZJlnVsNLB7bVPTu-yFXHtPwdh3NvH9zOVR0pCEV8.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_aMSMfAYmSsik9rluCtDSdXKDJFdsMGguArgkf29Mj_o.css" media="only screen">
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_uO8jFMBKGI8cKwyuAkvOrsq-LqkM0I2KQQHSbo2SqIQ.css" media="print">
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.engineersgarage.com/sites/default/files/css/css_aycQrg2TCW0TMJdS_FIKXkHYi_jbV7fvqSIo9WjqhmA.css" media="all" />
+<![endif]-->
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="http://www.engineersgarage.com/sites/default/files/css/css_eAySCIqlJhYocRN0WVPs9OFLc8ySR1mK51XpcUCUtOo.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/css_zjn17iiWSXy6WsLqQSch-ZnoUwTMN5GIpV72OT1wzMA.css" media="all">
+    <script id="twitter-wjs" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/widgets.js"></script><script id="facebook-jssdk" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/all.js"></script><script async="" type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/gpt.js"></script><script async="" type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/gpt.js"></script><script async="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/analytics.js"></script><script src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_oCVMDTeSNt-_QxknevWyf6yO5OzmME3AhRz3ggZgNtg.js"></script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_gAA-amIn3NdFn79plVh_e53GNhtVSzcDhxNpAE06kaY.js"></script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_Ja-_EKr7RzGAQI6zzZVQN7WqmSEmk9dVJmAH9ls5QQ4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var prc = "ARM001";
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function ($) { $(document).ready(function(){	
+						$("#page-title").after("<span class =heading-project-code>" + prc + "</span>");
+					}); })(jQuery);
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_q_5iOcBJVLWZoPzvvhoJx0t62iJ_mWuM4Y7vRqs6c0M.js"></script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/widgets.js"></script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_-SWQYGRbekq1VaX9Wqy7Z2xDc_zj9wsySP0hi0hR8pU.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var getfq="always"; var hidegaddval="always";  
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_rWVz0b9aSMf_d9MfzieDk1mXw9sJvQ-dmn0IauNzt50.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-17412058-4", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_mMuSdRh5NeaBYvACFdfxYZFykbM62b1Ir0OkbP8m74A.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+	(function ($) {
+	  if (Drupal.Nucleus == undefined) {
+		Drupal.Nucleus = {};
+	  }
+	  Drupal.behaviors.skinMenuAction = {
+		attach: function (context) {
+		  jQuery(".change-skin-button").click(function() {
+			parts = this.href.split("/");
+			style = parts[parts.length - 1];
+			jQuery.cookie("nucleus_skin", style, {path: "/"});
+			window.location.reload();
+			return false;
+		  });
+		}
+	  }
+	})(jQuery);
+  
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_pwercHo33R8Q6A9hXjTfZStwb9qteOHeEYrWWr1BEoY.js"></script>
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/js_ajmlsMbgdQjGSjzRP5Q25TE8qrBHZyE_8b1TODPQPVU.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"tb_purity","theme_token":"oI59BrzKJPjIudqINFK7XT0wr0QEr3czkyHqkme5K40","js":{"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.button.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.resizable.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.dialog.min.js":1,"sites\/all\/modules\/views\/js\/jquery.ui.dialog.patch.js":1,"sites\/all\/modules\/field_group\/horizontal-tabs\/horizontal-tabs.js":1,"sites\/all\/modules\/google_cse\/google_cse.js":1,"sites\/all\/modules\/comment_notify\/comment_notify.js":1,"0":1,"1":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/simple_dialog\/js\/simple_dialog.js":1,"\/\/apis.google.com\/js\/plusone.js":1,"\/\/platform.twitter.com\/widgets.js":1,"sites\/all\/modules\/tb_megamenu\/js\/tb-megamenu-frontend.js":1,"sites\/all\/modules\/tb_megamenu\/js\/tb-megamenu-touch.js":1,"2":1,"sites\/all\/modules\/engnrblock\/engnrblock.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"3":1,"misc\/textarea.js":1,"4":1,"sites\/all\/themes\/tb_purity\/tpl\/eg_files\/google_dfp.js":1,"sites\/all\/modules\/field_group\/field_group.js":1,"sites\/all\/themes\/nucleus\/nucleus\/js\/jquery.cookie.js":1,"sites\/all\/themes\/tb_purity\/js\/tb_purity.js":1,"sites\/all\/themes\/tb_purity\/js\/jquery.matchHeights.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/themes\/nucleus\/nucleus\/css\/base.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/all\/modules\/field_group\/horizontal-tabs\/horizontal-tabs.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/google_cse\/google_cse.css":1,"sites\/all\/modules\/invite\/modules\/invite_by_email\/css\/invite_by_email.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/EGCustomTweaks\/css\/Projectcode\/projectcode.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/simple_dialog\/css\/simple_dialog.css":1,"sites\/all\/modules\/wysiwyg_imageupload\/imgupload.css":1,"sites\/all\/modules\/easy_social\/css\/easy_social.css":1,"sites\/all\/modules\/tb_megamenu\/css\/bootstrap.css":1,"sites\/all\/modules\/tb_megamenu\/css\/base.css":1,"sites\/all\/modules\/tb_megamenu\/css\/default.css":1,"sites\/all\/modules\/tb_megamenu\/css\/compatibility.css":1,"sites\/all\/modules\/tb_megamenu\/css\/styles\/black.css":1,"sites\/all\/modules\/field_group\/field_group.css":1,"file":1,"sites\/all\/modules\/eg_feedback\/eg_feedback.css":1,"sites\/all\/themes\/nucleus\/nucleus\/css\/messages.css":1,"sites\/all\/themes\/tb_purity\/css\/html-elements.css":1,"sites\/all\/themes\/tb_purity\/css\/forms.css":1,"sites\/all\/themes\/tb_purity\/css\/tables.css":1,"sites\/all\/themes\/tb_purity\/css\/page.css":1,"sites\/all\/themes\/tb_purity\/css\/articles.css":1,"sites\/all\/themes\/tb_purity\/css\/comments.css":1,"sites\/all\/themes\/tb_purity\/css\/fields.css":1,"sites\/all\/themes\/tb_purity\/css\/blocks.css":1,"sites\/all\/themes\/tb_purity\/css\/panel-panes.css":1,"sites\/all\/themes\/tb_purity\/css\/navigation.css":1,"sites\/all\/themes\/tb_purity\/css\/forum.css":1,"sites\/all\/themes\/tb_purity\/css\/fonts.css":1,"sites\/all\/themes\/tb_purity\/css\/css3.css":1,"sites\/all\/themes\/tb_purity\/css\/ie7.css":1,"sites\/all\/themes\/nucleus\/nucleus\/css\/responsive\/responsive.css":1,"sites\/all\/themes\/tb_purity\/css\/print.css":1,"sites\/all\/themes\/nucleus\/nucleus\/css\/ie7.css":1,"sites\/all\/themes\/nucleus\/nucleus\/css\/ie.css":1,"public:\/\/nucleus\/grid-fluid-24-95.css":1}},"colorbox":{"transition":"elastic","speed":"350","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"maxWidth":"98%","maxHeight":"98%","initialWidth":"300","initialHeight":"250","fixed":true,"scrolling":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"googleCSE":{"cx":"013312369763081465168:qyfpukl6oey","language":"","resultsWidth":600,"domain":"www.google.com"},"simpleDialog":{"classes":"","defaults":"width:300;height:auto;position:[center,60]","selector":"content","title":""},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"field_group":{"htab":"full","hidden":"full","htabs":"full"}});
+//--><!]]>
+</script>
+  
+
+  
+    <div id="skip-link"><a href="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148#main-content" class="element-invisible element-focusable">Skip to main content</a></div>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--custom code for colorbox(welcomeAd) to make it work like Thick box(D6) and with timer-->
+
+<!--<script src="/spl/jquery-1.9.0.min.js"></script>-->
+<script src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/jquery.cookie.js"></script>
+<!--<script src="/spl/googlead_overide.js"></script>-->
+<link rel="stylesheet" href="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/stylep.css" media="screen" id="style-mobile">
+<style>
+   
+</style>
+
+
+
+ 
+
+<div id="cst-overlay"></div>
+   <div id="cst-overlay-content" style="width:640px; height:480px;">
+       <div class="cst-overlay-region"> 
+        <div class="timer-box"></div>
+        <span class="closebox"><a class="close" href="javascript:;">Close</a> or Esc Key </span>
+        <div class="module-content"><center><script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type="text/javascript">
+googletag.cmd.push(function() {
+googletag.defineSlot('/34225710/welcome_ad_2', [640, 480], 'div-gpt-ad-1435819003450-0').addService(googletag.pubads()).setCollapseEmptyDiv(true);
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<!-- /34225710/welcome_ad_2 -->
+<div id="div-gpt-ad-1435819003450-0" style="height:480px; width:640px;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1435819003450-0'); });
+</script>
+<div id="google_ads_iframe_/34225710/welcome_ad_2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/34225710/welcome_ad_2_0" title="3rd party ad content" name="google_ads_iframe_/34225710/welcome_ad_2_0" width="640" height="480" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_/34225710/welcome_ad_2_0__hidden__" title="" name="google_ads_iframe_/34225710/welcome_ad_2_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div></center></div>
+		</div>
+
+</div>
+<!-- // custom code for colorbox(welcomeAd) to make it work like Thick box(D6) and with timer-->
+<div id="page" class="page-default">
+  <a name="Top" id="Top"></a>
+  <!-- Google DFP Code Start -->
+ <!-- Google DFP Code End -->
+<!-- Facebook slider code start -->
+<!-- Facebook slider code end -->
+  <!-- HEADER -->
+  <div id="header-wrapper" class="wrapper">
+    <div class="container grid-24">
+      <div class="grid-inner clearfix">
+        <div id="header" class="clearfix">
+
+                      <a href="http://www.engineersgarage.com/" title="Home" id="logo">
+              <img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/logo.png" alt="Home">
+            </a>
+          
+          <div style="margin-left: 45%; margin-top:1%;"> <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/xd_arbiter.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/xd_arbiter(1).html" style="border: none;"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=492677590803338";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like fb_iframe_widget" data-href="http://www.facebook.com/engineersgarage" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=492677590803338&amp;container_width=634&amp;href=http%3A%2F%2Fwww.facebook.com%2Fengineersgarage&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=true"><span style="vertical-align: bottom; width: 88px; height: 20px;"><iframe name="f373f51c0cd02e" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/like.html" style="border: none; visibility: visible; width: 88px; height: 20px;" class=""></iframe></span></div>&nbsp;
+
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/follow_button.fd774b599f565016d763dd860cb31c79.en.html" style="position: static; visibility: visible; width: 162px; height: 20px;" data-screen-name="EngineersGarage"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script type="text/javascript" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/platform.js" gapi_processed="true"></script>
+
+<!-- Place this tag where you want the widget to render. -->
+<div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 80px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 80px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1460888375454" name="I0_1460888375454" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/follow.html" data-gapiattached="true"></iframe></div> </div>
+
+                        <div class="region region-header">
+    <div id="block-search-form" class="block block-search">
+  <div class="block-inner clearfix">
+    
+    
+    
+    <div class="block-content clearfix">
+      <form class="google-cse" action="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><span class="button edit-submit">
+    <input type="submit" name="op" id="edit-submit" value="Search" class="form-submit">
+    </span>
+</div><input type="hidden" name="form_build_id" value="form-QNaTaSJ8vkfXv3zlorO0dy9UA-hlp4xN57IlPu3mKvA">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>    </div>
+  </div>
+</div>
+  </div>
+                    
+         <style>
+#block-search-form{margin-top: -60px; height: 30px;} /* */
+
+#mouser_div{float:right; background:url(http://www.engineersgarage.com/sites/all/images/header_images/mouser-button-tab.gif)  top right no-repeat; width: 450px; height: 45px;margin-top: 15px;}
+#mouser_catalog{width:210px; height:38px; cursor:pointer; float: right;/*margin: 11px;*/}
+#mouser_menu{height:135px; width:99%; border-top:1px solid #ddd; display:none; float: right; clear:both; padding:10px;}
+#mouser_header{font-style: italic;font-size: 14px;line-height: 16px;text-transform: uppercase;letter-spacing: 1px;color: #999;position: relative;bottom: 10px;}
+.header_element{float:right; font-size: 11px; color: #242424; text-decoration: none;}
+.menu_col{ width:16.5%; float:left;}
+.menu_col ul{font-family:'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;}
+.menu_col li a{ color: #666; text-decoration: none; }
+.menu_col li a:hover{color:#ed1c24;text-decoration:underline;}
+</style>
+
+<div id="mouser_div">
+	<div id="mouser_catalog">
+<!---->    
+    </div>
+</div>
+
+<div id="mouser_menu">
+	<div style="margin-bottom: 6px;">
+    	<a href="" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Mouser Catalog Links&#39;, &#39;Click_Catalog&#39;]);"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/mouser.png"></a>
+        <!--use div then use diplay inlien-->
+       <span id="mouser_header" style="font-style: italic;font-size: 14px;line-height: 16px;
+text-transform: uppercase;letter-spacing: 1px;color: #999;position: relative;bottom: 10px;">Browse Products</span>
+
+       <a rel="nofollow" target="_blank" href="http://www.mouser.com/Electronic-Components/" class="header_element">View Product Index</a>
+       <span style="float:right; font-size: 11px; color: #242424; text-decoration: none; margin:0px 6px;">|</span>
+       <a href="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148#" id="menu_close" class="header_element">X Close Menu</a>
+    </div>
+
+	<div class="menu_col">
+    	<ul>
+        	<li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Passive-Components/Capacitors/_/N-5g7r/">Capacitors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Sensors/Temperature-Sensors/_/N-7gz50/">Temperature Sensors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Sensors/Current-Sensors/_/N-7gqeu/">Current Sensors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Sensors/Proximity-Sensors/_/N-7h7mq/">Proximity Sensors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Sensors/Pressure-Sensors/_/N-6g7qc/">Pressure Sensors</a></li>
+        </ul>
+    </div>
+    
+    <div class="menu_col">
+    	<ul>
+        	<li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/_/N-6j73k/">Integrated Circuits - ICs</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Test-Measurement/Multimeters-Voltmeters/_/N-5gfo/">Multimeters &amp; Voltmeters</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Passive-Components/Resistors/_/N-5g9n/">Resistors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Passive-Components/Encoders/_/N-6g7nx/">Encoders</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Electromechanical/Industrial-Automation/Timers/_/N-budh3/">Timers</a></li>
+        </ul>
+    </div>
+    
+    <div class="menu_col">
+    	<ul>
+        	<li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Embedded-Solutions/Display-Modules/_/N-6m71g/">7 Segment Displays</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Electromechanical/Switches/_/N-5g2h/">Switches</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Power/DC-DC-Converters/_/N-brvxe/">DC/DC Converters</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Semiconductors/RF-Semiconductors/_/N-96p9c/">RF Semiconductors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Electromechanical/Industrial-Automation/Input-Devices/_/N-5g20/">Input Devices</a></li>
+        </ul>
+    </div>
+    
+    <div class="menu_col">
+    	<ul>
+        	<li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Electromechanical/Motors-Drives/_/N-u86z/">Motors &amp; Drives</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Passive-Components/Potentiometers-Trimmers-Rheostats/_/N-9q0yi/">Potentiometers &amp; Trimmers</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Electromechanical/Relays/_/N-5g31/">Relays</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Passive-Components/Varistors/_/N-6g7mv/">Varistors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Power/AC-Power-Cords/_/N-6g7lo/">AC Power Cords</a></li>
+        </ul>
+    </div>
+    
+    <div class="menu_col">
+    	<ul>
+        	<li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/Embedded-Processors-Controllers/_/N-a86bc/">Processors &amp; Controllers</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Power/Transformers/_/N-8u9mo/">Transformers</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Sensors/Liquid-Level-Sensors/_/N-zqig/">Liquid Sensors</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Power/Batteries/_/N-5gbk/">Batteries</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Connectors/_/N-5g3y/">Connectors</a></li>
+        </ul>
+    </div>
+    
+    <div class="menu_col">
+    	<ul>
+        	<li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Embedded-Solutions/Interface-Modules/_/N-5g1o/">Interface Modules</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Optoelectronics/LED-Lighting/_/N-74g9t/">LED Lightings</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Test-Measurement/Oscilloscopes/_/N-5gff/">Oscilloscopes</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Test-Measurement/Counters-Tachometers/_/N-budrw/">Counters &amp; Tachometers</a></li>
+            <li><a rel="nofollow" target="_blank" href="http://www.mouser.com/Wire-Cable/_/N-5ggl/">Wire &amp; Cable</a></li>
+        </ul>
+    </div>    
+
+</div>
+<!--display:none; for hidden default
+float: right; for sliding whole page down otherwise overlaping
+clear:both; for display below browse button otherwise showing inline
+-->
+<script>
+ (function ($) {$(document).ready(function(){  
+					$("#mouser_catalog, #menu_close").click(function() {
+  					$("#mouser_menu").slideToggle( "fast" );
+					});		
+					$("a[href*='www.mouser.com']").each(function(){
+ 					$(this).attr({onClick: "ga('send','event','Mouser Links','Click_')"});
+					});	
+}); })(jQuery);
+</script>
+<script>
+(function ($) { 
+$(document).ready(function() {
+		//if($('a').html() == 'Code') {
+			//if ($('#ul li:last-child').hasClass('tab')) {
+				$( "ul.horizontal-tabs-list li:last-child a strong" ).css({'color' : '#FEFEFE'});
+				$( "ul.horizontal-tabs-list li:last-child a" ).css({'background' :'#314978'});
+				//$( "ul li:last-child a:hover" ).css({'background' :'#60C'});
+		//$("span.tab").addClass('highlight');
+		//$("span.tab").prev(".tab").addClass('highlight');
+		
+	//	}
+});
+})(jQuery);
+</script>
+                  </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#HEADER -->
+
+      <!-- MAIN NAV -->
+    <div id="menu-bar-wrapper" class="wrapper">
+      <div class="container grid-24">
+        <div class="grid-inner clearfix">
+            <div class="region region-menu-bar">
+    <div id="block-tb-megamenu-main-menu" class="block block-tb-megamenu">
+  <div class="block-inner clearfix">
+    
+    
+    
+    <div class="block-content clearfix">
+      <div class="tb-megamenu tb-megamenu-main-menu style-black">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="icon-reorder"></i>
+    </button>
+    <div class="nav-collapse collapse always-show">
+    <ul class="tb-megamenu-nav nav level-0 items-18">
+  <li data-id="591" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/" class="">
+        
+    Home          </a>
+  </li>
+
+<li data-id="50496" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/insight" class="">
+        
+    Insight          </a>
+  </li>
+
+<li data-id="592" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega dropdown">
+  <a href="http://www.engineersgarage.com/eg_labs" class="dropdown-toggle">
+        
+    EG Labs          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-2" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-1 items-5">
+  <li data-id="1138" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.engineersgarage.com/microcontroller/8051projects/list" class="dropdown-toggle">
+        
+    Microcontroller          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-1" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-6">
+  <li data-id="57614" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.engineersgarage.com/embedded/raspberry-pi" class="">
+        
+    Raspberry Pi          </a>
+  </li>
+
+<li data-id="56540" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.engineersgarage.com/microcontroller/arduino-projects" class="">
+        
+    Arduino          </a>
+  </li>
+
+<li data-id="6146" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.engineersgarage.com/microcontroller/8051projects" class="">
+        
+    8051          </a>
+  </li>
+
+<li data-id="6145" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.engineersgarage.com/embedded/avr-microcontroller-projects" class="">
+        
+    AVR          </a>
+  </li>
+
+<li data-id="20620" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.engineersgarage.com/embedded/pic-microcontroller-projects" class="">
+        
+    PIC          </a>
+  </li>
+
+<li data-id="60319" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.engineersgarage.com/microcontroller/arm-projects" class="">
+        
+    ARM          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="58513" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/circuit-design" class="">
+        
+    Circuit Design          </a>
+  </li>
+
+<li data-id="1137" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/electronic-circuits" class="">
+        
+    Electronic Circuits          </a>
+  </li>
+
+<li data-id="6881" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/tutorials" class="">
+        
+    Tutorials          </a>
+  </li>
+
+<li data-id="1139" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/electronic-components" class="">
+        
+    Components          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="50474" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/articles" class="">
+        
+    Articles          </a>
+  </li>
+
+<li data-id="8657" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/invention-stories" class="">
+        
+    Invention Stories          </a>
+  </li>
+
+<li data-id="252" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/forum" class="">
+        
+    Forum          </a>
+  </li>
+
+<li data-id="60399" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega dropdown">
+  <a href="http://www.mouser.com/Circuit-Protection/_/N-5g3c/" class="dropdown-toggle">
+        
+    STORE          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-17" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-1 items-14">
+  <li data-id="61872" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Sensors/_/N-5gej/" class="dropdown-toggle">
+        
+    Sensors          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-3" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-18">
+  <li data-id="62034" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Audio-Sensors/_/N-98yce/" class="">
+        
+    Audio Sensors          </a>
+  </li>
+
+<li data-id="62035" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Biomedical-Sensors/_/N-cbp2o/" class="">
+        
+    Biomedical Sensors          </a>
+  </li>
+
+<li data-id="62036" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Capacitive-Touch-Sensors/_/N-1b8oy/" class="">
+        
+    Capacitive Touch Sensors          </a>
+  </li>
+
+<li data-id="62037" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Current-Sensors/_/N-7gqeu/" class="">
+        
+    Current Sensors          </a>
+  </li>
+
+<li data-id="62038" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Encoders/_/N-ae944/" class="">
+        
+    Encoders          </a>
+  </li>
+
+<li data-id="62039" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Environmental-Sensors/_/N-axfl1/" class="">
+        
+    Environmental Sensors          </a>
+  </li>
+
+<li data-id="62040" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Flow-Sensors/_/N-zqi2/" class="">
+        
+    Flow Sensors          </a>
+  </li>
+
+<li data-id="62041" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Linear-Displacement-Sensors/_/N-zqfc/" class="">
+        
+    Linear Displacement Sensors          </a>
+  </li>
+
+<li data-id="62042" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Liquid-Level-Sensors/_/N-zqig/" class="">
+        
+    Liquid Level Sensors          </a>
+  </li>
+
+<li data-id="62043" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Magnetic-Sensors/_/N-6g7q4/" class="">
+        
+    Magnetic Sensors          </a>
+  </li>
+
+<li data-id="62044" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Motion-Position-Sensors/_/N-6g7q6/" class="">
+        
+    Motion &amp; Position Sensors          </a>
+  </li>
+
+<li data-id="62045" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Optical-Sensors/_/N-6g7q8/" class="">
+        
+    Optical Sensors          </a>
+  </li>
+
+<li data-id="62046" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Pressure-Sensors/_/N-6g7qc/" class="">
+        
+    Pressure Sensors          </a>
+  </li>
+
+<li data-id="62047" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Proximity-Sensors/_/N-7h7mq/" class="">
+        
+    Proximity Sensors          </a>
+  </li>
+
+<li data-id="62048" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Safety-Light-Curtains/_/N-19e40/" class="">
+        
+    Safety Light Curtains          </a>
+  </li>
+
+<li data-id="62049" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Sensor-Development-Tools/_/N-d0qxl/" class="">
+        
+    Sensor Development Tools          </a>
+  </li>
+
+<li data-id="62050" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Sensor-Hardware-Accessories/_/N-11ei3/" class="">
+        
+    Sensor Hardware &amp; Accessories          </a>
+  </li>
+
+<li data-id="62051" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Sensors/Temperature-Sensors/_/N-7gz50/" class="">
+        
+    Temperature Sensors          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61871" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Semiconductors/_/N-5gcb/" class="dropdown-toggle">
+        
+    Semiconductors          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-4" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-4">
+  <li data-id="62030" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Discrete-Semiconductors/_/N-awhng/" class="">
+        
+    Discrete Semiconductors          </a>
+  </li>
+
+<li data-id="62031" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/Embedded-Processors-Controllers/_/N-a86bc/" class="">
+        
+    Embedded Processors &amp; Controllers          </a>
+  </li>
+
+<li data-id="62032" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/_/N-6j73k/" class="">
+        
+    Integrated Circuits - ICs          </a>
+  </li>
+
+<li data-id="62033" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/RF-Semiconductors/_/N-96p9c/" class="">
+        
+    RF Semiconductors          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61869" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Passive-Components/_/N-5g73/" class="dropdown-toggle">
+        
+    Passive Components          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-5" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-13">
+  <li data-id="62002" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Antennas/_/N-8w0fa/" class="">
+        
+    Antennas          </a>
+  </li>
+
+<li data-id="62003" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Capacitors/_/N-5g7r/" class="">
+        
+    Capacitors          </a>
+  </li>
+
+<li data-id="62004" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/EMI-RFI-Components/_/N-18v9d/" class="">
+        
+    EMI/RFI Components          </a>
+  </li>
+
+<li data-id="62005" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Encoders/_/N-6g7nx/" class="">
+        
+    Encoders          </a>
+  </li>
+
+<li data-id="62006" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Frequency-Control-Timing-Devices/_/N-6zu9e/" class="">
+        
+    Frequency Control &amp; Timing Devices          </a>
+  </li>
+
+<li data-id="62007" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Inductors/_/N-5gb4/" class="">
+        
+    Inductors          </a>
+  </li>
+
+<li data-id="62008" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Potentiometers-Trimmers-Rheostats/_/N-9q0yi/" class="">
+        
+    Potentiometers, Trimmers &amp; Rheostats          </a>
+  </li>
+
+<li data-id="62009" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Resistors/_/N-5g9n/" class="">
+        
+    Resistors          </a>
+  </li>
+
+<li data-id="62010" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Signal-Conditioning/_/N-8bzui/" class="">
+        
+    Signal Conditioning          </a>
+  </li>
+
+<li data-id="62011" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Thermistors-NTC/_/N-6g7mw/" class="">
+        
+    Thermistors - NTC          </a>
+  </li>
+
+<li data-id="62012" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Thermistors-PTC/_/N-796na/" class="">
+        
+    Thermistors - PTC          </a>
+  </li>
+
+<li data-id="62013" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Transformers-Audio-Signal/_/N-5gbg/" class="">
+        
+    Transformers Audio &amp; Signal          </a>
+  </li>
+
+<li data-id="62014" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Passive-Components/Varistors/_/N-6g7mv/" class="">
+        
+    Varistors          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61863" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Embedded-Solutions/_/N-5g1k/" class="dropdown-toggle">
+        
+    Embedded Solutions          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-6" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-18">
+  <li data-id="61930" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Audio-Modules/_/N-8ncly/" class="">
+        
+    Audio Modules          </a>
+  </li>
+
+<li data-id="61931" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Computing/_/N-aez39/" class="">
+        
+    Computing          </a>
+  </li>
+
+<li data-id="61932" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Data-Conversion-Modules/_/N-9a84h/" class="">
+        
+    Data Conversion Modules          </a>
+  </li>
+
+<li data-id="61933" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Display-Modules/_/N-6m71g/" class="">
+        
+    Display Modules          </a>
+  </li>
+
+<li data-id="61934" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Energy-Harvesting-Modules/_/N-8t3zx/" class="">
+        
+    Energy Harvesting Modules          </a>
+  </li>
+
+<li data-id="61935" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Engineering-Tools/_/N-8mwys/" class="">
+        
+    Engineering Tools          </a>
+  </li>
+
+<li data-id="61936" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Ethernet-Communication-Modules/_/N-6vz2l/" class="">
+        
+    Ethernet &amp; Communication Modules          </a>
+  </li>
+
+<li data-id="61937" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Interface-Modules/_/N-5g1o/" class="">
+        
+    Interface Modules          </a>
+  </li>
+
+<li data-id="61938" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Embedded-Solutions/Memory-Cards/_/N-bk01j/" class="">
+        
+    Memory Cards          </a>
+  </li>
+
+<li data-id="61939" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Memory-Modules/_/N-9pjzp/" class="">
+        
+    Memory Modules          </a>
+  </li>
+
+<li data-id="61940" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Modules-Accessories/_/N-93r9q/" class="">
+        
+    Modules Accessories          </a>
+  </li>
+
+<li data-id="61941" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Other-Modules/_/N-9a86n/" class="">
+        
+    Other Modules          </a>
+  </li>
+
+<li data-id="61942" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Power-Management-Modules/_/N-8tx4j/" class="">
+        
+    Power Management Modules          </a>
+  </li>
+
+<li data-id="61943" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/RF-Wireless-Modules/_/N-6f8ws/" class="">
+        
+    RF / Wireless Modules          </a>
+  </li>
+
+<li data-id="61944" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Sensor-Modules/_/N-8qbx6/" class="">
+        
+    Sensor Modules          </a>
+  </li>
+
+<li data-id="61945" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Solid-State-Drives-SSD/_/N-d0ro0/" class="">
+        
+    Solid State Drives - SSD          </a>
+  </li>
+
+<li data-id="61946" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/USB-Flash-Drives/_/N-d0rlr/" class="">
+        
+    USB Flash Drives          </a>
+  </li>
+
+<li data-id="61947" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Embedded-Solutions/Video-Modules/_/N-8nl98/" class="">
+        
+    Video Modules          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61862" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Electromechanical/_/N-5g1x/" class="dropdown-toggle">
+        
+    Electromechanical          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-7" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-11">
+  <li data-id="61919" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Audio-Devices/_/N-awp3d/" class="">
+        
+    Audio Devices          </a>
+  </li>
+
+<li data-id="61920" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Circuit-Breakers/_/N-6g7n7/" class="">
+        
+    Circuit Breakers          </a>
+  </li>
+
+<li data-id="61921" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Encoders/_/N-39xfc/" class="">
+        
+    Encoders          </a>
+  </li>
+
+<li data-id="61922" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Hardware/_/N-5g2c/" class="">
+        
+    Hardware          </a>
+  </li>
+
+<li data-id="61923" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/I-O-Modules/_/N-ay0v0/" class="">
+        
+    I/O Modules          </a>
+  </li>
+
+<li data-id="61924" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/_/N-5g1y/" class="">
+        
+    Industrial Automation          </a>
+  </li>
+
+<li data-id="61925" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Knobs-Dials/_/N-5g22/" class="">
+        
+    Knobs &amp; Dials          </a>
+  </li>
+
+<li data-id="61926" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Motors-Drives/_/N-u86z/" class="">
+        
+    Motors &amp; Drives          </a>
+  </li>
+
+<li data-id="61927" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Printers/_/N-b11jw/" class="">
+        
+    Printers          </a>
+  </li>
+
+<li data-id="61928" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Relays/_/N-5g31/" class="">
+        
+    Relays          </a>
+  </li>
+
+<li data-id="61929" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Electromechanical/Switches/_/N-5g2h/" class="">
+        
+    Switches          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61873" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Test-Measurement/_/N-5gf3/" class="dropdown-toggle">
+        
+    Test &amp; Measurement          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-8" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-26">
+  <li data-id="62052" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Analyzers/_/N-b722z/" class="">
+        
+    Analyzers          </a>
+  </li>
+
+<li data-id="62053" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Attenuators-Interconnects/_/N-93rw1/" class="">
+        
+    Attenuators - Interconnects          </a>
+  </li>
+
+<li data-id="62054" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Audio-Video-Test-Equipment/_/N-7uqfz/" class="">
+        
+    Audio/Video Test Equipment          </a>
+  </li>
+
+<li data-id="62055" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Battery-Testers/_/N-7uqkp/" class="">
+        
+    Battery Testers          </a>
+  </li>
+
+<li data-id="62056" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Bench-Top-Power-Supplies/_/N-6g7ln/" class="">
+        
+    Bench Top Power Supplies          </a>
+  </li>
+
+<li data-id="62057" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Calibration-Equipment/_/N-7uqgk/" class="">
+        
+    Calibration Equipment          </a>
+  </li>
+
+<li data-id="62058" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Calibration-Warranties-Service-Plans/_/N-bi8j5/" class="">
+        
+    Calibration, Warranties, &amp; Service Plans          </a>
+  </li>
+
+<li data-id="62059" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Component-Testers/_/N-7uqmf/" class="">
+        
+    Component Testers          </a>
+  </li>
+
+<li data-id="62060" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Counters-Tachometers/_/N-budrw/" class="">
+        
+    Counters &amp; Tachometers          </a>
+  </li>
+
+<li data-id="62061" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Datalogging-Acquisition/_/N-7uqh6/" class="">
+        
+    Datalogging &amp; Acquisition          </a>
+  </li>
+
+<li data-id="62062" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Decade-Boxes/_/N-7uqlk/" class="">
+        
+    Decade Boxes          </a>
+  </li>
+
+<li data-id="62063" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Environmental-Test-Equipment/_/N-5gfj/" class="">
+        
+    Environmental Test Equipment          </a>
+  </li>
+
+<li data-id="62064" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Fiber-Optic-Testing/_/N-7uqhu/" class="">
+        
+    Fiber Optic Testing          </a>
+  </li>
+
+<li data-id="62065" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Frequency-Counters/_/N-7uqig/" class="">
+        
+    Frequency Counters          </a>
+  </li>
+
+<li data-id="62066" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Function-Generators-Synthesizers/_/N-5gf6/" class="">
+        
+    Function Generators &amp; Synthesizers          </a>
+  </li>
+
+<li data-id="62067" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Insulation-Testers-Megohmmeters/_/N-7uqoy/" class="">
+        
+    Insulation Testers / Megohmmeters          </a>
+  </li>
+
+<li data-id="62068" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/LAN-Telecom-Cable-Testing/_/N-7uqj3/" class="">
+        
+    LAN/Telecom/Cable Testing          </a>
+  </li>
+
+<li data-id="62069" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Multimeters-Voltmeters/_/N-5gfo/" class="">
+        
+    Multimeters &amp; Voltmeters          </a>
+  </li>
+
+<li data-id="62070" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Oscilloscopes/_/N-5gff/" class="">
+        
+    Oscilloscopes          </a>
+  </li>
+
+<li data-id="62071" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Panel-Meters/_/N-5gfl/" class="">
+        
+    Panel Meters          </a>
+  </li>
+
+<li data-id="62072" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/RF-Test-Equipment/_/N-7uqjq/" class="">
+        
+    RF Test Equipment          </a>
+  </li>
+
+<li data-id="62073" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Source-Measure-Units-SMUs/_/N-bdf1y/" class="">
+        
+    Source Measure Units - SMUs          </a>
+  </li>
+
+<li data-id="62074" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Test-Equipment-Accessories/_/N-7uqcs/" class="">
+        
+    Test Equipment Accessories          </a>
+  </li>
+
+<li data-id="62075" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Test-Equipment-Power-Cords/_/N-94z0n/" class="">
+        
+    Test Equipment Power Cords          </a>
+  </li>
+
+<li data-id="62076" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Thermal-Imagers/_/N-9hnot/" class="">
+        
+    Thermal Imagers          </a>
+  </li>
+
+<li data-id="62077" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Test-Measurement/Timers/_/N-budsy/" class="">
+        
+    Timers          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61866" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/_/N-5g1y/" class="dropdown-toggle">
+        
+    Industrial Automation          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-9" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-9">
+  <li data-id="61974" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Controllers/_/N-5g1z/" class="">
+        
+    Controllers          </a>
+  </li>
+
+<li data-id="61975" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Counters-Tachometers/_/N-budip/" class="">
+        
+    Counters &amp; Tachometers          </a>
+  </li>
+
+<li data-id="61976" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Input-Devices/_/N-5g20/" class="">
+        
+    Input Devices          </a>
+  </li>
+
+<li data-id="61977" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Power/_/N-b12pp/" class="">
+        
+    Power          </a>
+  </li>
+
+<li data-id="61978" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Relays-Solenoids/_/N-b12kx/" class="">
+        
+    Relays &amp; Solenoids          </a>
+  </li>
+
+<li data-id="61979" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Sensors/_/N-b12pu/" class="">
+        
+    Sensors          </a>
+  </li>
+
+<li data-id="61980" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Switches/_/N-b12q0/" class="">
+        
+    Switches          </a>
+  </li>
+
+<li data-id="61981" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Terminal-Blocks/_/N-b12q9/" class="">
+        
+    Terminal Blocks          </a>
+  </li>
+
+<li data-id="61982" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Electromechanical/Industrial-Automation/Timers/_/N-budh3/" class="">
+        
+    Timers          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61870" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://in.mouser.com/Power/_/N-5gbh/" class="dropdown-toggle">
+        
+    Power          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-10" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-15">
+  <li data-id="62015" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/AC-Power-Cords/_/N-6g7lo/" class="">
+        
+    AC Power Cords          </a>
+  </li>
+
+<li data-id="62016" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/AC-Power-Entry-Modules/_/N-6g7mp/" class="">
+        
+    AC Power Entry Modules          </a>
+  </li>
+
+<li data-id="62017" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/AC-Power-Plugs-Receptacles/_/N-a9sg5/" class="">
+        
+    AC Power Plugs &amp; Receptacles          </a>
+  </li>
+
+<li data-id="62018" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/_/N-5gbh/" class="">
+        
+    Batteries          </a>
+  </li>
+
+<li data-id="62019" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Battery-Chargers/_/N-5gca/" class="">
+        
+    Battery Chargers          </a>
+  </li>
+
+<li data-id="62020" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Battery-Holders-Clips-Contacts/_/N-cicxg/" class="">
+        
+    Battery Holders, Clips &amp; Contacts          </a>
+  </li>
+
+<li data-id="62021" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Power/Bench-Top-Power-Supplies/_/N-wp4b/" class="">
+        
+    Bench Top Power Supplies
+          </a>
+  </li>
+
+<li data-id="62022" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/DC-Power-Connectors/_/N-6g7mo/" class="">
+        
+    DC Power Connectors          </a>
+  </li>
+
+<li data-id="62023" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/DC-DC-Converters/_/N-brvxe/" class="">
+        
+    DC/DC Converters          </a>
+  </li>
+
+<li data-id="62024" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Power-Condition/_/N-axgms/" class="">
+        
+    Power Condition          </a>
+  </li>
+
+<li data-id="62025" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Power-Inverters/_/N-brvw6/" class="">
+        
+    Power Inverters          </a>
+  </li>
+
+<li data-id="62026" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.in/Power/Power-Management-ICs/_/N-6g7lv/" class="">
+        
+    Power Management ICs          </a>
+  </li>
+
+<li data-id="62027" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Power-Supplies/_/N-axgi2/" class="">
+        
+    Power Supplies          </a>
+  </li>
+
+<li data-id="62028" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Supercapacitors/_/N-6uivw/" class="">
+        
+    Supercapacitors          </a>
+  </li>
+
+<li data-id="62029" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Power/Transformers/_/N-8u9mo/" class="">
+        
+    Transformers          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61861" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Connectors/_/N-5g3y/" class="dropdown-toggle">
+        
+    Connectors          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-11" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-27">
+  <li data-id="61892" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Connectors/AC-Power-Line-Filters/_/N-71w5m/" class="">
+        
+    AC Power Line Filters
+          </a>
+  </li>
+
+<li data-id="61893" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Audio-Video-Connectors/_/N-778ct/" class="">
+        
+    Audio &amp; Video Connectors          </a>
+  </li>
+
+<li data-id="61894" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Automotive-Connectors/_/N-1ehb5/" class="">
+        
+    Automotive Connectors          </a>
+  </li>
+
+<li data-id="61895" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Backplane-Connectors/_/N-axj5g/" class="">
+        
+    Backplane Connectors          </a>
+  </li>
+
+<li data-id="61896" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Board-to-Board-Mezzanine-Connectors/_/N-ay0kr/" class="">
+        
+    Board to Board &amp; Mezzanine Connectors          </a>
+  </li>
+
+<li data-id="61897" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Card-Edge-Connectors/_/N-axj76/" class="">
+        
+    Card Edge Connectors          </a>
+  </li>
+
+<li data-id="61898" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Circular-Connectors/_/N-76q5a/" class="">
+        
+    Circular Connectors          </a>
+  </li>
+
+<li data-id="61899" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Data-Bus-Components/_/N-a9u8u/" class="">
+        
+    Data Bus Components          </a>
+  </li>
+
+<li data-id="61900" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/D-Sub-Connectors/_/N-9gxxm/" class="">
+        
+    D-Sub Connectors          </a>
+  </li>
+
+<li data-id="61901" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/FFC-FPC/_/N-axjog/" class="">
+        
+    FFC / FPC          </a>
+  </li>
+
+<li data-id="61902" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.in/Connectors/Fiber-Optic-Connectors/_/N-bszko/" class="">
+        
+    Fiber Optic Connectors          </a>
+  </li>
+
+<li data-id="61903" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Headers-Wire-Housings/_/N-ay0lo/" class="">
+        
+    Headers &amp; Wire Housings          </a>
+  </li>
+
+<li data-id="61904" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/I-O-Connectors/_/N-1yrnl/" class="">
+        
+    I/O Connectors          </a>
+  </li>
+
+<li data-id="61905" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/IC-Component-Sockets/_/N-211lk/" class="">
+        
+    IC &amp; Component Sockets          </a>
+  </li>
+
+<li data-id="61906" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/IEEE-1394-Connectors/_/N-88hnv/" class="">
+        
+    IEEE 1394 Connectors          </a>
+  </li>
+
+<li data-id="61907" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Junction-Systems/_/N-aa8e0/" class="">
+        
+    Junction Systems          </a>
+  </li>
+
+<li data-id="61908" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Lighting-Connectors/_/N-74w3v/" class="">
+        
+    Lighting Connectors          </a>
+  </li>
+
+<li data-id="61909" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Memory-Connectors/_/N-axj7o/" class="">
+        
+    Memory Connectors          </a>
+  </li>
+
+<li data-id="61910" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Modular-Connectors-Ethernet-Connectors/_/N-wos3/" class="">
+        
+    Modular Connectors / Ethernet Connectors          </a>
+  </li>
+
+<li data-id="61911" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Pin-Socket-Connectors/_/N-ay0mm/" class="">
+        
+    Pin &amp; Socket Connectors          </a>
+  </li>
+
+<li data-id="61912" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Power-Connectors/_/N-axip3/" class="">
+        
+    Power Connectors          </a>
+  </li>
+
+<li data-id="61913" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/RF-Interconnects/_/N-89mc7/" class="">
+        
+    RF Interconnects          </a>
+  </li>
+
+<li data-id="61914" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Solar-Connectors-Photovoltaic-Connectors/_/N-79syi/" class="">
+        
+    Solar Connectors / Photovoltaic Connectors          </a>
+  </li>
+
+<li data-id="61915" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Terminal-Blocks/_/N-7rqal/" class="">
+        
+    Terminal Blocks          </a>
+  </li>
+
+<li data-id="61916" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Terminals/_/N-5g5u/" class="">
+        
+    Terminals          </a>
+  </li>
+
+<li data-id="61917" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Connectors/Unspecified-Connectors/_/N-worp/" class="">
+        
+    Unspecified Connectors          </a>
+  </li>
+
+<li data-id="61918" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Connectors/USB-Connectors/_/N-88hmf/" class="">
+        
+    USB Connectors          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61868" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Optoelectronics/_/N-5g5v/" class="dropdown-toggle">
+        
+    Optoelectronics          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-12" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-14">
+  <li data-id="61988" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Backlighting-Components/_/N-6hpc8/" class="">
+        
+    Backlighting Components          </a>
+  </li>
+
+<li data-id="61989" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Displays/_/N-6j734/" class="">
+        
+    Displays          </a>
+  </li>
+
+<li data-id="61990" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Drivers/_/N-7zi3j/" class="">
+        
+    Drivers          </a>
+  </li>
+
+<li data-id="61991" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Fiber-Optics/_/N-6qrgd/" class="">
+        
+    Fiber Optics          </a>
+  </li>
+
+<li data-id="61992" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Infrared-Data-Communications/_/N-6qrgf/" class="">
+        
+    Infrared Data Communications          </a>
+  </li>
+
+<li data-id="61993" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Lamps-Holders/_/N-5g6p/" class="">
+        
+    Lamps &amp; Holders          </a>
+  </li>
+
+<li data-id="61994" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Lasers/_/N-6hpbm/" class="">
+        
+    Lasers          </a>
+  </li>
+
+<li data-id="61995" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.in/Optoelectronics/LED-Indication/_/N-b1d1k/" class="">
+        
+    LED Indication          </a>
+  </li>
+
+<li data-id="61996" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Emitters/_/N-ec209/" class="">
+        
+    LED Lighting          </a>
+  </li>
+
+<li data-id="61997" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Optoelectronics/LED-Projectors/_/N-74ga3/" class="">
+        
+    LED Projectors
+          </a>
+  </li>
+
+<li data-id="61998" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Optoelectronics/Lighting-Connectors/_/N-byaho/" class="">
+        
+    Lighting Connectors
+          </a>
+  </li>
+
+<li data-id="61999" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.in/Optoelectronics/Optical-Detectors-and-Sensors/_/N-6jju9/" class="">
+        
+    Optical Detectors and Sensors          </a>
+  </li>
+
+<li data-id="62000" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Optical-Switches/_/N-abusc/" class="">
+        
+    Optical Switches          </a>
+  </li>
+
+<li data-id="62001" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/Optocouplers-Photocouplers/_/N-6x5ji/" class="">
+        
+    Optocouplers / Photocouplers          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61867" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Lighting/_/N-74g9t/" class="dropdown-toggle">
+        
+    LED Lighting          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-13" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-5">
+  <li data-id="61983" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Lighting/LED-Bulbs-Modules/_/N-b1a3c/" class="">
+        
+    LED Bulbs &amp; Modules          </a>
+  </li>
+
+<li data-id="61984" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Lighting/LED-Emitters/_/N-8usfd/" class="">
+        
+    LED Emitters          </a>
+  </li>
+
+<li data-id="61985" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Lighting/LED-Lighting-Electronics/_/N-b1a48/" class="">
+        
+    LED Lighting Electronics          </a>
+  </li>
+
+<li data-id="61986" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Lighting/LED-Lighting-Mechanical/_/N-b1a4p/" class="">
+        
+    LED Lighting Mechanical          </a>
+  </li>
+
+<li data-id="61987" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Optoelectronics/LED-Lighting/LED-Lighting-Optics/_/N-b1a4z/" class="">
+        
+    LED Lighting Optics          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61865" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Semiconductors/Engineering-Development-Tools/_/N-6hpeq/" class="dropdown-toggle">
+        
+    Engineering Tools          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-14" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-23">
+  <li data-id="61951" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Active-Filter-Development-Tools/_/N-8n2w2/" class="">
+        
+    Active Filter Development Tools
+          </a>
+  </li>
+
+<li data-id="61952" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Amplifier-IC-Development-Tools/_/N-8n2xk/" class="">
+        
+    Amplifier IC Development Tools
+          </a>
+  </li>
+
+<li data-id="61953" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Antenna-Development-Tools/_/N-8n2z3/" class="">
+        
+    Antenna Development Tools
+          </a>
+  </li>
+
+<li data-id="61954" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Audio-IC-Development-Tools/_/N-8nd9y/" class="">
+        
+    Audio IC Development Tools
+          </a>
+  </li>
+
+<li data-id="61955" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Clock-Timer-Development-Tools/_/N-8n30o/" class="">
+        
+    Clock &amp; Timer Development Tools
+          </a>
+  </li>
+
+<li data-id="61956" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Data-Conversion-IC-Development-Tools/_/N-8n329/" class="">
+        
+    Data Conversion IC Development Tools
+          </a>
+  </li>
+
+<li data-id="61957" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.in/Semiconductors/Engineering-Development-Tools/Development-Software/_/N-6hpet/" class="">
+        
+    Development Software          </a>
+  </li>
+
+<li data-id="61958" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Digital-Potentiometer-Development-Tools/_/N-8n33v/" class="">
+        
+    Digital Potentiometer Development Tools
+          </a>
+  </li>
+
+<li data-id="61959" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Display-Development-Tools/_/N-8nz7l/" class="">
+        
+    Display Development Tools
+          </a>
+  </li>
+
+<li data-id="61960" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Embedded-Processor-Development-Tools/_/N-8x1tw/" class="">
+        
+    Embedded Processor Development Tools
+          </a>
+  </li>
+
+<li data-id="61961" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Ethernet-Communication-Development-Tools/_/N-8pcv2/" class="">
+        
+    Ethernet &amp; Communication Development Tools
+          </a>
+  </li>
+
+<li data-id="61962" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Engineering-Development-Tools/Fiber-Optic-Development-Tools/_/N-d0wso/" class="">
+        
+    Fiber Optic Development Tools          </a>
+  </li>
+
+<li data-id="61963" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Interface-Development-Tools/_/N-93rrr/" class="">
+        
+    Interface Development Tools
+          </a>
+  </li>
+
+<li data-id="61964" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Engineering-Development-Tools/LED-Lighting-Development-Tools/_/N-8nddk/" class="">
+        
+    LED Lighting Development Tools          </a>
+  </li>
+
+<li data-id="61965" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Memory-IC-Development-Tools/_/N-8n35n/" class="">
+        
+    Memory IC Development Tools
+          </a>
+  </li>
+
+<li data-id="61966" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Other-Development-Tools/_/N-8t4lj/" class="">
+        
+    Other Development Tools
+          </a>
+  </li>
+
+<li data-id="61967" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Engineering-Development-Tools/Power-Management-IC-Development-Tools/_/N-8t4jf/" class="">
+        
+    Power Management IC Development Tools          </a>
+  </li>
+
+<li data-id="61968" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Programmable-Logic-IC-Development-Tools/_/N-8mxdv/" class="">
+        
+    Programmable Logic IC Development Tools
+          </a>
+  </li>
+
+<li data-id="61969" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Engineering-Development-Tools/RF-Wireless-Development-Tools/_/N-90oqw/" class="">
+        
+    RF / Wireless Development Tools          </a>
+  </li>
+
+<li data-id="61970" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Security-Authentication-Development-Tools/_/N-8n37b/" class="">
+        
+    Security / Authentication Development Tools
+          </a>
+  </li>
+
+<li data-id="61971" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Semiconductors/Engineering-Development-Tools/Sensor-Development-Tools/_/N-8qcty/" class="">
+        
+    Sensor Development Tools          </a>
+  </li>
+
+<li data-id="61972" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Switch-IC-Development-Tools/_/N-8nzdm/" class="">
+        
+    Switch IC Development Tools
+          </a>
+  </li>
+
+<li data-id="61973" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://in.mouser.com/Semiconductors/Engineering-Development-Tools/Video-IC-Development-Tools/_/N-8nljf/" class="">
+        
+    Video IC Development Tools          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61876" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Wire-Cable/_/N-5ggl/" class="dropdown-toggle">
+        
+    Wire &amp; Cable          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-15" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-8">
+  <li data-id="62096" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Cable-Assemblies/_/N-bkre6/" class="">
+        
+    Cable Assemblies          </a>
+  </li>
+
+<li data-id="62097" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Coaxial-Cables/_/N-5ggp/" class="">
+        
+    Coaxial Cables          </a>
+  </li>
+
+<li data-id="62098" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/FFC-FPC-Jumper-Cables/_/N-ad930/" class="">
+        
+    FFC / FPC Jumper Cables          </a>
+  </li>
+
+<li data-id="62099" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Fiber-Optic/_/N-axgnc/" class="">
+        
+    Fiber Optic          </a>
+  </li>
+
+<li data-id="62100" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Flat-Cables/_/N-5ggm/" class="">
+        
+    Flat Cables          </a>
+  </li>
+
+<li data-id="62101" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Hook-up-Wire/_/N-5ggs/" class="">
+        
+    Hook-up Wire          </a>
+  </li>
+
+<li data-id="62102" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Multi-Conductor-Paired-Cables/_/N-9lx96/" class="">
+        
+    Multi-Conductor &amp; Paired Cables          </a>
+  </li>
+
+<li data-id="62103" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Wire-Cable/Wire-Protection-Management/Wire-Identification/_/N-apvo7/" class="">
+        
+    Wire Protection &amp; Management          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="61875" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="http://www.mouser.com/Tools-Supplies/_/N-5gg1/" class="dropdown-toggle">
+        
+    Tools &amp; Supplies          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-16" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-2 items-9">
+  <li data-id="62087" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Adhesive-Tapes/_/N-wp6v/" class="">
+        
+    Adhesive Tapes          </a>
+  </li>
+
+<li data-id="62088" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Anti-Static-Control-Products/_/N-5gg4/" class="">
+        
+    Anti-Static Control Products          </a>
+  </li>
+
+<li data-id="62089" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Chemicals/_/N-wp63/" class="">
+        
+    Chemicals          </a>
+  </li>
+
+<li data-id="62090" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Liquid-Dispensers-Bottles/_/N-a3agx/" class="">
+        
+    Labels and Industrial Warning Signs          </a>
+  </li>
+
+<li data-id="62091" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.in/Tools-Supplies/Liquid-Dispensers-Bottles/_/N-a3agx/" class="">
+        
+    Liquid Dispensers &amp; Bottles          </a>
+  </li>
+
+<li data-id="62092" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Prototyping-Products/_/N-b11oh/" class="">
+        
+    Prototyping Products          </a>
+  </li>
+
+<li data-id="62093" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Soldering/_/N-b11q6/" class="">
+        
+    Soldering          </a>
+  </li>
+
+<li data-id="62094" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Storage-Boxes-Cases/_/N-11ums/" class="">
+        
+    Storage Boxes &amp; Cases          </a>
+  </li>
+
+<li data-id="62095" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="http://www.mouser.com/Tools-Supplies/Storage-Boxes-Cases/_/N-11ums/" class="">
+        
+    Tools          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="24342" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega dropdown">
+  <a href="http://www.engineersgarage.com/contribution" class="dropdown-toggle">
+        
+    Knowledge Base          <span class="caret"></span>
+          </a>
+  <div data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div class="tb-megamenu-row row-fluid">
+  <div data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-18" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul class="tb-megamenu-subnav mega-nav level-1 items-6">
+  <li data-id="18979" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/contribution" class="">
+        
+    Projects          </a>
+  </li>
+
+<li data-id="24343" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/mygarage" class="">
+        
+    Blogs          </a>
+  </li>
+
+<li data-id="33009" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/how_to" class="">
+        
+    How to          </a>
+  </li>
+
+<li data-id="39688" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/c-language-programs" class="">
+        
+    C-Programs          </a>
+  </li>
+
+<li data-id="68378" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/sponsored-content" class="">
+        
+    Sponsored Content          </a>
+  </li>
+
+<li data-id="68393" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega">
+  <a href="http://www.engineersgarage.com/news" class="">
+        
+    News          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li data-id="57990" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/submit" class="">
+        
+    Contribute          </a>
+  </li>
+
+<li data-id="29148" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/advertise-us" class="">
+        
+    Advertise          </a>
+  </li>
+
+<li data-id="1101" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://www.engineersgarage.com/contact" class="">
+        
+    Contact Us          </a>
+  </li>
+</ul>
+      </div>
+  </div>
+    </div>
+  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#MAIN NAV -->
+  
+      <!-- SLIDESHOW -->
+    <div id="slideshow-wrapper" class="wrapper">
+      <div class="container grid-24">
+        <div class="grid-inner clearfix">
+            <div class="region region-slideshow">
+    <div id="block-block-32" class="block block-block">
+  <div class="block-inner clearfix">
+    
+    
+    
+    <div class="block-content clearfix">
+      <p style="text-align: center;"><span style="font-family: Arial;"><span style="font-family: Arial;"><span style="font-size: medium;"><span style="color: rgb(51, 102, 255);"><a href="http://www.engineersgarage.com/microcontroller/arduino-projects">Arduino Projects</a>&nbsp;&nbsp;</span></span><span style="color: rgb(0, 0, 0);"><span style="font-size: medium;">&nbsp;</span></span></span></span><span style="color: rgb(51, 102, 255);"><span style="font-family: Arial;"><span style="font-family: Arial;"><font size="3"><span style="font-size: medium;">| &nbsp;&nbsp;</span></font></span></span></span><span style="color: rgb(51, 102, 255);"><span style="font-family: Arial;"><span style="font-family: Arial;"><span><span style="color: rgb(51, 102, 255); font-size: medium;"><font size="3"><a href="http://www.engineersgarage.com/embedded/raspberry-pi" style="color: rgb(51, 102, 255);">Raspberry Pi</a>&nbsp;</font></span></span><font size="3">&nbsp;&nbsp;<span style="font-size: medium;">|</span>&nbsp; &nbsp;</font></span></span></span><span style="font-family: Arial;"><span style="font-family: Arial;"><span style="font-size: medium;"><a href="http://www.engineersgarage.com/electronic-circuits"><span style="color: rgb(51, 102, 255);">Electronic Circuits</span></a></span></span></span><span style="font-size: 16px; font-family: Arial; line-height: 1; color: rgb(51, 102, 255);"><span style="font-size: medium;">&nbsp; &nbsp;| &nbsp;&nbsp;</span></span><span style="font-size: 16px; font-family: Arial; line-height: 1; color: rgb(51, 102, 255);"><a href="http://www.engineersgarage.com/embedded/avr-microcontroller-projects" style="color: rgb(51, 102, 255);"><span style="font-size: medium;">AVR</span></a></span><span style="font-size: 16px; font-family: Arial; line-height: 1; color: rgb(51, 102, 255);"><span style="font-size: medium;">&nbsp;&nbsp;</span><font size="3">&nbsp;<span style="font-size: medium;">|</span>&nbsp; &nbsp;</font></span><span style="font-size: medium; font-family: Arial; line-height: 1; color: rgb(51, 102, 255);"><a href="http://www.engineersgarage.com/embedded/pic-microcontroller-projects" style="font-size: medium; font-family: Arial; line-height: 1;">PIC</a>&nbsp;</span><span style="font-size: 16px; font-family: Arial; line-height: 1; color: rgb(51, 102, 255);"><font size="3">&nbsp; <span style="font-size: medium;">|</span>&nbsp; &nbsp;</font></span><span style="font-size: medium; font-family: Arial; line-height: 1;"><a href="http://www.engineersgarage.com/microcontroller/8051projects"><span style="color: rgb(51, 102, 255);">8051</span></a></span><span style="font-size: 16px; font-family: Arial; line-height: 1; color: rgb(51, 102, 255);"><span style="font-size: medium;">&nbsp; &nbsp;| &nbsp;&nbsp;</span></span><span style="font-size: medium; font-family: Arial; line-height: 1;"><a href="http://www.engineersgarage.com/contribution"><span style="color: rgb(51, 102, 255);">Electronic Projects</span></a></span></p>    </div>
+  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#SLIDESHOW -->
+    
+   
+  
+  <div id="main-wrapper" class="wrapper">
+  <!-- Bottom Ad SECOND -->
+  			<div style="width:13%; height:615px; display:block; position:fixed; right:0px; bottom:0;">
+			  <div class="region region-rightsidebarad">
+    <div id="block-block-64" class="block block-block">
+  <div class="block-inner clearfix">
+    
+    
+    
+    <div class="block-content clearfix">
+      <style type="text/css">
+#page {width: 90%;}</style>
+<!-- Skyscraper -->
+<div id="div-gpt-ad-1418110654679-3" style="width:160px; height:600px;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418110654679-3'); });
+</script>
+<div id="google_ads_iframe_/34225710/skyscraper_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/34225710/skyscraper_0" title="3rd party ad content" name="google_ads_iframe_/34225710/skyscraper_0" width="160" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div></div>    </div>
+  </div>
+</div>
+  </div>
+ 
+		</div>
+	    <!-- //Bottom Ad SECOND -->
+    <div class="container grid-24">
+      <div class="container-inner clearfix">
+        <div class="group-cols-1 group-19 grid grid-19">
+          <div class="group-inner clearfix">
+            <!-- Main Content -->
+            <div id="main-content" class="tb-main-box grid grid-19 section">
+              <div class="grid-inner clearfix">
+
+				                                  <h1 id="page-title">Introduction to ARM7 Based Microcontroller (LPC2148)</h1>
+                
+                
+
+                
+                
+                
+                				   <div class="region region-content">
+    <div id="block-system-main" class="block-system">
+  <div class="block-inner clearfix">
+    
+    
+    
+    <div class="block-content clearfix">
+      <div id="article-59096" class="article node node-arm node-odd node-full clearfix">
+  
+  
+  <div class="node-content">
+    <div class="field-group-htabs-wrapper group-all-htabs-arm field-group-htabs"><h2 class="element-invisible">Group all Htabs ARM</h2><div class="horizontal-tabs-panes"><div class="section field field-name-field-ad-summary-top field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item odd"><!-- Leaderboard-Top -->
+<div id="div-gpt-ad-1418110654679-2" style="width:728px; height:90px;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418110654679-2'); });
+</script><iframe src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/container.html" style="visibility: hidden; display: none;"></iframe>
+<div id="google_ads_iframe_/34225710/leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/34225710/leaderboard_0" title="3rd party ad content" name="google_ads_iframe_/34225710/leaderboard_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div></div></div></div></div><fieldset class="collapsible collapsed fieldset form-wrapper titled">
+      <legend>
+      <span class="fieldset-title fieldset-legend">
+        Summary      </span>
+    </legend>
+  
+      <div class="fieldset-content fieldset-wrapper clearfix">
+      <div class="description"></div><div class="section field field-name-field-developed-by field-type-text field-label-inline clearfix"><h3 class="field-label">Developed By:&nbsp;</h3><div class="field-items"><div class="field-item odd">Dishant Shah</div></div></div><div class="section field field-name-field-summary field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item odd"><div><p><span>Increasingly, embedded systems developers and system-on-chip designers select specificmicroprocessor cores and a family of tools, libraries, and off-the-shelf components toquickly develop new microprocessor-based products and applications. ARM is one of the major options available for embedded system developer.</span></p><p>&nbsp;</p><p>Over the last few years, the ARM architecture has become the most pervasive 32-bitarchitecture in the world, with wide range of ICs available from various IC manufacturers. <a href="http://www.engineersgarage.com/articles/arm-advanced-risc-machines-processors">ARM processors</a> are embedded in products ranging from cell/mobilephones to automotive braking systems. A worldwide community of ARM partners andthird-party vendors has developed among semiconductor and product design companies,including hardware engineers, system designers, and software developers.</p><p>&nbsp;</p><p>ARM7 is one of the widely used micro-controller family in embedded system application. This section is humble effort for explaining basic features of ARM-7.</p><p>&nbsp;</p><p><strong>ARM</strong>&nbsp;is a family of instruction set architectures&nbsp;for computer processors&nbsp;based on a reduced instruction set computing&nbsp;(RISC) architecture&nbsp;developed by British company ARM Holdings.</p><p>A RISC-based computer design approach means ARM processors require significantly fewer transistors than typical processors in average computers. This approach reduces costs, heat and power use. These are desirable traits for light, portable, battery-powered devices—including smartphones, laptops, tablet&nbsp;and notepad computers), and other <a href="http://www.engineersgarage.com/articles/embedded-systems">embedded systems</a>. A simpler design facilitates more efficient multi-core&nbsp;CPUs and higher core counts at lower cost, providing higher processing power and improved energy efficiency for servers and supercomputers.</p><p>&nbsp;</p><p><strong><u>SOME FACTS YOU MUST KNOW</u></strong></p><p>In 2005, about 98% of all mobile phones sold used at least one ARM processor.&nbsp;The low power consumption of ARM processors has made them very popular: 37&nbsp;billion ARM processors have been produced as of 2013, up from 10&nbsp;billion in 2008.&nbsp;The ARM architecture (32-bit) is the most widely used architecture in mobile devices, and most popular 32-bit one in embedded systems.</p><p>According to ARM Holdings, in 2010 alone, producers of chips based on ARM architectures reported shipments of 6.1&nbsp;billion ARM Based processors, representing 95% of smartphones,&nbsp;35% of digital televisions and set-top boxes&nbsp;and 10% of mobile computers. It is the most widely used 32-bit instruction set architecture in terms of quantity produced.</p><p>&nbsp;</p><p><strong><u>LET’S START WITH LPC 2148</u></strong></p><p><strong>LPC2148 </strong>is the widely used IC from ARM-7 family. It is manufactured by Philips and it is pre-loaded with many inbuilt peripherals making it more efficient and a reliable option for the beginners as well as high end application developer.</p><div>&nbsp;</div><div><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/lpc2148.jpg" style="font-size: 14px; background-color: rgb(255, 255, 255); font-family: &#39;times new roman&#39;, times, serif; line-height: 32px; text-align: justify; float: left;"></div><div><span style="font-size:14px;"><span style="line-height: 1;">Let us go through the </span><strong style="font-size: 16px; line-height: 1;">features&nbsp;of LPC214x series controllers</strong></span><span style="font-size: 16px; line-height: 1;">.</span></div><p>&nbsp;</p><p><strong>• </strong>8 to 40 kB of on-chip static RAM and 32 to 512 kB of on-chip flash program memory.128 bit wide interface/accelerator enables high speed 60 MHz operation.</p><p><strong>• </strong>In-System/In-Application Programming (ISP/IAP) via on-chip boot-loader software.Single flash sector or full chip erase in 400 ms and programming of 256 bytes in 1ms.</p><p><strong>• </strong>EmbeddedICE RT and Embedded Trace interfaces offer real-time debugging with theon-chip RealMonitor software and high speed tracing of instruction execution.</p><p><strong>• </strong>USB 2.0 Full Speed compliant Device Controller with 2 kB of endpoint RAM.In addition, the LPC2146/8 provides 8 kB of on-chip RAM accessible to USB by DMA.</p><p><strong>• </strong>One or two (<strong>LPC2141/2 vs. LPC2144/6/8</strong>) 10-bit A/D converters provide a total of 6/14analog inputs, with conversion times as low as 2.44 us per channel.</p><p><strong>• </strong>Single 10-bit D/A converter provides variable analog output.</p><p><strong>• </strong>Two 32-bit timers/external event counters (with four capture and four comparechannels each), PWM unit (six outputs) and watchdog.</p><p><strong>• </strong>Low power real-time clock with independent power and dedicated 32 kHz clock input.</p><p><strong>• </strong>Multiple serial interfaces including two UARTs (16C550), two Fast I2C-bus(400 kbit/s), SPI and SSP with buffering and variable data length capabilities.</p><p><strong>• </strong>Vectored interrupt controller with configurable priorities and vector addresses.</p><p><strong>• </strong>Up to 45 of 5 V tolerant fast general purpose I/O pins in a tiny LQFP64 package.</p><p><strong>• </strong>Up to nine edge or level sensitive external interrupt pins available.</p><p><strong>• </strong>On-chip integrated oscillator operates with an external crystal in range from 1 MHz to30 MHz and with an external oscillator up to 50 MHz.</p><p><strong>• </strong>Power saving modes include Idle and Power-down.</p><p><strong>• </strong>Individual enable/disable of peripheral functions as well as peripheral clock scaling foradditional power optimization.</p><p><strong>• </strong>Processor wake-up from Power-down mode via external interrupt, USB, Brown-OutDetect (BOD) or Real-Time Clock (RTC).</p><p><strong>• </strong>Single power supply chip with Power-On Reset (POR) and BOD circuits:</p><p><strong>– </strong>CPU operating voltage range of 3.0 V to 3.6 V (3.3 V ± 10 %) with 5 V tolerant I/Opads.</p><p>&nbsp;</p><p><sup>* adopted from datasheet of LPC 2148. Each inbuilt peripheral will be explained in brief later on.</sup></p><p>&nbsp;</p><p>The list of feature is enough to explain why it has covered such a huge market for high end applications such as mobile phones, tablets etc.</p><p>&nbsp;</p><p><strong><u>FIRST STEP- HARDWARE REQUIREMENT</u></strong></p><p>&nbsp;</p><p>Here is the <strong>pin configuration of LPC 2148</strong>.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/LPC2148-Pin-Diagram.jpg" alt="LPC2148 Pin Diagram" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>Now let us start with the hardware requirement of LPC2148.</p><p>LPC2148 need minimum below listed hardware to work properly.</p><p>&nbsp;</p><p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Power Supply</p><p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crystal Oscillator</p><p>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reset Circuit</p><p>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RTC crystal oscillator (This is not necessary if you are not using RTC. However this is considered as necessary requirement)</p><p>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UART</p><p>&nbsp;</p><p><strong>1.&nbsp;</strong><strong>Power Supply</strong></p><p>LPC2148 works on 3.3 V power supply. LM 117 can be used for generating 3.3 V supply. However, basic peripherals like LCD, ULN 2003 (Motor Driver IC) etc. works on 5V. So AC mains supply is converted into 5V using below mentioned circuit and after that LM 117 is used to convert 5V into 3.3V.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/power-supply-block-diagram.jpg" alt="Power Supply Block Diagram" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p>Block diagram for power supply is given below.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p><strong>Transformer:</strong>It is used to step down 230V AC to 9V AC supply and provides isolation between power grids and circuit.</p><p>&nbsp;</p><p><strong>Rectifier: </strong>It is used to convert AC supply into DC.</p><p>&nbsp;</p><p><strong>Filter:</strong>It is used to reduce ripple factor of DC output available from rectifier end.</p><p>&nbsp;</p><p><strong>Regulator:</strong>It is used to regulate DC supply output.</p><p>Circuit for this is as shown below.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/Regulator.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p>Here, Regulator IC 7805 is used to provide fix 5V dc supply.</p><p>&nbsp;</p><p>Now we can use LM 117 for generating 3.3V supply from 5V using below circuit.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/LM-117.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><h3>Calculations</h3><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/Calculations.gif" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p><strong>2.&nbsp;</strong><strong>Reset Circuit</strong></p><p>&nbsp;</p><p>Reset button is essential in a system to avoid programming pitfalls and sometimes to manually bring back the system to the initialization mode. Circuit diagram for reset is as shown below.</p><p>&nbsp;</p><p>MCP 130T is a special IC used for providing stable RESET signal to LPC 2148.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/Reset-Circuit.jpg" alt="Reset Circuit" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p><strong>3.&nbsp;</strong><strong>Oscillator Circuit</strong></p><p>Oscillations, the heartbeat, are provided using a crystal and are necessary for the system to work.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/Oscillator-Circuit.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p>The value of capacitors C20 &amp; C21 depends upon the frequency of crystal Y3. General circuit and its equivalent circuit is as shown below.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/general-circuit.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p>Recommended values are as shown in table.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/Recommended-Values.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p>We can also use external oscillator for providing system clock. Circuit for this application is as given below.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/system-clock.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p><strong>4.&nbsp;</strong><strong>RTC Oscillator Circuit</strong></p><p>It provides clock for RTC operation.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/rtc-circuit.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p><strong>5.&nbsp;</strong><strong>UART</strong></p><p>LPC 2148 has inbuilt ISP which means we can program it within the system using serial communication on COM0. It has also COM1 for serial communication. MAX 232/233 IC must be used for voltage logic conversion. Related connections are as given below.</p><p><span class="wysiwyg_imageupload image imgupl_floating_none 0"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/UART.jpg" alt="" title="" class="imagecache wysiwyg_imageupload 0 imagecache imagecache-Original" style=""></span></p><p>&nbsp;</p><p>Once above listed circuit design is ready, we are ready to go further.</p><p>&nbsp;</p></div></div></div></div>    </div>
+  </fieldset>
+<fieldset class="collapsible collapsed group-body-tab-arm field-group-htab fieldset form-wrapper titled">
+      <legend>
+      <span class="fieldset-title fieldset-legend">
+        Description      </span>
+    </legend>
+  
+      <div class="fieldset-content fieldset-wrapper clearfix">
+      <div class="description"></div><div class="section field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item odd"></div></div></div>    </div>
+  </fieldset>
+</div></div><div class="easy_social_box clearfix horizontal easy_social_lang_und">
+            <div class="easy_social-widget easy_social-widget-facebook first"><iframe src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/like(1).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:88px; height:21px;" allowtransparency="true"></iframe></div>
+          <div class="easy_social-widget easy_social-widget-googleplus"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1460888375468" name="I1_1460888375468" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></div>
+          <div class="easy_social-widget easy_social-widget-twitter last"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/tweet_button.fd774b599f565016d763dd860cb31c79.en.html" style="position: absolute; visibility: hidden; width: 0px; height: 0px;" data-url="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148"></iframe></div>
+  </div> <!-- /.easy_social_box -->  </div>
+
+      <div class="menu node-links clearfix"><ul class="links inline"><li class="statistics_counter first last"><span>84288 reads</span></li>
+</ul></div>
+  
+  </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+                              </div>
+               
+            </div>
+          <!-- //Main Content -->
+          
+                <!-- Bottom Ad SECOND -->
+            
+  						<div id="adbottom_wrapper" class="wrapper" style="margin-left: -11px;">  
+    						<div class="container grid-24">  
+      							<div class="grid-inner clearfix">  
+        							  <div class="region region-adbottom">
+    <div id="block-block-110" class="block block-block">
+  <div class="block-inner clearfix">
+    
+    
+    
+    <div class="block-content clearfix">
+      <style type="text/css">
+.main_box1
+{
+width:99%;
+height:250px;
+background: url(http://www.engineersgarage.com/sites/default/files/ti_online_traning.png) 0px 0px no-repeat;
+//background: url(Background.png) 0px 0px no-repeat;
+}
+</style>
+<a href="https://ad.doubleclick.net/ddm/clk/302075816;129172077;d?http://www.ti.com/general/docs/video/watch.tsp?entryid=3874158073001" rel="nofollow" style="font-family: Keep Calm;font-size:26px;text-decoration:none;" target="_blank">
+
+<div class="main_box1" onclick="location.href=&#39;https://ad.doubleclick.net/ddm/clk/302075816;129172077;d?http://www.ti.com/general/docs/video/watch.tsp?entryid=3874158073001&#39;;" style="cursor: pointer;">
+	
+		<!-- <div style="width:100%;font-size:26px;font-family:Keep Calm;font-style:Medium;color:#363435;text-align:center;padding-top:5px;">
+			<a href="https://ad.doubleclick.net/ddm/clk/292400618;119619600;a?https://training.ti.com/search-catalog?keyword_op=AND&amp;keywords=&amp;start=&amp;end=" rel="nofollow" style="font-family: Keep Calm;font-size:26px;text-decoration:none;" target="_blank">
+				<span style="color:#363435;">
+					<strong>
+						Join TI's Online Training 
+					</strong> 
+				</span>
+			</a>
+		</div>
+		 <hr style="width:90%;background:red;border:solid 1px red;"> -->
+
+	
+
+		
+
+		<div style="width:176px;margin-top:50px;margin-left:15px;float:left;">
+			<table cellspacing="0" cellpadding="0" style="width:100%;">
+				
+				<tbody><tr>
+					<td style="margin-top:2px;">
+			<a href="https://ad.doubleclick.net/ddm/clk/302075816;129172077;d?http://www.ti.com/general/docs/video/watch.tsp?entryid=3874158073001">
+				<img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/1_23.png">
+						</a>
+					</td>
+				</tr>
+				
+			</tbody></table>		
+		</div>
+
+		
+
+		<div style="width:176px;margin-top:50px;margin-left:15px;float:left;">
+			<table cellspacing="0" cellpadding="0" style="width:100%;">
+				
+				<tbody><tr>
+					<td style="margin-top:2px;">
+				<a href="https://ad.doubleclick.net/ddm/clk/302075816;129172077;d?http://www.ti.com/general/docs/video/watch.tsp?entryid=4667412395001">
+				<img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/2_10.png">
+						</a>
+					</td>
+				</tr>
+				
+			</tbody></table>		
+		</div>
+
+		
+
+		<div style="width:176px;margin-top:50px;margin-left:15px;float:left;">
+			<table cellspacing="0" cellpadding="0" style="width:100%;">
+				
+				<tbody><tr>
+					<td style="margin-top:2px;">
+				<a href="https://ad.doubleclick.net/ddm/clk/302075816;129172077;d?http://www.ti.com/general/docs/video/watch.tsp?entryid=3895728970001">
+				<img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/3_8.png">
+						</a>
+					</td>
+				</tr>
+				
+			</tbody></table>		
+		</div>
+
+		
+
+		<div style="width:176px;margin-top:50px;margin-left:15px;float:left;">
+			<table cellspacing="0" cellpadding="0" style="width:100%;">
+				
+				<tbody><tr>
+					<td style="margin-top:2px;">
+				<a href="https://ad.doubleclick.net/ddm/clk/302075816;129172077;d?http://www.ti.com/general/docs/video/watch.tsp?entryid=4605232810001">
+				<img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/4_8.png">
+						</a>
+					</td>
+				</tr>
+				
+			</tbody></table>		
+		</div>
+	
+
+</div></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+  </div>
+  
+      							</div>  
+    						</div>  
+  						</div>  
+				 
+           <!-- //Bottom Ad SECOND -->
+        </div>
+
+      </div>
+                    <!-- SIDEBAR FIRST -->
+          <div id="sidebar-first-wrapper" class="sidebar tb-main-box grid grid-5 grid-last">
+            <div class="grid-inner clearfix">
+                <div class="region region-sidebar-first">
+    <div id="block-eg-feedback-suggestion--2" class="block block-eg-feedback block-xhtml">
+  <div class="block-inner clearfix">
+            
+    <div class="block-content clearfix">
+      <form action="http://www.engineersgarage.com/electronic-circuits/safety-alarm-circuit" method="post" id="eg-feedback-form" accept-charset="UTF-8"><div><div id="wrapper1"><div id="contener1"><div class="form-item form-type-textarea form-item-feedback-msg">
+ <div class="form-textarea-wrapper resizable"><textarea placeholder="Give your feedback here." id="edit-feedback-msg" name="feedback_msg" cols="60" rows="4" class="form-textarea required"></textarea></div>
+</div>
+<div class="form-item form-type-textfield form-item-feedback-email">
+ <input placeholder="Email id:(Optional)" type="text" id="edit-feedback-email" name="feedback_email" value="" size="26" maxlength="128" class="form-text">
+</div>
+<span style="margin-bottom:10px;"><font style="font-size:9pt;">We promise not to send you spam.</font></span><br></div><center><span class="button edit-feedback-save">
+    <input type="submit" name="op" id="edit-feedback-save" value="Submit" class="form-submit">
+    </span>
+</center><br></div><input type="hidden" name="form_build_id" value="form-BIP1H2H2nqJq1vW7ZjZ66AlMUPF4FA26Sx1L_c7JNCE">
+<input type="hidden" name="form_id" value="eg_feedback_form">
+</div></form>    </div>
+  </div>
+</div>
+<div id="block-user-login--2" class="block block-user block-xhtml">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">User login</h2>
+        
+    <div class="block-content clearfix">
+      <form action="http://www.engineersgarage.com/arm-projects/introduction-to-arm-microcontroller-lpc2148?destination=node/59096" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">E-mail <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required">
+</div>
+<div class="item-list"><ul><li class="first"><a href="http://www.engineersgarage.com/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="http://www.engineersgarage.com/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-zm0NXo-rL19ykOIPbAFyjP1vxaM3YVRSH-02wMDa3iE">
+<input type="hidden" name="form_id" value="user_login_block">
+<div class="form-actions form-wrapper" id="edit-actions--2"><span class="button edit-submit--2">
+    <input type="submit" name="op" id="edit-submit--2" value="Log in" class="form-submit">
+    </span>
+</div></div></form>    </div>
+  </div>
+</div>
+<div id="block-block-44--2" class="block block-block block-xhtml">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Featured Arduino Projects</h2>
+        
+    <div class="block-content clearfix">
+      <div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/getting-started-with-arduino" style="text-decoration:none;"><span>Getting Started with Arduino</span></a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/how-to-interface-4-bit-lcd-with-arduino" style="text-decoration:none;"><span>LCD Arduino Interfacing</span></a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/how-to-interface-xbee-with-arduino-tutorial" style="text-decoration:none;"><span>Xbee Arduino Interfacing</span></a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/arduino-gps-interfacing-project-circuit" style="text-decoration:none;"><span>Interface GPS with Arduino</span></a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/how-to-interface-sd-card-with-arduino-project-circuit" style="text-decoration:none;"><span>Interface SD Card with Arduino</span></a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/how-make-call-using-keyboard-gsm-module-and-arduino" style="text-decoration:none;"><span>Call using Keyboard, GSM &amp; Arduino</span></a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/arduino/how-test-spi-module-arduino" style="text-decoration:none;"><span>SPI Module of Arduino</span></a></div><hr><p style="text-align: right;"><span><span style="font-size: x-small;"><span style="font-family: Arial;">...&nbsp;</span></span></span><span style="font-size: small;"><a href="http://www.engineersgarage.com/microcontroller/arduino-projects" style="text-decoration:none;"><span><span style="font-size: x-small;"><span style="font-family: Arial;">more arduino projects</span></span></span></a></span></p>    </div>
+  </div>
+</div>
+<div id="block-block-72--2" class="block block-block block-xhtml">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">TI Reference Design Library</h2>
+        
+    <div class="block-content clearfix">
+      <div style="margin-bottom:6.0pt"><span style="font-size:18px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:#800000;">Featured Designs </span> </strong> </span> </span></div><hr><h3 style="font-family: &#39;Source Sans Pro&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-size: 2.2rem; font-weight: inherit; margin-top: 0.6em; margin-bottom: 0.6em; vertical-align: baseline; word-wrap: break-word; clear: both; color: rgb(51, 153, 204);"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/TIDA-00808" rel="nofollow" style="font-family: sans-serif; font-weight: inherit; font-size: 2.2rem;" target="_blank"><u><strong><span style="font-size: 14px;"><span style="font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline; word-wrap: break-word; text-decoration: none; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;"><span style="font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline; word-wrap: break-word; color: rgb(128, 0, 0); text-decoration: none; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;">Space-optimized DC/DC Inverting Power Module Reference Design with Minimal BOM Count </span> </span> </span> </strong> </u> </a></h3><h4 style="font-size: 12.8000001907349px;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/TIDA-00808" rel="nofollow" target="_blank"><img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/med_tida-00808_board_top.JPG" style="width: 200px; height: 129px;"></a></h4><p style="font-size: 12.8000001907349px; text-align: center;"><span style="font-family: &#39;times new roman&#39;, times, serif;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/TIDA-00808" rel="nofollow" target="_blank"><input design="" name="View Design" type="button" value="View Design"></a> </span></p><hr style="font-size: 12.8000001907349px; border-top-style: dotted;"><h3 style="font-family: &#39;Source Sans Pro&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-size: 2.2rem; font-weight: inherit; margin-top: 0.6em; margin-bottom: 0.6em; vertical-align: baseline; word-wrap: break-word; clear: both; color: rgb(51, 153, 204);"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/PMP11180.1" rel="nofollow" style="font-family: sans-serif; font-weight: inherit; font-size: 2.2rem;" target="_blank"><u><strong><span style="font-size: 14px;"><span style="font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline; word-wrap: break-word; text-decoration: none; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;"><span style="font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline; word-wrap: break-word; color: rgb(128, 0, 0); text-decoration: none; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;">High Light-Load Efficient 120VAC Input, 25W/5VDC Reference Design with 4 POL Outputs </span> </span> </span> </strong> </u> </a></h3><h4 style="font-size: 12.8000001907349px;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/PMP11180.1" rel="nofollow" target="_blank"><img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/med_pmp11180.1_pmp11180_boardimage_top.JPG" style="width: 200px; height: 129px;"></a></h4><p style="font-size: 12.8000001907349px; text-align: center;"><span style="font-family: &#39;times new roman&#39;, times, serif;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/PMP11180.1" rel="nofollow" target="_blank"><input design="" name="View Design" type="button" value="View Design"></a> </span></p><hr style="font-size: 12.8000001907349px; border-top-style: dotted;"><h3 style="font-family: &#39;Source Sans Pro&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-size: 2.2rem; font-weight: inherit; margin-top: 0.6em; margin-bottom: 0.6em; vertical-align: baseline; word-wrap: break-word; clear: both; color: rgb(51, 153, 204);"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/TIDA-00712" rel="nofollow" style="font-family: sans-serif; font-weight: inherit; font-size: 2.2rem;" target="_blank"><u><strong><span style="font-size: 14px;"><span style="font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline; word-wrap: break-word; text-decoration: none; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;"><span style="font-family: inherit; font-style: inherit; font-weight: inherit; vertical-align: baseline; word-wrap: break-word; color: rgb(128, 0, 0); text-decoration: none; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;">Smartwatch Battery Management Solution Reference Design </span> </span> </span> </strong> </u> </a></h3><h4 style="font-size: 12.8000001907349px;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/TIDA-00712" rel="nofollow" target="_blank"><img alt="" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/med_tida-00712_tida-00712_boardimage.gif" style="width: 200px; height: 129px;"></a></h4><p style="font-size: 12.8000001907349px; text-align: center;"><span style="font-family: &#39;times new roman&#39;, times, serif;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/tool/TIDA-00712" rel="nofollow" target="_blank"><input design="" name="View Design" type="button" value="View Design"></a> </span></p><p style="font-size: 12.8000001907349px; text-align: center;">&nbsp;</p><hr style="border-top: dotted 1px;"><p style="text-align: center;"><br><strong style="font-size: 14px;"><a href="https://ad.doubleclick.net/ddm/clk/302075022;129170692;t?http://www.ti.com/general/docs/refdesignsearch.tsp" rel="nofollow" target="_blank">For more designs, check out TI Reference Design Library </a> </strong></p>    </div>
+  </div>
+</div>
+<div id="block-forum-active--2" class="block block-forum block-xhtml">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Active forum topics</h2>
+        
+    <div class="block-content clearfix">
+      <div class="item-list"><ul><li class="first"><a href="http://www.engineersgarage.com/forums/electronics/surge-protection">surge protection</a></li>
+<li><a href="http://www.engineersgarage.com/forums/8051/i-am-not-able-get-output-program-0">I am not able to get the output of the program.</a></li>
+<li><a href="http://www.engineersgarage.com/forums/8051/i-am-not-able-get-output-program">I am not able to get the output of the program.</a></li>
+<li class="last"><a href="http://www.engineersgarage.com/forums/others/students-result">students result</a></li>
+</ul></div><div class="more-link"><a href="http://www.engineersgarage.com/forum" title="Read the latest forum topics.">More</a></div>    </div>
+  </div>
+</div>
+<div id="block-block-59--2" class="block block-block block-xhtml">
+  <div class="block-inner clearfix">
+            
+    <div class="block-content clearfix">
+      <p><a href="http://bit.ly/MDvaec" rel="nofollow" target="_blank"><img src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/Asq-a-question.jpg" style="float: center;"></a></p>    </div>
+  </div>
+</div>
+<div id="block-block-60--2" class="block block-block block-xhtml">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Featured Raspberry Pi Projects</h2>
+        
+    <div class="block-content clearfix">
+      <div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/raspberry-pi/how-to-load-ubuntu-on-raspberry-pi" style="text-decoration:none;">How to Load Ubuntu on Raspberry Pi</a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/raspberry-pi/configure-raspberry-pi" style="text-decoration:none;">How to Configure Raspberry Pi</a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/raspberry-pi/how-to-use-alarm-signal-in-raspberry-pi" style="text-decoration:none;">How to use Alarm Signal in Raspberry Pi</a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/raspberry-pi/get-display-on-raspberry-pi" style="text-decoration:none;">How to Get GUI on Raspberry Pi</a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/raspberry-pi/playing-snake-game-using-raspberry-pi-game-pad" style="text-decoration:none;">Playing Snake Game using Raspberry Pi Game Pad</a></div><div style="margin-bottom:6.0pt"><a href="http://www.engineersgarage.com/embedded/raspberry-pi/how-to-use-raspberry-pi-as-a-game-server" style="text-decoration:none;">How to Use Raspberry Pi as a Game Server</a></div><hr><p style="text-align: right;"><a href="http://www.engineersgarage.com/embedded/raspberry-pi" style="text-decoration:none;"><span><span style="font-size: x-small; text-decoration:none;"><span style="font-family: Arial;">... more raspberry pi projects</span></span></span></a><span style="font-size: small;"><a href="http://www.engineersgarage.com/embedded/raspberry-pi"><span><span style="font-size: x-small; text-decoration:none;"><span style="font-family: Arial;">&nbsp;</span></span></span></a></span></p>    </div>
+  </div>
+</div>
+  </div>
+            </div>
+          </div>
+          <!-- //SIDEBAR FIRST -->
+          
+        </div>
+      </div>
+  </div>
+
+  
+
+      <!-- FOOTER -->
+    <div id="footer-wrapper" class="wrapper">
+      <div class="container grid-24">
+        <div class="grid-inner clearfix">
+          <div id="footer" class="clearfix">  <div class="region region-footer">
+    <p><span style="font-family: Arial;">&nbsp;</span><span style="color: rgb(0, 0, 0);">Copyright                © 2012 EngineersGarage. All rights reserved. <span style="color: rgb(0, 0, 0);"><a href="http://www.engineersgarage.com/privacy-policy" rel="nofollow">Privacy Policy</a></span>&nbsp;|&nbsp;<a href="http://www.engineersgarage.com/subscriptions-refund-policy" rel="nofollow">Refund Policy</a>&nbsp;|&nbsp;</span><a href="http://www.engineersgarage.com/about-us" rel="nofollow">About Us</a></p>  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <!-- /#FOOTER -->
+  </div>
+      
+<iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;"></iframe><iframe name="oauth2relay529032041" id="oauth2relay529032041" src="./Introduction to ARM7 Based Microcontroller (LPC2148)_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

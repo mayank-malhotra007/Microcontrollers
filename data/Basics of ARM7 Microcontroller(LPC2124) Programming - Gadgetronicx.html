@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class=" js" slick-uniqueid="3"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+  <meta name="viewport" content="width=device-width">  
+  
+  <link rel="pingback" href="http://www.gadgetronicx.com/xmlrpc.php">
+<title>Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx</title>
+<!-- Performance scores of this site is tuned by WP Performance Score Booster plugin v1.5 - http://wordpress.org/plugins/wp-performance-score-booster -->
+
+<!-- This site is optimized with the Yoast SEO plugin v3.1.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Basics of ARM7 Microcontroller NXP LPC2124 Microcontroller and programming tutorial of Embedded C programming language ARM Microcontroller Tutorials">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx">
+<meta property="og:description" content="Basics of ARM7 Microcontroller NXP LPC2124 Microcontroller and programming tutorial of Embedded C programming language ARM Microcontroller Tutorials">
+<meta property="og:url" content="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/">
+<meta property="og:site_name" content="Gadgetronicx">
+<meta property="article:publisher" content="http://www.facebook.com/gadgetronicx">
+<meta property="article:author" content="https://www.facebook.com/frank.d.donald">
+<meta property="article:tag" content="arm7">
+<meta property="article:section" content="ARM Tutorial">
+<meta property="article:published_time" content="2014-10-02T16:20:00+05:30">
+<meta property="article:modified_time" content="2015-04-18T16:05:44+05:30">
+<meta property="og:updated_time" content="2015-04-18T16:05:44+05:30">
+<meta property="og:image" content="http://www.gadgetronicx.com/wp-content/uploads/2014/10/165258_RB_00_FB.EPS_1000.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1000">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Basics of ARM7 Microcontroller NXP LPC2124 Microcontroller and programming tutorial of Embedded C programming language ARM Microcontroller Tutorials">
+<meta name="twitter:title" content="Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx">
+<meta name="twitter:site" content="@gadgetronicx">
+<meta name="twitter:image" content="http://www.gadgetronicx.com/wp-content/uploads/2014/10/165258_RB_00_FB.EPS_1000.jpg">
+<meta name="twitter:creator" content="@frankdonald3">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Gadgetronicx » Feed" href="http://www.gadgetronicx.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Gadgetronicx » Comments Feed" href="http://www.gadgetronicx.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Gadgetronicx » Basics of ARM7 Microcontroller(LPC2124) Programming Comments Feed" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/feed/">
+		<script type="text/javascript" async="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/recaptcha__en.js"></script><script src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/ca-pub-2428652754304823.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.gadgetronicx.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="theme-my-login-group-css" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource" type="text/css" media="all">
+<style id="happenstance-style-inline-css" type="text/css">
+#wrapper #header .header-content .site-title, #wrapper #header .header-content .site-description, #wrapper #header .header-content .header-logo { max-width: 100%; }
+</style>
+<link rel="stylesheet" id="happenstance-google-font-default-css" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="mycred-widget-group-css" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(1)" type="text/css" media="all">
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/jquery.js"></script>
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mb_ajax = {"ajaxurl":"http:\/\/www.gadgetronicx.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"url":"http:\/\/www.gadgetronicx.com\/wp-admin\/admin-ajax.php","wpdiscuz_options":{"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"Show Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_captcha_show_hide":0,"wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_held_for_moderate":"Comment awaiting moderation","wc_comment_edit_not_possible":"Sorry, this comment no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_new_comment_button_text":"new comment","wc_new_comments_button_text":"new comments","wc_new_reply_button_text":"new reply on your comment","wc_new_replies_button_text":"new replies on your comments","wc_captcha_show_hide_for_members":0,"is_email_field_required":0,"is_user_logged_in":false,"commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"600","liveUpdateGuests":"1","wc_comment_bg_color":"#fefefe","wc_reply_bg_color":"#f8f8f8","wordpress_comment_order":"desc","commentsVoteOrder":false,"wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"","commentTextMaxLength":null,"storeCommenterData":100000,"isCaptchaInSession":false,"isGoodbyeCaptchaActive":false,"version":"3.2.8","wc_post_id":50,"loadLastCommentId":"1766"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(2)"></script>
+<link rel="canonical" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/">
+<link rel="https://api.w.org/" href="http://www.gadgetronicx.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.gadgetronicx.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.gadgetronicx.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="http://wp.me/p63mU6-O">
+<link rel="alternate" type="application/json+oembed" href="http://www.gadgetronicx.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.gadgetronicx.com%2Fbasics-of-arm7-microcontroller-lpc2124%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.gadgetronicx.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.gadgetronicx.com%2Fbasics-of-arm7-microcontroller-lpc2124%2F&amp;format=xml">
+	<style>
+	.ts-fab-list li a { background-color: #e9e9e9; border: 1px solid #e9e9e9; color: #333; }
+	.ts-fab-list li.active a { background-color: #333; border: 1px solid #e3e2de; color: #fff; }
+	.ts-fab-tab { background-color: #f9f9f9; border: 2px solid #333; color: #555; }
+	</style>
+	<script type="text/javascript">
+	window._se_plugin_version = '8.1.4';
+</script>
+<style type="text/css">	.ssba {
+									
+									
+									
+									
+								}
+								.ssba img
+								{
+									width: 35px !important;
+									padding: 6px;
+									border:  0;
+									box-shadow: none !important;
+									display: inline !important;
+									vertical-align: middle;
+								}
+								.ssba, .ssba a
+								{
+									text-decoration:none;
+									border:0;
+									background: none;
+									
+									font-size: 	23px;
+									
+									font-weight: normal;
+								}</style><style type="text/css">#wpcomm .wc_new_comment{background:#00B38F;}#wpcomm .wc_new_reply{background:#00B38F;}#wpcomm .wc-form-wrapper{background:#f9f9f9;}#wpcomm select,#wpcomm input[type="text"],#wpcomm input[type="email"],#wpcomm input[type="url"]{border:#d9d9d9 1px solid;}#wpcomm .wc-comment .wc-comment-right{background:#fefefe;}#wpcomm .wc-reply .wc-comment-right{background:#f8f8f8;}#wpcomm .wc-comment-text{font-size:14px;color:#555;}#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-administrator > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-shop_manager > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-shop_manager > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-shop_manager > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-shop_accountant > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-shop_accountant > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-shop_accountant > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-shop_worker > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-shop_worker > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-shop_worker > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-shop_vendor > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-shop_vendor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-shop_vendor > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-pending > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-pending > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-pending > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-member > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-member > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-member > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author,#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-left .wc-comment-label{background:#00B38F;}#wpcomm .wc-comment-footer a,#wpcomm .wc-comment-footer span.wc_editable_comment,#wpcomm .wc-comment-footer span.wc_save_edited_comment,#wpcomm span.wc_cancel_edit{color:#666666;}#wpcomm .wc-comment-footer .wc-vote-result{background:#666666;}#wpcomm .wc-reply-link,#wpcomm .wc-vote-link,#wpcomm .wc-share-link{color:#666666;}.wc-load-more-submit{border:1px solid #d9d9d9;}#wpcomm .wc-new-loaded-comment > .wc-comment-right{background:rgb(255,250,214);}.comments-area{width:auto; margin: 0 auto;}.wpdiscuz-front-actions{background:#f9f9f9;}.wpdiscuz-subscribe-bar{background:#f9f9f9;}.wpdiscuz-sort-buttons{color:#666666;}.wpdiscuz-sort-button{color:#666666; cursor:pointer;}.wpdiscuz-sort-button:hover{color:#00B38F;cursor:pointer;}.wpdiscuz-sort-button-active{color:#00B38F!important;cursor:default!important;}#wpcomm .page-numbers{color:#555;border:#555 1px solid;}#wpcomm span.current{background:#555;}#wpcomm .wpdiscuz-readmore{cursor:pointer;color:#00B38F;} #wpcomm .wpdiscuz-textarea-wrap{border:#d9d9d9 1px solid;}</style>
+            <style type="text/css">img#wpstats{display:none}</style><!--[if IE]>
+<style type="text/css" media="screen">
+#container-shadow {
+        behavior: url("http://www.gadgetronicx.com/wp-content/themes/happenstance/css/pie/PIE.php");
+        zoom: 1;
+}
+</style>
+<![endif]-->
+
+		<script type="text/javascript">
+
+		var ultimatemember_image_upload_url = 'http://www.gadgetronicx.com/wp-content/plugins/ultimate-member/core/lib/upload/um-image-upload.php';
+		var ultimatemember_file_upload_url = 'http://www.gadgetronicx.com/wp-content/plugins/ultimate-member/core/lib/upload/um-file-upload.php';
+		var ultimatemember_ajax_url = 'http://www.gadgetronicx.com/wp-admin/admin-ajax.php';
+
+		</script>
+
+	
+		<style type="text/css">.request_name { display: none !important; }</style>
+
+			<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<link rel="icon" href="http://www.gadgetronicx.com/wp-content/uploads/2015/04/Gadgetronicx-favicon-50x50.png" sizes="32x32">
+<link rel="icon" href="http://www.gadgetronicx.com/wp-content/uploads/2015/04/Gadgetronicx-favicon.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.gadgetronicx.com/wp-content/uploads/2015/04/Gadgetronicx-favicon.png">
+<meta name="msapplication-TileImage" content="http://www.gadgetronicx.com/wp-content/uploads/2015/04/Gadgetronicx-favicon.png">
+
+<style id="custom-css-css">.um-1967 .um .um-profile-body{max-width:100%}.um{opacity:1}</style>
+  
+</head> 
+<body class="singular single single-post postid-50 single-format-standard wpdiscuz_3.2.8" id="wrapper"><div class="scroll-top arrow_carrot-up" style="display: block;"></div>
+<div class="pattern"></div> 
+   
+<div id="container">
+<div id="container-shadow">
+  <header id="header">
+    
+    <div class="header-content-wrapper">
+    <div class="header-content">
+      <a href="http://www.gadgetronicx.com/"><img class="header-logo" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/Gadgetronicx-banner4.png" alt="Gadgetronicx"></a>
+    </div>
+    </div>
+  <div class="menu-box-container">
+    <div class="menu-box-wrapper sticky-nav">
+    <div class="menu-box">
+      <a class="link-home" href="http://www.gadgetronicx.com/"><i class="icon_house" aria-hidden="true"></i></a>
+<div class="menu-menu-1-container"><ul id="nav" class="menu"><li id="menu-item-1420" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1420"><a href="http://www.gadgetronicx.com/category/electronics/">Electronics</a>
+<ul class="sub-menu">
+	<li id="menu-item-1421" class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item menu-item-1421"><a href="http://www.gadgetronicx.com/electronic-circuits-library/">Circuits Library</a></li>
+	<li id="menu-item-1422" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1422"><a href="http://www.gadgetronicx.com/category/electronics/ic/">IC working</a></li>
+	<li id="menu-item-1423" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1423"><a href="http://www.gadgetronicx.com/category/electronics/projects/">Projects</a></li>
+	<li id="menu-item-1624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1624"><a href="http://www.gadgetronicx.com/circuit-submission/">Submit your Project</a></li>
+	<li id="menu-item-1547" class="menu-item menu-item-type-custom menu-item-object-custom last-menu-item menu-item-1547"><a href="http://mustcalculate.com/electronics/expression.php">Online Calculator</a></li>
+</ul>
+</li>
+<li id="menu-item-1410" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-1410"><a href="http://www.gadgetronicx.com/category/microcontroller/">Microcontroller</a>
+<ul class="sub-menu">
+	<li id="menu-item-1411" class="menu-item menu-item-type-taxonomy menu-item-object-category first-menu-item menu-item-1411"><a href="http://www.gadgetronicx.com/category/microcontroller/8051/">8051</a></li>
+	<li id="menu-item-1412" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1412"><a href="http://www.gadgetronicx.com/category/microcontroller/arm/">ARM</a></li>
+	<li id="menu-item-1413" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1413"><a href="http://www.gadgetronicx.com/category/microcontroller/avr/">AVR</a></li>
+	<li id="menu-item-1414" class="menu-item menu-item-type-taxonomy menu-item-object-category last-menu-item menu-item-1414"><a href="http://www.gadgetronicx.com/category/microcontroller/pic/">PIC</a></li>
+</ul>
+</li>
+<li id="menu-item-1524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1524"><a href="http://www.gadgetronicx.com/image-hover-effects/">Image hover effects</a></li>
+<li id="menu-item-1405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1405"><a href="http://www.gadgetronicx.com/about-us/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-1408" class="menu-item menu-item-type-post_type menu-item-object-page first-menu-item menu-item-1408"><a href="http://www.gadgetronicx.com/copyright-notice/">Copyright Notice</a></li>
+</ul>
+</li>
+<li id="menu-item-1407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1407"><a href="http://www.gadgetronicx.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-2010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2010"><a href="http://www.gadgetronicx.com/profile/">User</a>
+<ul class="sub-menu">
+	<li id="menu-item-2005" class="menu-item menu-item-type-post_type menu-item-object-page first-menu-item menu-item-2005"><a href="http://www.gadgetronicx.com/register/">Register</a></li>
+	<li id="menu-item-2006" class="menu-item menu-item-type-post_type menu-item-object-page last-menu-item menu-item-2006"><a href="http://www.gadgetronicx.com/login/">Login</a></li>
+</ul>
+</li>
+</ul><select class="selectnav" id="selectnav1"><option value="">- MENU -</option><option value="http://www.gadgetronicx.com/category/electronics/">ELECTRONICS</option><option value="http://www.gadgetronicx.com/electronic-circuits-library/">→ Circuits Library</option><option value="http://www.gadgetronicx.com/category/electronics/ic/">→ IC working</option><option value="http://www.gadgetronicx.com/category/electronics/projects/">→ Projects</option><option value="http://www.gadgetronicx.com/circuit-submission/">→ Submit your Project</option><option value="http://mustcalculate.com/electronics/expression.php">→ Online Calculator</option><option value="http://www.gadgetronicx.com/category/microcontroller/">MICROCONTROLLER</option><option value="http://www.gadgetronicx.com/category/microcontroller/8051/">→ 8051</option><option value="http://www.gadgetronicx.com/category/microcontroller/arm/">→ ARM</option><option value="http://www.gadgetronicx.com/category/microcontroller/avr/">→ AVR</option><option value="http://www.gadgetronicx.com/category/microcontroller/pic/">→ PIC</option><option value="http://www.gadgetronicx.com/image-hover-effects/">IMAGE HOVER EFFECTS</option><option value="http://www.gadgetronicx.com/about-us/">ABOUT US</option><option value="http://www.gadgetronicx.com/copyright-notice/">→ Copyright Notice</option><option value="http://www.gadgetronicx.com/contact-us/">CONTACT US</option><option value="http://www.gadgetronicx.com/profile/">USER</option><option value="http://www.gadgetronicx.com/register/">→ Register</option><option value="http://www.gadgetronicx.com/login/">→ Login</option></select></div>    </div>
+    </div>
+  </div>
+    
+  </header> <!-- end of header -->
+  <div id="wrapper-content">
+  <div id="main-content">
+  <div id="content">    <div class="content-headline">
+      <h1 class="entry-headline title single-title entry-title"><span class="entry-headline-text">Basics of ARM7 Microcontroller(LPC2124) Programming</span></h1>
+<p class="breadcrumb-navigation"><!-- Breadcrumb NavXT 5.4.0 -->
+<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to Gadgetronicx." href="http://www.gadgetronicx.com/" class="home">Gadgetronicx</a></span> &gt; <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to the Microcontroller category archives." href="http://www.gadgetronicx.com/category/microcontroller/" class="taxonomy category">Microcontroller</a></span> &gt; <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to the ARM Microcontroller category archives." href="http://www.gadgetronicx.com/category/microcontroller/arm/" class="taxonomy category">ARM Microcontroller</a></span> &gt; <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to the ARM Tutorial category archives." href="http://www.gadgetronicx.com/category/microcontroller/arm/arm-tutorial/" class="taxonomy category">ARM Tutorial</a></span> &gt; <span typeof="v:Breadcrumb"><span property="v:title">Basics of ARM7 Microcontroller(LPC2124) Programming</span></span></p>    </div>
+    <p class="post-meta">
+      <span class="post-info-author vcard author"><i class="icon_pencil-edit" aria-hidden="true"></i><span class="fn"><a href="http://www.gadgetronicx.com/author/frank-donald/" title="Posts by Frank Donald" rel="author">Frank Donald</a></span></span>
+      <span class="post-info-date post_date date updated"><i class="icon_clock_alt" aria-hidden="true"></i>October 2, 2014</span>
+      <span class="post-info-comments"><i class="icon_comment_alt" aria-hidden="true"></i><a href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comments">12 Comments</a></span>
+    </p>
+    <div class="post-info">
+      <p class="post-category"><span class="post-info-category"><i class="icon_folder-alt" aria-hidden="true"></i><a href="http://www.gadgetronicx.com/category/microcontroller/arm/arm-tutorial/" rel="category tag">ARM Tutorial</a></span></p>
+      <p class="post-tags"><span class="post-info-tags"><i class="icon_tag_alt" aria-hidden="true"></i><a href="http://www.gadgetronicx.com/tag/arm7/" rel="tag">arm7</a></span></p>
+    </div>
+    <div class="entry-content">
+<!-- Simple Share Buttons Adder (6.1.5) simplesharebuttons.com --><div class="ssba ssba-wrap"><div style="text-align:left"><a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/facebook.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="lazy ssba ssba-img" alt="Share on Facebook"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="lazy lazy-hidden ssba ssba-img" alt="Share on Facebook" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="ssba ssba-img" alt="Share on Facebook" /&gt;</noscript></a><a data-site="" class="ssba_google_share" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/google.png" title="Google+" class="lazy ssba ssba-img" alt="Share on Google+"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/google.png" title="Google+" class="lazy lazy-hidden ssba ssba-img" alt="Share on Google+" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/google.png" title="Google+" class="ssba ssba-img" alt="Share on Google+" /&gt;</noscript></a><a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/&amp;text=Basics+of+ARM7+Microcontroller%28LPC2124%29+Programming+" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="lazy ssba ssba-img" alt="Tweet about this on Twitter"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="lazy lazy-hidden ssba ssba-img" alt="Tweet about this on Twitter" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter" /&gt;</noscript></a><a data-site="reddit" class="ssba_reddit_share" href="http://reddit.com/submit?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/&amp;title=Basics%20of%20ARM7%20Microcontroller(LPC2124)%20Programming" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/reddit.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/reddit.png" title="Reddit" class="lazy ssba ssba-img" alt="Share on Reddit"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/reddit.png" title="Reddit" class="lazy lazy-hidden ssba ssba-img" alt="Share on Reddit" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/reddit.png" title="Reddit" class="ssba ssba-img" alt="Share on Reddit" /&gt;</noscript></a><a data-site="stumbleupon" class="ssba_stumbleupon_share ssba_share_link" href="http://www.stumbleupon.com/submit?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/&amp;title=Basics%20of%20ARM7%20Microcontroller(LPC2124)%20Programming" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/stumbleupon.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/stumbleupon.png" title="StumbleUpon" class="lazy ssba ssba-img" alt="Share on StumbleUpon"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/stumbleupon.png" title="StumbleUpon" class="lazy lazy-hidden ssba ssba-img" alt="Share on StumbleUpon" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/stumbleupon.png" title="StumbleUpon" class="ssba ssba-img" alt="Share on StumbleUpon" /&gt;</noscript></a><a data-site="pinterest" class="ssba_pinterest_share" href="javascript:void((function()%7Bvar%20e=document.createElement(&#39;script&#39;);e.setAttribute(&#39;type&#39;,&#39;text/javascript&#39;);e.setAttribute(&#39;charset&#39;,&#39;UTF-8&#39;);e.setAttribute(&#39;src&#39;,&#39;//assets.pinterest.com/js/pinmarklet.js?r=&#39;+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/pinterest.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/pinterest.png" title="Pinterest" class="lazy ssba ssba-img" alt="Pin on Pinterest"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/pinterest.png" title="Pinterest" class="lazy lazy-hidden ssba ssba-img" alt="Pin on Pinterest" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/pinterest.png" title="Pinterest" class="ssba ssba-img" alt="Pin on Pinterest" /&gt;</noscript></a></div></div>
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script async="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/adsbygoogle.js"></script>
+<!-- Gadgetronicx_responsive -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-2428652754304823" data-ad-slot="1570234037" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:734px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:734px;background-color:transparent"><iframe width="734" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div dir="ltr" style="text-align: left;">
+<table style="margin-left: auto; margin-right: auto; text-align: center;" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="margin-left: auto; margin-right: auto;" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/165258_RB_00_FB.EPS_1000.jpg"><img class="lazy alignnone" title="ARM7 Microcontroller" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/165258_RB_00_FB.EPS_1000.jpg" data-lazy-type="image" data-lazy-src="http://gadgetronicx.com/wp-content/uploads/2014/10/165258_RB_00_FB.EPS_1000.jpg" alt="basics-of-arm7-microcontroller" width="400" height="400" border="0"><noscript>&lt;img class="alignnone" title="ARM7 Microcontroller" src="http://gadgetronicx.com/wp-content/uploads/2014/10/165258_RB_00_FB.EPS_1000.jpg" alt="basics-of-arm7-microcontroller" width="400" height="400" border="0" /&gt;</noscript></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">ARM7 Microcontroller</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">ARM ( Advanced Risc Machine ) a Microcontroller which took us to the next step in to the world of Automation. There are plenty of devices and gadgets running with the help of these Controllers. In fact 90% of smartphones, Cameras, Cars, Laptops etc&nbsp;</span><span style="font-family: Arial, Helvetica, sans-serif;">uses ARM controllers</span><span style="font-family: Arial, Helvetica, sans-serif;">. Its fair to say that the usage of these Controllers crosses the horizon since it was used in space too. Let’s step in to the basics of ARM7 microcontroller.</span><br>
+<a name="more"></a></p>
+<p style="text-align: justify;">What makes this controller so special? how it fits in all kind of applications? To answer this, we can point out its Robust Architecture and high computing power. Aside from that here are some features which makes it really unique.</p>
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script async="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/adsbygoogle.js"></script>
+<!-- link-units-gadgetronicx -->
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:15px" data-ad-client="ca-pub-2428652754304823" data-ad-slot="1341610037" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<ul style="text-align: left;">
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">16/32 bit ARM7TDMI Architecture&nbsp;</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Memory Accelerator Module to increase CPU performance</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Programmable PLL.</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Peripherals such as UART, Timer, ADC, PWM, RTC,PWM, Capture, Compare and much more.</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Protocols I2C, SPI, CAN and USB.</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Dual Power supply 1.65 to 1.95 for CPU and 3.0 to 3.6V for I/O.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">I definitely need 10 or more articles to discuss about the highlights of ARM 7 Microcontrollers. So i suggest you to download the Manual provided in the below link as it does a better job in describing the features than i do.</span></p>
+<p style="text-align: center;"><a href="http://www.keil.com/dd/docs/datashts/philips/user_manual_lpc2114_2124_2212_2214.pdf" target="_blank" rel="nofollow">Download</a></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">So Let me come straight to the point, How to program a ARM Microcontroller? Programming ARM Microcontroller will be a piece of cake if you are familiar with AVR Programming if you are not then getting a clear idea about Bit masking and Bit wise operation, it will give you a edge in learning programming this Controller.</span></p>
+<p style="text-align: justify;">This tutorial deals with the ARM7 Microcontroller LPC2124 ( 64 Pin package)by Philips. &nbsp;It consists of totally two 32 bit Birdirectional I/O ports Port 0 and Port 1. Each Pins in the port Carries four functions which is separated by slashes ‘/’ in the below pin diagram. The pins 2 to 15 in the Port 1 is not available for the user.</p>
+<h2 style="text-align: justify;"><span style="color: #3c98ff;">BASICS OF ARM7 MICROCONTROLLER:</span></h2>
+<div style="text-align: left;">
+<table style="margin-left: auto; margin-right: auto; text-align: center;" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="margin-left: auto; margin-right: auto;" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/LPC2114-pinout.jpg"><img class="lazy" title="LPC2124 Pin diagram" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/LPC2114-pinout.jpg" data-lazy-type="image" data-lazy-src="http://gadgetronicx.com/wp-content/uploads/2014/10/LPC2114-pinout.jpg" alt="Pin-diagram-of-LPC2124-ARM-Microcontrollers" width="640" height="616" border="0"><noscript>&lt;img title="LPC2124 Pin diagram" src="http://gadgetronicx.com/wp-content/uploads/2014/10/LPC2114-pinout.jpg" alt="Pin-diagram-of-LPC2124-ARM-Microcontrollers" width="640" height="616" border="0" /&gt;</noscript></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">Pin Diagram of LPC 2124</td>
+</tr>
+</tbody>
+</table>
+<p style="clear: both; text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">When coming to ARM7 Programming there are 5 things you need to be get familiarize with. They are</span></p>
+<ul style="text-align: left;">
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">PINSEL</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">IODIR</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">IOSET</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">IOCLR</span></li>
+<li style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">IOPIN</span></li>
+</ul>
+</div>
+<h2><span style="color: #3c98ff;">PINSEL:</span></h2>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">A 32 bit register which is used to select the function of the pins in which the user needs it to operate. As i said there are four functions for each pins of the controller, in which the first function one was GPIO ( General Purpose Input Output ). It means that the pin can either act as a Input or Output with no specific functions.&nbsp;</span></p>
+<p style="text-align: justify;">There are totally three PINSEL register in LPC2124 Controller in order to control the functions of the Pins in the respective ports. The classification is given below</p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">PINSEL0 – Controls functions of Port0.0 – Port0.15</span></p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">PINSEL1 – Controls functions of Port0.16-Port0.31</span></p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">PINSEL2 – Controls functions of Port1.16-Port1.31</span></p>
+<p style="text-align: justify;">Now you know that these registers are used to assign functions for all the Pins in the controller. Now let me tell how to configure this register to force the pin to perform a specific task. A table illustrates the value to load in the PINSEL for specific functions.</p>
+<table style="margin-left: auto; margin-right: auto; text-align: center;" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><a style="margin-left: auto; margin-right: auto;" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/PINSEL-2Bregister.png"><img class="lazy" title="PINSEL0 table" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/PINSEL-2Bregister.png" data-lazy-type="image" data-lazy-src="http://gadgetronicx.com/wp-content/uploads/2014/10/PINSEL-2Bregister.png" alt="PINSEL0-table-for-ARM-Microcontroller" width="640" height="390" border="0"><noscript>&lt;img title="PINSEL0 table" src="http://gadgetronicx.com/wp-content/uploads/2014/10/PINSEL-2Bregister.png" alt="PINSEL0-table-for-ARM-Microcontroller" width="640" height="390" border="0" /&gt;</noscript></a></td>
+</tr>
+<tr>
+<td style="text-align: center;">PINSEL Table</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">So the above table will give you the values you need to load to make the pin to perform your desired function. So if you want to make the whole port to function as GPIO you can simply do it by&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">“PINSEL0=0” or you can ignore mentioning it because 0 in the register always make the pin to work as GPIO. But always mention it for good programming practice.</span></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">If you need to use specific pin P0.0 as TXD then you can do it by</span></p>
+<p style="text-align: center;">PINSEL0|=(1&lt;&lt;0)</p>
+<p><span style="font-family: Arial, Helvetica, sans-serif;">If you need to make the same pin P0.0 as PWM1 then you should load the value as&nbsp;</span></p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">PINSEL0|=(1&lt;&lt;1)</span></p>
+<p><span style="font-family: Arial, Helvetica, sans-serif;">Can you feel the difference between these two, writing 1 to the 0th position make it work as TXD and to the 1st position make it work as PWM1 as shown in the above table.</span><br>
+<span style="font-family: Arial, Helvetica, sans-serif;"><br>
+</span></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Consider the Pin P0.3 and for making it work as EINT1 that is the fourth function then you need to configure it as</span></p>
+<p style="text-align: center;">PINSEL0|=(1&lt;&lt;6)|(1&lt;&lt;7)</p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Kindly refer the manual for function tables of PINSEL1 and PINSEL2. I hope now you are clear with choosing the functions using the PINSEL register.&nbsp;</span></p>
+<h2><span style="color: #3c98ff;">IODIR:</span></h2>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Like DDR in AVR and TRIS in PIC, ARM uses IODIR register to specify the direction which in which we are going to use the pins. Two 32 bit registers IODIR0 for Port0(P0.0 – P0.31) and IODIR1 for Port1(P1.16- P1.31). Kindly note that loading values in IODIR, it will take effect only if the Pins are used as GPIO and the directions are controlled automatically if it was specified with any special functions.</span></p>
+<p style="text-align: justify;">So for making as Pin as output you have to load “1” to it and “0” for output. You can do it by following two methods. For example if you need to specify P0.0 as output then you can do it as</p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">IODIR0=0x00000001 or IODIR0|=(1&lt;&lt;0).&nbsp;</span></p>
+<p style="text-align: left;"><span style="font-family: Arial, Helvetica, sans-serif;">You may use it as input by loading 0&nbsp;</span></p>
+<h2><span style="color: #3c98ff;">IOSET:</span></h2>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">This Register is meant to set the pins in the Ports where writing 1 to it will set the respective pin while 0 will have no effect. There are two registers dedicated for both the ports IOSET0 -P0.0 – P0.31 and IOSET1 for P1.16 – P1.31</span></p>
+<p style="text-align: justify;">&nbsp;For example if you need to set P0.12 then you can do it by</p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">IOSET0|=(1&lt;&lt;12) or IOSET0=0x00001000</span></p>
+<h2><span style="color: #3c98ff;">IOCLR:</span></h2>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">This Register is meant to clear the pins in the Ports where writing 1 will clear the respective pin while 0 will have no effect in the Ports. There are two registers dedicated for both the ports IOCLR0 -P0.0 – P0.31 and IOCLR1 for P1.16 – P1.31</span></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">For example if you need to Clear P0.12 then you can do it by&nbsp;</span></p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">IOCLR0|=(1&lt;&lt;12) or IOCLR0=0x00001000</span></p>
+<h2 style="text-align: justify;"><span style="color: #3c98ff;">IOPIN:</span></h2>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">This is used only when we assign certain pins as Input in the IODIR register. There are two registers dedicated for both the ports IOPIN0 -P0.0 – P0.31 and IOPIN1 for P1.16 – P1.31. For example you have connected a switch as input to the Pin P0.0 then you can read it as &nbsp;</span></p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">if((IOPIN0&amp;(1&lt;&lt;0))) // seeing if P0.0 ==1</span></p>
+<p style="text-align: center;"><span style="font-family: Arial, Helvetica, sans-serif;">if(!(IOPIN0&amp;(1&lt;&lt;0))) //Check if P0.0 ==0</span></p>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">So that’s it you are now familiar with all the basic programming procedures of ARM7 Microcontrollers. Now let’s take a first step by writing simple LED toggle program in this ARM7 Microcontroller.</span></p>
+<h2><span style="color: #3c98ff;">CODE:</span></h2>
+<p style="text-align: justify;"><span style="font-family: Arial, Helvetica, sans-serif;">Consider 16 LED’s are connected to the Port 0 form (P0.0-P0.15) of the LPC2124 Microcontroller. Lets see how to write a simple code for toggling the LED’s with equal time delays. This code was built using Keil uvision 4 Software.</span></p>
+<div style="text-align: justify;">
+<pre class="EnlighterJSRAW" data-enlighter-language="c" data-enlighter-theme="panic" style="display: none;">#include&lt;lpc21xx.h&gt;
+void delay(void);
+int main(void)
+&nbsp; {
+&nbsp; &nbsp; &nbsp;PINSEL0=0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Use all pins as GPIO
+&nbsp; &nbsp; &nbsp;IODIR0=0x0000ffff; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Setting directions of P0.0-P0.15 as output
+&nbsp; &nbsp; &nbsp; while(1)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;IOSET0=0x0000ffff; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Setting pins P0.0-P0.15
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delay(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;IOCLR0=0x0000ffff; &nbsp; &nbsp; &nbsp; &nbsp; //Clearing pins P0.0-P0.15
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;delay();
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &nbsp; return 0;
+&nbsp; &nbsp;}
+
+void delay(void)
+&nbsp; {
+&nbsp; &nbsp; unsigned int i;
+&nbsp; &nbsp; for(i=0;i&lt;=30000;i++);
+&nbsp; }</pre><div class="EnlighterJSWrapper panicEnlighterJSWrapper"><ol class="hoverEnabled panicEnlighterJS EnlighterJS"><li class=" odd"><span class="kw2">#include&lt;lpc21xx.h&gt;</span><span class=""></span></li><li class=" even"><span class=""></span><span class="kw1">void</span><span class=""> </span><span class="de1">delay</span><span class="br0">(</span><span class="kw1">void</span><span class="br0">)</span><span class="">;</span></li><li class=" odd"><span class=""></span><span class="kw1">int</span><span class=""> </span><span class="de1">main</span><span class="br0">(</span><span class="kw1">void</span><span class="br0">)</span><span class=""></span></li><li class=" even"><span class="">  </span><span class="br0">{</span><span class=""></span></li><li class=" odd"><span class="">     PINSEL0=</span><span class="nu0">0</span><span class="">;                     </span><span class="co1"> //Use all pins as GPIO</span><span class=""></span></li><li class=" even"><span class="">     IODIR0=</span><span class="nu0">0x0000ffff</span><span class="">;         </span><span class="co1"> //Setting directions of P0.0-P0.15 as output</span><span class=""></span></li><li class=" odd"><span class="">      </span><span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class=""></span></li><li class=" even"><span class="">          </span><span class="br0">{</span><span class=""></span></li><li class=" odd"><span class="">             IOSET0=</span><span class="nu0">0x0000ffff</span><span class="">;         </span><span class="co1"> //Setting pins P0.0-P0.15</span><span class=""></span></li><li class=" even"><span class="">             </span><span class="de1">delay</span><span class="br0">(</span><span class="br0">)</span><span class="">;                                </span></li><li class=" odd"><span class="">             IOCLR0=</span><span class="nu0">0x0000ffff</span><span class="">;        </span><span class="co1"> //Clearing pins P0.0-P0.15</span><span class=""></span></li><li class=" even"><span class="">             </span><span class="de1">delay</span><span class="br0">(</span><span class="br0">)</span><span class="">;</span></li><li class=" odd"><span class="">          </span><span class="br0">}</span><span class=""></span></li><li class=" even"><span class="">      </span><span class="kw1">return</span><span class=""> </span><span class="nu0">0</span><span class="">;</span></li><li class=" odd"><span class="">   </span><span class="br0">}</span><span class=""></span></li><li class=" even"><span class=""></span></li><li class=" odd"><span class=""></span><span class="kw1">void</span><span class=""> </span><span class="de1">delay</span><span class="br0">(</span><span class="kw1">void</span><span class="br0">)</span><span class=""></span></li><li class=" even"><span class="">  </span><span class="br0">{</span><span class=""></span></li><li class=" odd"><span class="">    </span><span class="kw1">unsigned</span><span class=""> </span><span class="kw1">int</span><span class=""> i;</span></li><li class=" even"><span class="">    </span><span class="de1">for</span><span class="br0">(</span><span class="">i=</span><span class="nu0">0</span><span class="">;i&lt;=</span><span class="nu0">30000</span><span class="">;i++</span><span class="br0">)</span><span class="">;</span></li><li class=" odd"><span class="">  </span><span class="br0">}</span></li></ol><pre style="display: none;">#include&lt;lpc21xx.h&gt;
+void delay(void);
+int main(void)
+  {
+     PINSEL0=0;                      //Use all pins as GPIO
+     IODIR0=0x0000ffff;          //Setting directions of P0.0-P0.15 as output
+      while(1)
+          {
+             IOSET0=0x0000ffff;          //Setting pins P0.0-P0.15
+             delay();                                
+             IOCLR0=0x0000ffff;         //Clearing pins P0.0-P0.15
+             delay();
+          }
+      return 0;
+   }
+
+void delay(void)
+  {
+    unsigned int i;
+    for(i=0;i&lt;=30000;i++);
+  }</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+</div>
+</div>
+
+<!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<div align="left">
+<h3 style="font-family:Arial,Helvetica,sans-serif;font-size:26px;text-decoration:none"><a href="https://easyeda.com/" target="_blank" rel="nofollow">Free Circuit Simulation Software - EasyEDA</a></h3>
+<p>Powerful Circuit design,mixed-mode circuit simulation and PCB design.</p>
+<p style="color: #3c98ff;">Select Language on EasyEDA</p>
+<p>
+<a href="https://easyeda.com/?l=en" target="_blank" rel="nofollow">English</a> &nbsp;
+<a href="https://easyeda.com/cn" target="_blank" rel="nofollow">中文(简体)</a> &nbsp;
+<a href="https://easyeda.com/fr" target="_blank" rel="nofollow">French</a> &nbsp;
+<a href="https://easyeda.com/pt" target="_blank" rel="nofollow">Portuguese</a> &nbsp;
+<a href="https://easyeda.com/es" target="_blank" rel="nofollow">Spanish</a> &nbsp;
+<a href="https://easyeda.com/th" target="_blank" rel="nofollow">Thai</a> &nbsp;
+<a href="https://easyeda.com/ar" target="_blank" rel="nofollow">Arabic</a> &nbsp;
+<a href="https://easyeda.com/nl" target="_blank" rel="nofollow">Dutch</a> 
+</p>
+<p>
+<a href="https://easyeda.com/iw" target="_blank" rel="nofollow">Hebrew</a> &nbsp;
+<a href="https://easyeda.com/vn" target="_blank" rel="nofollow">Vietnamese</a> &nbsp;
+<a href="https://easyeda.com/ru" target="_blank" rel="nofollow">Russian</a> &nbsp;
+<a href="https://easyeda.com/it" target="_blank" rel="nofollow">Italian</a> &nbsp;
+<a href="https://easyeda.com/pl" target="_blank" rel="nofollow">Polish</a> &nbsp;
+<a href="https://easyeda.com/af" target="_blank" rel="nofollow">Afrikaans</a> &nbsp;
+<a href="https://easyeda.com/fa" target="_blank" rel="nofollow">Persian</a> 
+</p>
+<br>
+</div>
+<script async="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/adsbygoogle.js"></script>
+<!-- Gadgetronicx_top -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-2428652754304823" data-ad-slot="3165822437" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div><!-- Simple Share Buttons Adder (6.1.5) simplesharebuttons.com --><div class="ssba ssba-wrap"><div style="text-align:left"><a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/facebook.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="lazy ssba ssba-img" alt="Share on Facebook"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="lazy lazy-hidden ssba ssba-img" alt="Share on Facebook" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" title="Facebook" class="ssba ssba-img" alt="Share on Facebook" /&gt;</noscript></a><a data-site="" class="ssba_google_share" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/google.png" title="Google+" class="lazy ssba ssba-img" alt="Share on Google+"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/google.png" title="Google+" class="lazy lazy-hidden ssba ssba-img" alt="Share on Google+" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/google.png" title="Google+" class="ssba ssba-img" alt="Share on Google+" /&gt;</noscript></a><a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/&amp;text=Basics+of+ARM7+Microcontroller%28LPC2124%29+Programming+" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="lazy ssba ssba-img" alt="Tweet about this on Twitter"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="lazy lazy-hidden ssba ssba-img" alt="Tweet about this on Twitter" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter" /&gt;</noscript></a><a data-site="reddit" class="ssba_reddit_share" href="http://reddit.com/submit?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/&amp;title=Basics%20of%20ARM7%20Microcontroller(LPC2124)%20Programming" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/reddit.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/reddit.png" title="Reddit" class="lazy ssba ssba-img" alt="Share on Reddit"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/reddit.png" title="Reddit" class="lazy lazy-hidden ssba ssba-img" alt="Share on Reddit" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/reddit.png" title="Reddit" class="ssba ssba-img" alt="Share on Reddit" /&gt;</noscript></a><a data-site="stumbleupon" class="ssba_stumbleupon_share ssba_share_link" href="http://www.stumbleupon.com/submit?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/&amp;title=Basics%20of%20ARM7%20Microcontroller(LPC2124)%20Programming" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/stumbleupon.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/stumbleupon.png" title="StumbleUpon" class="lazy ssba ssba-img" alt="Share on StumbleUpon"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/stumbleupon.png" title="StumbleUpon" class="lazy lazy-hidden ssba ssba-img" alt="Share on StumbleUpon" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/stumbleupon.png" title="StumbleUpon" class="ssba ssba-img" alt="Share on StumbleUpon" /&gt;</noscript></a><a data-site="pinterest" class="ssba_pinterest_share" href="javascript:void((function()%7Bvar%20e=document.createElement(&#39;script&#39;);e.setAttribute(&#39;type&#39;,&#39;text/javascript&#39;);e.setAttribute(&#39;charset&#39;,&#39;UTF-8&#39;);e.setAttribute(&#39;src&#39;,&#39;//assets.pinterest.com/js/pinmarklet.js?r=&#39;+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/pinterest.png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/pinterest.png" title="Pinterest" class="lazy ssba ssba-img" alt="Pin on Pinterest"><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/pinterest.png" title="Pinterest" class="lazy lazy-hidden ssba ssba-img" alt="Pin on Pinterest" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/pinterest.png" title="Pinterest" class="ssba ssba-img" alt="Pin on Pinterest" /&gt;</noscript></a></div></div><!-- Begin Yuzo --><div class="yuzo_related_post style-1" data-version="5.12.37"><div class="yuzo_clearfixed yuzo__title"><h3>Related Designs and Schematics</h3></div><div class="yuzo_wraps">
+						  <div class="relatedthumb relatedpost-33" style="width: 126.5px; float: left; overflow: hidden; height: 146px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a rel="nofollow" href="http://www.gadgetronicx.com/adc-programming-in-arm-microcontrollers/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url(&#39;http://www.gadgetronicx.com/wp-content/uploads/2014/11/adc-arm-microcontroller-150x150.png&#39;) 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">ADC Programming in ARM Microcontrollers</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-19" style="width: 126.5px; float: left; overflow: hidden; height: 146px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a rel="nofollow" href="http://www.gadgetronicx.com/how-to-program-i2c-protocol/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url(&#39;http://www.gadgetronicx.com/wp-content/uploads/2015/01/i2c-tutorial-arm-controller-150x150.png&#39;) 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">How to program I2C protocol in ARM Microcontroller</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-21" style="width: 126.5px; float: left; overflow: hidden; height: 146px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a rel="nofollow" href="http://www.gadgetronicx.com/spi-protocol-tutorial-arm/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url(&#39;http://www.gadgetronicx.com/wp-content/uploads/2014/12/spi-protocol-arm-microcontroller-150x150.png&#39;) 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">SPI protocol tutorial in ARM7 Microcontroller</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-39" style="width: 126.5px; float: left; overflow: hidden; height: 146px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a rel="nofollow" href="http://www.gadgetronicx.com/programming-uart-tutorial-arm7/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url(&#39;http://www.gadgetronicx.com/wp-content/uploads/2014/11/UART-tutorial-ARM-150x150.png&#39;) 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">Programming UART tutorial in ARM7 Microcontrollers</span>
+							  
+							  
+							  </a>
+
+						  </span></div></div> <!-- end wrap -->
+</div> <style>
+								.yuzo_related_post img{width:126.5px !important; height:88px !important;}
+								.yuzo_related_post .relatedthumb{line-height:15px;background: !important;color:!important;}
+								.yuzo_related_post .relatedthumb:hover{background:#fcfcf4 !important; -webkit-transition: background 0.2s linear; -moz-transition: background 0.2s linear; -o-transition: background 0.2s linear; transition: background 0.2s linear;;color:!important;}
+								.yuzo_related_post .relatedthumb a{color:!important;}
+								.yuzo_related_post .relatedthumb a:hover{ color:}!important;}
+								.yuzo_related_post .relatedthumb:hover a{ color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo__text--title{ color:!important;}
+								.yuzo_related_post .yuzo_text, .yuzo_related_post .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo_text, .yuzo_related_post:hover .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb{  margin: 0px  0px  0px  0px;   padding: 5px  5px  5px  5px;  }
+								
+								</style> <script>
+						  jQuery(document).ready(function( $ ){
+							jQuery('.yuzo_related_post .yuzo_wraps').equalizer({ columns : '> div' });
+						   });
+						  </script> <!-- End Yuzo :) --><div style="clear:both;"></div><div id="ts-fab-below" class="ts-fab-wrapper"><span class="screen-reader-text">The following two tabs change content below.</span><ul class="ts-fab-list"><li class="ts-fab-bio-link active"><a href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#ts-fab-bio-below">Bio</a></li><li class="ts-fab-latest-posts-link"><a href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#ts-fab-latest-posts-below">Latest Posts</a></li></ul><div class="ts-fab-tabs">
+	<div class="ts-fab-tab" id="ts-fab-bio-below" style="display: block;">
+		<div class="ts-fab-avatar"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/80398319125dedcef0c75af0e4ecafed" data-lazy-type="image" data-lazy-src="http://gravatar.com/avatar/80398319125dedcef0c75af0e4ecafed?s=400&amp;d=identicon" class="lazy func-um_user gravatar avatar avatar-80 um-avatar" width="80" height="80" alt=""><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://gravatar.com/avatar/80398319125dedcef0c75af0e4ecafed?s=400&amp;d=identicon" class="lazy lazy-hidden func-um_user gravatar avatar avatar-80 um-avatar" width="80" height="80" alt="" /&gt;&lt;noscript&gt;&lt;img src="http://gravatar.com/avatar/80398319125dedcef0c75af0e4ecafed?s=400&amp;d=identicon" class="func-um_user gravatar avatar avatar-80 um-avatar" width="80" height="80" alt="" /&gt;</noscript><div class="ts-fab-social-links"><a href="http://twitter.com/frankdonald3" title="Twitter" rel="nofollow"><img class="lazy" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter(1).png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/twitter.png" width="24" height="24" alt="My Twitter profile"><noscript>&lt;img class="lazy lazy-hidden" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/twitter.png" width="24" height="24" alt="My Twitter profile" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/twitter.png" width="24" height="24" alt="My Twitter profile" /&gt;</noscript></a><a href="http://facebook.com/frank.d.donald" title="Facebook" rel="nofollow"><img class="lazy" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/facebook(1).png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/facebook.png" width="24" height="24" alt="My Facebook profile"><noscript>&lt;img class="lazy lazy-hidden" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/facebook.png" width="24" height="24" alt="My Facebook profile" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/facebook.png" width="24" height="24" alt="My Facebook profile" /&gt;</noscript></a></div>
+		</div>
+		
+		<div class="ts-fab-text">
+			<div class="ts-fab-header"><h4><a href="http://www.gadgetronicx.com/profile/frank-donald/" rel="nofollow">Frank Donald</a></h4><div class="ts-fab-description"><span>Junior Network Engineer</span> at <a href="http://www.tatacommunications.com/" rel="nofollow"><span>Tata Communications</span></a></div></div><!-- /.ts-fab-header -->
+			<div class="ts-fab-content">Frank Donald is an Electronics and Communication Engineer who is very passionate about his subject. Reading, Surfing and Blogging are the things he loves.</div>
+		</div>
+	</div>
+	<div class="ts-fab-tab" id="ts-fab-latest-posts-below" style="display: none;">
+		<div class="ts-fab-avatar"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/80398319125dedcef0c75af0e4ecafed" data-lazy-type="image" data-lazy-src="http://gravatar.com/avatar/80398319125dedcef0c75af0e4ecafed?s=400&amp;d=identicon" class="lazy func-um_user gravatar avatar avatar-80 um-avatar" width="80" height="80" alt=""><noscript>&lt;img src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://gravatar.com/avatar/80398319125dedcef0c75af0e4ecafed?s=400&amp;d=identicon" class="lazy lazy-hidden func-um_user gravatar avatar avatar-80 um-avatar" width="80" height="80" alt="" /&gt;&lt;noscript&gt;&lt;img src="http://gravatar.com/avatar/80398319125dedcef0c75af0e4ecafed?s=400&amp;d=identicon" class="func-um_user gravatar avatar avatar-80 um-avatar" width="80" height="80" alt="" /&gt;</noscript><div class="ts-fab-social-links"><a href="http://twitter.com/frankdonald3" title="Twitter" rel="nofollow"><img class="lazy" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter(1).png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/twitter.png" width="24" height="24" alt="My Twitter profile"><noscript>&lt;img class="lazy lazy-hidden" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/twitter.png" width="24" height="24" alt="My Twitter profile" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/twitter.png" width="24" height="24" alt="My Twitter profile" /&gt;</noscript></a><a href="http://facebook.com/frank.d.donald" title="Facebook" rel="nofollow"><img class="lazy" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/facebook(1).png" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/facebook.png" width="24" height="24" alt="My Facebook profile"><noscript>&lt;img class="lazy lazy-hidden" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-type="image" data-lazy-src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/facebook.png" width="24" height="24" alt="My Facebook profile" /&gt;&lt;noscript&gt;&lt;img src="http://www.gadgetronicx.com/wp-content/plugins/fancier-author-box/images/facebook.png" width="24" height="24" alt="My Facebook profile" /&gt;</noscript></a></div>
+		</div>
+		<div class="ts-fab-text">
+			<div class="ts-fab-header">
+				<h4>Latest posts by Frank Donald <span class="latest-see-all">(<a href="http://www.gadgetronicx.com/author/frank-donald/" rel="nofollow">see all</a>)</span></h4>
+			</div>
+			<ul class="ts-fab-latest">
+				<li>
+					<a href="http://www.gadgetronicx.com/battery-charge-indicator-circuit-diagram/">How to design a Battery charge indicator circuit</a><span> - April 9, 2016</span> 
+				</li>
+				<li>
+					<a href="http://www.gadgetronicx.com/reflex-test-game-using-arduino/">Reflex test for your brain using Arduino</a><span> - April 3, 2016</span> 
+				</li>
+				<li>
+					<a href="http://www.gadgetronicx.com/wired-spy-bug-circuit/">Wired spy bug Circuit</a><span> - March 28, 2016</span> 
+				</li>
+		</ul></div>
+	</div>
+		</div>
+	</div><div id="happenstance-post-nav" class="navigation" role="navigation">
+	<div class="nav-wrapper">
+  <p class="nav-previous"><a href="http://www.gadgetronicx.com/mains-operated-led-light-circuit-diagram/" title="230V AC mains operated LED light circuit diagram">← Previous post</a></p>
+	<p class="nav-next"><a href="http://www.gadgetronicx.com/dot-matrix-interfacing-arm7/" title="8x8 LED dot matrix interfacing  with ARM Microcontroller">Next post →</a></p>
+   </div>
+</div>
+
+    <div class="wpdiscuz_top_clearing"></div>
+                    <div id="comments" class="comments-area">
+                    <div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div>
+                            <h3 id="wc-comment-header">Ask your query</h3>
+                <div id="wpcomm" class="wpdiscuz_unauth">
+                            <div class="wc-comment-bar">
+                    <p class="wc-comment-title">
+                        <span class="wc_header_text_count">12</span> Comments on "Basics of ARM7 Microcontroller(LPC2124) Programming"                    </p>
+                    <div class="wpdiscuz_clear"></div>
+                </div>
+                                    <div class="wc_social_plugin_wrapper">
+                            </div>
+                            <div class="wpdiscuz-subscribe-bar">
+                                            <form action="http://www.gadgetronicx.com/wp-admin/admin-ajax.php?action=addSubscription" method="post" id="wpdiscuz-subscribe-form">
+                            <div class="wpdiscuz-subscribe-form-intro">Notify of </div>
+                            <div class="wpdiscuz-subscribe-form-option" style="width:40%;">
+                                <select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+                                                                            <option value="post">Notify of all new follow-up comments</option>
+                                                                                                                <option value="all_comment">Notify of new replies to all my comments</option>
+                                                                    </select>
+                            </div>
+                                                            <div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+                                    <input id="" class="email" type="email" name="wpdiscuzSubscriptionEmail" required="required" value="" placeholder="Email">
+                                </div>
+                                                        <div class="wpdiscuz-subscribe-form-button">
+                                <input id="wpdiscuz_subscription_button" type="submit" value="›" name="wpdiscuz_subscription_button">
+                            </div> 
+                            <input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="73c682de55"><input type="hidden" name="_wp_http_referer" value="/basics-of-arm7-microcontroller-lpc2124/">                            <input type="hidden" value="50" name="wpdiscuzSubscriptionPostId">
+                        </form>
+                                        <div class="wpdiscuz_clear"></div>
+                                    </div>
+                                <div class="wc-form-wrapper wc-main-form-wrapper" id="wc-main-form-wrapper-0_0">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                                        <form class="wc_comm_form wc_main_comm_form" method="post" action="" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                                                                                <div class="wc-field-avatararea">
+                                <img alt="avatar" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(3)" data-lazy-type="image" data-lazy-src="http://0.gravatar.com/avatar/?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo avatar-default" height="48" width="48"><noscript>&lt;img alt='avatar' src='http://0.gravatar.com/avatar/?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo avatar-default' height='48' width='48' /&gt;</noscript>                            </div>
+                                                <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+                                <textarea id="wc-textarea-0_0" placeholder="Join the discussion" required="" name="wc_comment" class="wc_comment wc_field_input"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;">                        
+                                                                                <div class="wc-author-data">
+                                <div class="wc-field-name wpdiscuz-item">
+                                    <input type="text" data-validate-length-range="3,50" maxlength="50" placeholder="Name" value="" name="wc_name" class="wc_name wc_field_input">
+                                </div>
+                                <div class="wc-field-email wpdiscuz-item">
+                                    <input type="email" placeholder="Email" value="" name="wc_email" class="wc_email wc_field_input email">
+                                </div>
+                                                                <div class="clearfix"></div>
+                            </div>
+                                                <div class="wc-form-submit">
+                                            <div class="wc-field-captcha wpdiscuz-item">
+                    <div class="wc-captcha-input">
+                        <input type="text" maxlength="5" value="" required="required" name="wc_captcha" class="wc_field_input wc_field_captcha" placeholder="Code" title="Insert the CAPTCHA code">
+                    </div>
+                    <div class="wc-label wc-captcha-label">
+                                                <a class="wpdiscuz-nofollow" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#" rel="nofollow"><img alt="wpdiscuz_captcha" class="wc_captcha_img" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/kSbRZ-14610413080199.png" width="80" height="26"></a><a class="wpdiscuz-nofollow wc_captcha_refresh_img" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#" rel="nofollow"><img alt="refresh" class="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/captcha-loading.png" width="16" height="16"></a>
+                        <input type="hidden" id="kSbRZe43c812b492dafbbe15a9f092ee29e87ef3e8d728b8125741a4de734bb89ad46" class="wpdiscuz-cnonce" name="cnonce" value="kSbRZe43c812b492dafbbe15a9f092ee29e87ef3e8d728b8125741a4de734bb89ad46">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                                            <div class="wc-field-submit">
+                                                                                                            <div class="wc_notification_checkboxes" style="display:block">
+                                                                                            <input id="wc_notification_new_comment-0_0" class="wc_notification_new_comment-0_0" value="comment" type="checkbox" name="wpdiscuz_notification_type"> <label class="wc-label-comment-notify" for="wc_notification_new_comment-0_0">Notify of new replies to this comment</label><br>
+                                                                                        </div>
+                                                                                                    <input type="button" class="wc_comm_submit button alt" value="Post Comment" name="submit">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id">
+                </form>
+                    </div>
+                    <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                        <div class="wc-form-wrapper wc-secondary-form-wrapper" id="wc-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                            <div class="wc-secondary-forms-social-content"></div>
+                                        <form class="wc_comm_form wc-secondary-form-wrapper" method="post" action="" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                                                                                <div class="wc-field-avatararea">
+                                <img alt="avatar" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(4)" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://2.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo avatar-default" height="48" width="48"><noscript>&lt;img alt='avatar' src='http://1.gravatar.com/avatar/?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://2.gravatar.com/avatar/?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo avatar-default' height='48' width='48' /&gt;</noscript>                            </div>
+                                                <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap ">
+                                <textarea id="wc-textarea-wpdiscuzuniqueid" placeholder="Join the discussion" required="" name="wc_comment" class="wc_comment wc_field_input"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;">                        
+                                                                                <div class="wc-author-data">
+                                <div class="wc-field-name wpdiscuz-item">
+                                    <input type="text" data-validate-length-range="3,50" maxlength="50" placeholder="Name" value="" name="wc_name" class="wc_name wc_field_input">
+                                </div>
+                                <div class="wc-field-email wpdiscuz-item">
+                                    <input type="email" placeholder="Email" value="" name="wc_email" class="wc_email wc_field_input email">
+                                </div>
+                                                                <div class="clearfix"></div>
+                            </div>
+                                                <div class="wc-form-submit">
+                                            <div class="wc-field-captcha wpdiscuz-item">
+                    <div class="wc-captcha-input">
+                        <input type="text" maxlength="5" value="" required="required" name="wc_captcha" class="wc_field_input wc_field_captcha" placeholder="Code" title="Insert the CAPTCHA code">
+                    </div>
+                    <div class="wc-label wc-captcha-label">
+                                                <a class="wpdiscuz-nofollow" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#" rel="nofollow"><img alt="wpdiscuz_captcha" class="wc_captcha_img" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/LhL5b-14610413080254.png" width="80" height="26"></a><a class="wpdiscuz-nofollow wc_captcha_refresh_img" href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#" rel="nofollow"><img alt="refresh" class="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/captcha-loading.png" width="16" height="16"></a>
+                        <input type="hidden" id="LhL5b6480d75c736fd0bca08df1cd5d3c76496b534aa127af0e33c45f42a4bd015148" class="wpdiscuz-cnonce" name="cnonce" value="LhL5b6480d75c736fd0bca08df1cd5d3c76496b534aa127af0e33c45f42a4bd015148">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                                            <div class="wc-field-submit">
+                                                                                                            <div class="wc_notification_checkboxes" style="display:block">
+                                                                                            <input id="wc_notification_new_comment-wpdiscuzuniqueid" class="wc_notification_new_comment-wpdiscuzuniqueid" value="comment" type="checkbox" name="wpdiscuz_notification_type"> <label class="wc-label-comment-notify" for="wc_notification_new_comment-wpdiscuzuniqueid">Notify of new replies to this comment</label><br>
+                                                                                        </div>
+                                                                                                    <input type="button" class="wc_comm_submit button alt" value="Post Comment" name="submit">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id">
+                </form>
+                    </div>
+                    </div>
+                        <hr>
+
+                        
+                                    <div class="wpdiscuz-front-actions">
+                        <div class="wpdiscuz-sort-buttons" style="font-size:14px;">Sort by: &nbsp;
+                            <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc wpdiscuz-sort-button-active">newest</span> | 
+                            <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc">oldest</span>
+                                                            | <span class="wpdiscuz-sort-button wpdiscuz-vote-sort-up">most voted</span>
+                                                    </div>
+                    </div>
+                
+                                <div id="wcThreadWrapper" class="wc-thread-wrapper">
+                    <div id="wc-comm-1762_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left"><img alt="deva" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/8a4b6e4abf28d3fc85ea62155d56420f" data-lazy-type="image" data-lazy-src="http://2.gravatar.com/avatar/8a4b6e4abf28d3fc85ea62155d56420f?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://2.gravatar.com/avatar/8a4b6e4abf28d3fc85ea62155d56420f?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='deva' src='http://2.gravatar.com/avatar/8a4b6e4abf28d3fc85ea62155d56420f?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://2.gravatar.com/avatar/8a4b6e4abf28d3fc85ea62155d56420f?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-1762" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">deva</div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">3 months 12 days ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>i m beginner to arm.it is very useful and understandable..thank you..and put more projects</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=i%20m%20beginner%20to%20arm.it%20is%20very%20useful%20and%20understandable..thank%20you..and%20put%20more%20projects%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-1762"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1762_0" style="clear:both"></div><div id="wc-comm-1766_1762" class="wc-comment wc-reply wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left"><a href="http://www.gadgetronicx.com/author/frank-donald/" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/80398319125dedcef0c75af0e4ecafed" class="func-um_user gravatar avatar avatar-48 um-avatar" width="48" height="48" alt=""></a><div class="wc-blog-post_author wc-comment-label">Author</div></div><div id="comment-1766" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="http://www.gadgetronicx.com/profile/frank-donald/" target="_blank">Frank Donald</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">3 months 10 days ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Deva,<br>
+I will try to add more tutorials and projects, thank you for your feedback.</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Deva,I%20will%20try%20to%20add%20more%20tutorials%20and%20projects,%20thank%20you%20for%20your%20feedback.%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-1766"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle wpdiscuz-hidden">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1766_1762" style="clear:both"></div></div></div><div id="wc-comm-322_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left"><img alt="Anonymous" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Anonymous' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-322" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">Anonymous</div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 3 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Get an editor.  This article has so mangled the English language it’s painful to read.</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Get%20an%20editor.%20%20This%20article%20has%20so%20mangled%20the%20English%20language%20it%E2%80%99s%20painful%20to%20read.%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-322"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-322_0" style="clear:both"></div><div id="wc-comm-323_322" class="wc-comment wc-reply wc-blog-guest wc_comment_level-2"><div class="wc-comment-left"><img alt="Frank Donald" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Frank Donald' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-323" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="http://www.blogger.com/profile/14528852117232549684" target="_blank">Frank Donald</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 3 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Sorry for the inconvenience</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Sorry%20for%20the%20inconvenience%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-323"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle wpdiscuz-hidden">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-323_322" style="clear:both"></div></div></div><div id="wc-comm-243_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left"><img alt="Anonymous" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Anonymous' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-243" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">Anonymous</div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 6 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text">&gt;&gt; So for making as Pin as output you have to load “1” to it and “0” for output. ^ is this input?Thanks, good tutorial</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=%3E%3E%20So%20for%20making%20as%20Pin%20as%20output%20you%20have%20to%20load%20%E2%80%9C1%E2%80%9D%20to%20it%20and%20%E2%80%9C0%E2%80%9D%20for%20output.%20^%20is%20this%20input?Thanks,%20good%20tutorial%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-243"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-243_0" style="clear:both"></div><div id="wc-comm-246_243" class="wc-comment wc-reply wc-blog-guest wc_comment_level-2"><div class="wc-comment-left"><img alt="Frank Donald" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Frank Donald' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-246" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="http://www.blogger.com/profile/14528852117232549684" target="_blank">Frank Donald</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 6 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Its ok, i figured it was a typo. I hope you understand it well, feel free to ask if you have any queries</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Its%20ok,%20i%20figured%20it%20was%20a%20typo.%20I%20hope%20you%20understand%20it%20well,%20feel%20free%20to%20ask%20if%20you%20have%20any%20queries%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-246"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle wpdiscuz-hidden">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-246_243" style="clear:both"></div></div><div id="wc-comm-245_243" class="wc-comment wc-reply wc-blog-guest wc_comment_level-2"><div class="wc-comment-left"><img alt="Anonymous" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Anonymous' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-245" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">Anonymous</div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 6 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Sorry it was my fault when I posted the comment. I just wanted indicate that in the sentence the second “output” probably had have to be “input” instead.</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Sorry%20it%20was%20my%20fault%20when%20I%20posted%20the%20comment.%20I%20just%20wanted%20indicate%20that%20in%20the%20sentence%20the%20second%20%E2%80%9Coutput%E2%80%9D%20probably%20had%20have%20to%20be%20%E2%80%9Cinput%E2%80%9D%20instead.%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-245"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle wpdiscuz-hidden">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-245_243" style="clear:both"></div></div><div id="wc-comm-244_243" class="wc-comment wc-reply wc-blog-guest wc_comment_level-2"><div class="wc-comment-left"><img alt="Frank Donald" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Frank Donald' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-244" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="http://www.blogger.com/profile/14528852117232549684" target="_blank">Frank Donald</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 6 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>I cant understand you, I guess the article is clear enough for explaining basics. As i said before go through the bit wise operations in C language then this will be a piece of cake.</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=I%20cant%20understand%20you,%20I%20guess%20the%20article%20is%20clear%20enough%20for%20explaining%20basics.%20As%20i%20said%20before%20go%20through%20the%20bit%20wise%20operations%20in%20C%20language%20then%20this%20will%20be%20a%20piece%20of%20cake.%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-244"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle wpdiscuz-hidden">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-244_243" style="clear:both"></div></div></div><div id="wc-comm-241_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left"><img alt="Justin" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Justin' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-241" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author">Justin</div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 6 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Love it i always thought of learning ARM and this tutorial made ma first step towards it. i would love to see more ARM based interfacing and conceptual tutorial.good work mate</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Love%20it%20i%20always%20thought%20of%20learning%20ARM%20and%20this%20tutorial%20made%20ma%20first%20step%20towards%20it.%20i%20would%20love%20to%20see%20more%20ARM%20based%20interfacing%20and%20conceptual%20tutorial.good%20work%20mate%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-241"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-241_0" style="clear:both"></div><div id="wc-comm-242_241" class="wc-comment wc-reply wc-blog-guest wc_comment_level-2"><div class="wc-comment-left"><img alt="Frank Donald" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/41dc3e007986c35dc46763689fa93174" data-lazy-type="image" data-lazy-src="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Frank Donald' src='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://1.gravatar.com/avatar/41dc3e007986c35dc46763689fa93174?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-242" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="http://www.blogger.com/profile/14528852117232549684" target="_blank">Frank Donald</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">1 year 6 months ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Sure will post in the future, Keep visiting …Cheers</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Sure%20will%20post%20in%20the%20future,%20Keep%20visiting%20%E2%80%A6Cheers%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-242"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-242_241" style="clear:both"></div><div id="wc-comm-1476_242" class="wc-comment wc-reply wc-blog-guest wc_comment_level-3"><div class="wc-comment-left"><img alt="Bob Afwata" src="http://0.gravatar.com/avatar/f08c3c60f3021c4923c38a8f2a03455d?s=48&amp;d=mm&amp;r=g" data-lazy-type="image" data-lazy-src="http://0.gravatar.com/avatar/f08c3c60f3021c4923c38a8f2a03455d?s=48&amp;d=mm&amp;r=g" data-lazy-srcset="http://0.gravatar.com/avatar/f08c3c60f3021c4923c38a8f2a03455d?s=96&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-48 photo" height="48" width="48"><noscript>&lt;img alt='Bob Afwata' src='http://0.gravatar.com/avatar/f08c3c60f3021c4923c38a8f2a03455d?s=48&amp;#038;d=mm&amp;#038;r=g' srcset='http://0.gravatar.com/avatar/f08c3c60f3021c4923c38a8f2a03455d?s=96&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /&gt;</noscript><div class="wc-blog-guest wc-comment-label">Guest</div></div><div id="comment-1476" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="https://www.africastalking.com/" target="_blank">Bob Afwata</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">8 months 21 days ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Hello I am bob and i love your tutorial please help me get started very well like how to build a simple circuit using the chip and how to configure the software(I KNOW OF KEIL) but how to i put up a simple circuit together,crystal ,capacitors etc and what programmer do i need.I would appreciate if you provide a bare minimal sample blink led circuit with all components and programmer connected.If any driver is also needed</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Hello%20I%20am%20bob%20and%20i%20love%20your%20tutorial%20please%20help%20me%20get%20started%20very%20well%20like%20how%20to%20build%20a%20simple%20circuit%20using%20the%20chip%20and%20how%20to%20configure%20the%20software(I%20KNOW%20OF%20KEIL)%20but%20how%20to%20i%20put%20up%20a%20simple%20circuit%20together,crystal%20,capacitors%20etc%20and%20what%20programmer%20do%20i%20need.I%20would%20appreciate%20if%20you%20provide%20a%20bare%20minimal%20sample%20blink%20led%20circuit%20with%20all%20components%20and%20programmer%20connected.If%20any%20driver%20is%20also%20needed%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-1476"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1476_242" style="clear:both"></div><div id="wc-comm-1480_1476" class="wc-comment wc-reply wc-blog-post_author wc_comment_level-4"><div class="wc-comment-left"><a href="http://www.gadgetronicx.com/author/frank-donald/" target="_blank"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/80398319125dedcef0c75af0e4ecafed" class="func-um_user gravatar avatar avatar-48 um-avatar" width="48" height="48" alt=""></a><div class="wc-blog-post_author wc-comment-label">Author</div></div><div id="comment-1480" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author"><a rel="nofollow" href="http://www.gadgetronicx.com/profile/frank-donald/" target="_blank">Frank Donald</a></div><div class="wc-comment-link"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon-link.gif" class="wc-comment-img-link tooltipstered"></div><div class="wc-comment-date">8 months 20 days ago</div><div class="wpdiscuz_clear_right"></div></div><div class="wc-comment-text"><p>Bob,<br>
+ARM is a high end chip so i wouldn’t suggest you to buy the chip individually and hook it with crystals,led and so. It would be perfect if you buy a development board where you will be provided with all the software you required to code and program the chip. I hope it helps</p>
+</div><div class="wc-comment-footer"><div class="wc-vote-result">0</div><span class="wc-vote-link wc-up  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-up fa-flip-horizontal wc-vote-img-up"></i></span> &nbsp;|&nbsp; <span class="wc-vote-link wc-down  wc_vote wc_not_clicked wc_tooltipster tooltipstered"><i class="fa fa-thumbs-down wc-vote-img-down"></i></span>&nbsp;&nbsp;&nbsp;<span class="wc-reply-link" title="Reply">Reply</span> &nbsp;&nbsp;-&nbsp;&nbsp; <span class="wc-share-link" title="Share">Share</span> &nbsp;&nbsp;<span class="share_buttons_box"><a class="wc_tooltipster tooltipstered" target="_blank" href="http://www.facebook.com/sharer.php"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/fb-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/fb-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://twitter.com/home?status=Bob,ARM%20is%20a%20high%20end%20chip%20so%20i%20wouldn%E2%80%99t%20suggest%20you%20to%20buy%20the%20chip%20individually%20and%20hook%20it%20with%20crystals,led%20and%20so.%20It%20would%20be%20perfect%20if%20you%20buy%20a%20development%20board%20where%20you%20will%20be%20provided%20with%20all%20the%20software%20you%20required%20to%20code%20and%20program%20the%20chip.%20I%20hope%20it%20helps%20http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#comment-1480"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/twitter-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/twitter-18x18.png&#39;"></a>&nbsp;&nbsp;<a class="wc_tooltipster tooltipstered" target="_blank" href="https://plus.google.com/share?url=http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/"><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/google-18x18.png" onmouseover="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18-orig.png&#39;" onmouseout="this.src=&#39;http://www.gadgetronicx.com/wp-content/plugins/wpdiscuz/assets/img/social-icons/google-18x18.png&#39;"></a>&nbsp;&nbsp;</span><span class="wc-toggle wpdiscuz-hidden">Hide Replies ∧</span></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-1480_1476" style="clear:both"></div></div></div></div></div>                
+                    <div class="wpdiscuz-comment-pagination">
+                                            </div>
+                </div>
+                <div class="wpdiscuz_clear"></div>
+                                                            <div class="by-wpdiscuz">
+                            <span id="awpdiscuz" onclick="javascript:document.getElementById(&quot;bywpdiscuz&quot;).style.display = &quot;inline&quot;;
+                                                document.getElementById(&quot;awpdiscuz&quot;).style.display = &quot;none&quot;;">
+                                <img alt="wpDiscuz" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/icon_info.png" align="absmiddle" class="wpdimg">
+                            </span>&nbsp;
+                            <a href="http://wpdiscuz.com/" target="_blank" id="bywpdiscuz" title="wpDiscuz v3.2.8 - Supercharged native comments">wpDiscuz</a>
+                        </div>
+                                                </div>
+        </div>
+        <div class="wpdiscuz-loading-bar wpdiscuz-loading-bar-unauth"><img class="wpdiscuz-loading-bar-img" alt="wpDiscuz" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/loading.gif" width="32" height="25"></div>
+            </div>   
+  </div> <!-- end of content -->
+<aside id="sidebar">
+<div id="search-2" class="sidebar-widget widget_search"><form id="searchform" method="get" action="http://www.gadgetronicx.com/">
+  <div class="searchform-wrapper"><input type="text" value="" name="s" id="s" placeholder="Search here...">
+  <input type="submit" class="send icon_search" name="searchsubmit" value="U"></div>
+</form></div><div id="lsi_widget-2" class="sidebar-widget widget_lsi_widget"> <p class="sidebar-headline"><span class="sidebar-headline-text">FOLLOW US</span></p><ul class="lsi-social-icons icon-set-lsi_widget-2"><li class="lsi-social-facebook"><a class="" rel="nofollow" title="Facebook" aria-label="Facebook" href="http://www.facebook.com/gadgetronicx" target="_blank"><i class="lsicon lsicon-facebook"></i></a></li><li class="lsi-social-twitter"><a class="" rel="nofollow" title="Twitter" aria-label="Twitter" href="http://www.twitter.com/gadgetronicx" target="_blank"><i class="lsicon lsicon-twitter"></i></a></li><li class="lsi-social-pinterest"><a class="" rel="nofollow" title="Pinterest" aria-label="Pinterest" href="http://www.pinterest.com/gadgetronicx" target="_blank"><i class="lsicon lsicon-pinterest"></i></a></li><li class="lsi-social-gplus"><a class="" rel="nofollow" title="Google+" aria-label="Google+" href="https://plus.google.com/+gadgetronicx" target="_blank"><i class="lsicon lsicon-gplus"></i></a></li><li class="lsi-social-rss"><a class="" rel="nofollow" title="RSS" aria-label="RSS" href="http://www.gadgetronicx.com/feed/" target="_blank"><i class="lsicon lsicon-rss"></i></a></li></ul></div><div id="text-3" class="sidebar-widget widget_text">			<div class="textwidget"><script async="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/adsbygoogle.js"></script>
+<!-- Gadgetronicx_sidebar_large -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2428652754304823" data-ad-slot="7111308434" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div><div id="jcl_widget-2" class="sidebar-widget widget_jcl_widget"> <p class="sidebar-headline"><span class="sidebar-headline-text">CATEGORIES</span></p><ul class="jcl_widget"><li class="jcl_category jcl_has_child"><a href="http://www.gadgetronicx.com/category/arduino/">Arduino</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/arduino/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/arduino/project/">Projects</a></li></ul></li><li class="jcl_category jcl_has_child"><a href="http://www.gadgetronicx.com/category/electronics/">Electronics</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/electronics/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category jcl_has_child" style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/">Circuit</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/electronics/circuit/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/alarm/">Alarm Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/amplifier/">Amplifier Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/audio/">Audio Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/controller/">Controller Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/converter/">Converter Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/counter/">Counter Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/locks/">Electronic Locks</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/hobby/">Hobby Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/inverter/">Inverter Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/led/">LED Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/lighting/">Lighting Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/osciallator/">Oscillator Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/power/">Power Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/sensor/">Sensor Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/switching/">Switching Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/tester/">Tester Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/timer/">Timer Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/transceiver/">Transceiver Circuits</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/circuit/usb/">USB Circuits</a></li></ul></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/tutorials/">Electronic Tutorials</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/ic/">IC Working</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/pcb/">PCB</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/electronics/projects/">Projects</a></li></ul></li><li class="jcl_category jcl_has_child"><a href="http://www.gadgetronicx.com/category/embedded-system/">Embedded System</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/embedded-system/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/embedded-system/c-tutorial/">Embedded C tutorial</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/embedded-system/rtos/">RTOS</a></li></ul></li><li class="jcl_category "><a href="http://www.gadgetronicx.com/category/gadgets/">Gadgets</a></li><li class="jcl_category "><a href="http://www.gadgetronicx.com/category/iot/">IOT</a></li><li class="jcl_category jcl_has_child"><a href="http://www.gadgetronicx.com/category/microcontroller/">Microcontroller</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/microcontroller/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category jcl_has_child" style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/8051/">8051</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/microcontroller/8051/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/8051/projects-8051/">8051 Projects</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/8051/tutorial-8051/">8051 Tutorials</a></li></ul></li><li class="jcl_category jcl_has_child" style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/arm/">ARM Microcontroller</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/microcontroller/arm/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/arm/arm-tutorial/" class="jcl_active">ARM Tutorial</a></li></ul></li><li class="jcl_category jcl_has_child" style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/avr/">AVR</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/microcontroller/avr/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/avr/projects-avr/">AVR Projects</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/avr/tutorial-avr/">AVR Tutorial</a></li></ul></li><li class="jcl_category jcl_has_child" style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/pic/">PIC</a><a class="jcl_link" href="http://www.gadgetronicx.com/category/microcontroller/pic/" title="View Sub-Categories"><span class="jcl_symbol" style="padding-rightleft:5px">►</span></a><ul><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/pic/projects-pic/">PIC Projects</a></li><li class="jcl_category " style="display:none;"><a href="http://www.gadgetronicx.com/category/microcontroller/pic/tutorials-pic/">PIC tutorials</a></li></ul></li></ul></li><li class="jcl_category "><a href="http://www.gadgetronicx.com/category/tech/">Technology</a></li><li class="jcl_category "><a href="http://www.gadgetronicx.com/category/uncategorized/">Uncategorized</a></li><li class="jcl_category "><a href="http://www.gadgetronicx.com/category/web-design/">Web Designing</a></li></ul><input type="hidden" id="widget-jcl_widget-2-fx_in" name="widget-jcl_widget[2][fx_in]" class="fx_in" value="slideDown"><input type="hidden" id="widget-jcl_widget-2-ex_sym" name="widget-jcl_widget[2][ex_sym]" class="ex_sym" value="►"><input type="hidden" id="widget-jcl_widget-2-con_sym" name="widget-jcl_widget[2][con_sym]" class="con_sym" value="▼"><input type="hidden" id="widget-jcl_widget-2-showcount" name="widget-jcl_widget[2][showcount]" class="showcount" value="0"></div><div id="members-widget-login-2" class="sidebar-widget login"> <p class="sidebar-headline"><span class="sidebar-headline-text">Log In</span></p><img alt="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(5)" data-lazy-type="image" data-lazy-src="http://0.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=g" data-lazy-srcset="http://2.gravatar.com/avatar/?s=192&amp;d=mm&amp;r=g 2x" class="lazy avatar avatar-96 photo avatar-default" height="96" width="96"><noscript>&lt;img alt='' src='http://0.gravatar.com/avatar/?s=96&amp;#038;d=mm&amp;#038;r=g' srcset='http://2.gravatar.com/avatar/?s=192&amp;amp;d=mm&amp;amp;r=g 2x' class='avatar avatar-96 photo avatar-default' height='96' width='96' /&gt;</noscript><p>Please log into the site.</p>
+<div class="members-login-form">
+		<form name="loginform" id="loginform" action="http://www.gadgetronicx.com/login-2/" method="post">
+			
+			<p class="login-username">
+				<label for="user_login">Username</label>
+				<input type="text" name="log" id="user_login" class="input" value="" size="20">
+			</p>
+			<p class="login-password">
+				<label for="user_pass">Password</label>
+				<input type="password" name="pwd" id="user_pass" class="input" value="" size="20">
+			</p>
+			
+			<p class="login-remember"><label><input name="rememberme" type="checkbox" id="wp-submit" value="forever"> Remember Me</label></p>
+			<p class="login-submit">
+				<input type="submit" name="wp-submit" id="1" class="button-primary" value="Log In">
+				<input type="hidden" name="redirect_to" value="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/">
+			</p>
+			
+		</form></div></div><div id="text-7" class="sidebar-widget widget_text">			<div class="textwidget"><script async="" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/adsbygoogle.js"></script>
+<!-- Link_ads -->
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-2428652754304823" data-ad-slot="5478614830" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe width="200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div></aside> <!-- end of sidebar -->  </div> <!-- end of main-content -->
+  </div> <!-- end of wrapper-content -->
+<footer id="wrapper-footer">
+  <div id="footer">
+    <div class="footer-widget-area footer-widget-area-1">
+<div id="text-11" class="footer-widget widget_text"><p class="footer-headline"><span class="footer-headline-text">CATEGORIES</span></p>			<div class="textwidget"><ul style="list-style:none;line-height:35px;">
+<li>
+<a href="http://www.gadgetronicx.com/category/arduino/">ARDUINO</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/electronics/">ELECTRONICS</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/microcontroller/">MICROCONTROLLER</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/embedded-system/">EMBEDDED SYSTEMS</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/iot/">IOT</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/tech/">TECHNOLOGY</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/web-design/">WEB DESIGNING</a>
+</li>
+</ul></div>
+		</div>    </div>    
+    <div class="footer-widget-area footer-widget-area-2">
+<div id="tag_cloud-2" class="footer-widget widget_tag_cloud"><p class="footer-headline"><span class="footer-headline-text">TAGS</span></p><div class="tagcloud"><a href="http://www.gadgetronicx.com/tag/adc/" class="tag-link-99 tag-link-position-1" title="3 topics" style="font-size: 11.471074380165pt;">adc</a>
+<a href="http://www.gadgetronicx.com/tag/alarm/" class="tag-link-118 tag-link-position-2" title="6 topics" style="font-size: 14.363636363636pt;">alarm</a>
+<a href="http://www.gadgetronicx.com/tag/arduino-uno/" class="tag-link-180 tag-link-position-3" title="2 topics" style="font-size: 10.082644628099pt;">arduino uno</a>
+<a href="http://www.gadgetronicx.com/tag/arm7/" class="tag-link-123 tag-link-position-4" title="2 topics" style="font-size: 10.082644628099pt;">arm7</a>
+<a href="http://www.gadgetronicx.com/tag/automatic-system/" class="tag-link-60 tag-link-position-5" title="2 topics" style="font-size: 10.082644628099pt;">automatic system</a>
+<a href="http://www.gadgetronicx.com/tag/bluetooth/" class="tag-link-109 tag-link-position-6" title="3 topics" style="font-size: 11.471074380165pt;">Bluetooth</a>
+<a href="http://www.gadgetronicx.com/tag/cd4017/" class="tag-link-121 tag-link-position-7" title="2 topics" style="font-size: 10.082644628099pt;">cd4017</a>
+<a href="http://www.gadgetronicx.com/tag/css/" class="tag-link-116 tag-link-position-8" title="24 topics" style="font-size: 20.727272727273pt;">css</a>
+<a href="http://www.gadgetronicx.com/tag/dc-motor/" class="tag-link-137 tag-link-position-9" title="6 topics" style="font-size: 14.363636363636pt;">dc motor</a>
+<a href="http://www.gadgetronicx.com/tag/diy-projects/" class="tag-link-119 tag-link-position-10" title="19 topics" style="font-size: 19.570247933884pt;">diy projects</a>
+<a href="http://www.gadgetronicx.com/tag/fg/" class="tag-link-125 tag-link-position-11" title="2 topics" style="font-size: 10.082644628099pt;">FG</a>
+<a href="http://www.gadgetronicx.com/tag/fm/" class="tag-link-136 tag-link-position-12" title="3 topics" style="font-size: 11.471074380165pt;">FM</a>
+<a href="http://www.gadgetronicx.com/tag/fun-circuits/" class="tag-link-98 tag-link-position-13" title="3 topics" style="font-size: 11.471074380165pt;">fun circuits</a>
+<a href="http://www.gadgetronicx.com/tag/generator/" class="tag-link-143 tag-link-position-14" title="2 topics" style="font-size: 10.082644628099pt;">generator</a>
+<a href="http://www.gadgetronicx.com/tag/glcd/" class="tag-link-63 tag-link-position-15" title="1 topic" style="font-size: 8pt;">glcd</a>
+<a href="http://www.gadgetronicx.com/tag/html/" class="tag-link-117 tag-link-position-16" title="23 topics" style="font-size: 20.495867768595pt;">html</a>
+<a href="http://www.gadgetronicx.com/tag/i2c/" class="tag-link-113 tag-link-position-17" title="1 topic" style="font-size: 8pt;">i2c</a>
+<a href="http://www.gadgetronicx.com/tag/ic/" class="tag-link-138 tag-link-position-18" title="4 topics" style="font-size: 12.628099173554pt;">IC</a>
+<a href="http://www.gadgetronicx.com/tag/ic555/" class="tag-link-135 tag-link-position-19" title="31 topics" style="font-size: 22pt;">ic555</a>
+<a href="http://www.gadgetronicx.com/tag/infrared/" class="tag-link-156 tag-link-position-20" title="5 topics" style="font-size: 13.553719008264pt;">infrared</a>
+<a href="http://www.gadgetronicx.com/tag/lamp/" class="tag-link-148 tag-link-position-21" title="5 topics" style="font-size: 13.553719008264pt;">lamp</a>
+<a href="http://www.gadgetronicx.com/tag/lcd/" class="tag-link-103 tag-link-position-22" title="6 topics" style="font-size: 14.363636363636pt;">LCD</a>
+<a href="http://www.gadgetronicx.com/tag/ldr/" class="tag-link-134 tag-link-position-23" title="5 topics" style="font-size: 13.553719008264pt;">ldr</a>
+<a href="http://www.gadgetronicx.com/tag/led/" class="tag-link-108 tag-link-position-24" title="19 topics" style="font-size: 19.570247933884pt;">LED</a>
+<a href="http://www.gadgetronicx.com/tag/lm386/" class="tag-link-126 tag-link-position-25" title="3 topics" style="font-size: 11.471074380165pt;">lm386</a>
+<a href="http://www.gadgetronicx.com/tag/locks/" class="tag-link-107 tag-link-position-26" title="4 topics" style="font-size: 12.628099173554pt;">locks</a>
+<a href="http://www.gadgetronicx.com/tag/music/" class="tag-link-104 tag-link-position-27" title="3 topics" style="font-size: 11.471074380165pt;">music</a>
+<a href="http://www.gadgetronicx.com/tag/opamp/" class="tag-link-146 tag-link-position-28" title="15 topics" style="font-size: 18.413223140496pt;">opamp</a>
+<a href="http://www.gadgetronicx.com/tag/op-amp/" class="tag-link-124 tag-link-position-29" title="4 topics" style="font-size: 12.628099173554pt;">op amp</a>
+<a href="http://www.gadgetronicx.com/tag/pcb/" class="tag-link-150 tag-link-position-30" title="3 topics" style="font-size: 11.471074380165pt;">pcb</a>
+<a href="http://www.gadgetronicx.com/tag/relay/" class="tag-link-154 tag-link-position-31" title="6 topics" style="font-size: 14.363636363636pt;">relay</a>
+<a href="http://www.gadgetronicx.com/tag/remote-control/" class="tag-link-178 tag-link-position-32" title="3 topics" style="font-size: 11.471074380165pt;">remote control</a>
+<a href="http://www.gadgetronicx.com/tag/rf/" class="tag-link-152 tag-link-position-33" title="3 topics" style="font-size: 11.471074380165pt;">rf</a>
+<a href="http://www.gadgetronicx.com/tag/rfid/" class="tag-link-176 tag-link-position-34" title="2 topics" style="font-size: 10.082644628099pt;">rfid</a>
+<a href="http://www.gadgetronicx.com/tag/robot/" class="tag-link-170 tag-link-position-35" title="3 topics" style="font-size: 11.471074380165pt;">robot</a>
+<a href="http://www.gadgetronicx.com/tag/rtc/" class="tag-link-166 tag-link-position-36" title="2 topics" style="font-size: 10.082644628099pt;">rtc</a>
+<a href="http://www.gadgetronicx.com/tag/sensor/" class="tag-link-168 tag-link-position-37" title="8 topics" style="font-size: 15.520661157025pt;">sensor</a>
+<a href="http://www.gadgetronicx.com/tag/software/" class="tag-link-172 tag-link-position-38" title="2 topics" style="font-size: 10.082644628099pt;">software</a>
+<a href="http://www.gadgetronicx.com/tag/solar-power/" class="tag-link-142 tag-link-position-39" title="2 topics" style="font-size: 10.082644628099pt;">solar power</a>
+<a href="http://www.gadgetronicx.com/tag/switching/" class="tag-link-111 tag-link-position-40" title="5 topics" style="font-size: 13.553719008264pt;">switching</a>
+<a href="http://www.gadgetronicx.com/tag/timer/" class="tag-link-129 tag-link-position-41" title="3 topics" style="font-size: 11.471074380165pt;">timer</a>
+<a href="http://www.gadgetronicx.com/tag/transistors/" class="tag-link-106 tag-link-position-42" title="21 topics" style="font-size: 20.03305785124pt;">transistors</a>
+<a href="http://www.gadgetronicx.com/tag/uart/" class="tag-link-115 tag-link-position-43" title="4 topics" style="font-size: 12.628099173554pt;">UART</a>
+<a href="http://www.gadgetronicx.com/tag/ultrasonics/" class="tag-link-110 tag-link-position-44" title="3 topics" style="font-size: 11.471074380165pt;">ultrasonics</a>
+<a href="http://www.gadgetronicx.com/tag/voltage-regulator/" class="tag-link-149 tag-link-position-45" title="5 topics" style="font-size: 13.553719008264pt;">voltage regulator</a></div>
+</div>    </div>   
+    <div class="footer-widget-area footer-widget-area-3">
+<div id="text-5" class="footer-widget widget_text"><p class="footer-headline"><span class="footer-headline-text">GADGETRONICX</span></p>			<div class="textwidget"><ul style="list-style:none;line-height:35px;">
+<li>
+<a href="http://www.gadgetronicx.com/">HOME</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/about-us/">ABOUT US</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/electronics/">ELECTRONICS</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/category/embedded-system/">EMBEDDED SYSTEMS</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/contact-us/">CONTACT US</a>
+</li>
+<li>
+<a href="http://www.gadgetronicx.com/copyright-notice/">COPYRIGHT NOTICE</a>
+</li>
+</ul></div>
+		</div><div id="lsi_widget-3" class="footer-widget widget_lsi_widget"><p class="footer-headline"><span class="footer-headline-text">FOLLOW US</span></p><ul class="lsi-social-icons icon-set-lsi_widget-3"><li class="lsi-social-facebook"><a class="" rel="nofollow" title="Facebook" aria-label="Facebook" href="http://www.facebook.com/gadgetronicx" target="_blank"><i class="lsicon lsicon-facebook"></i></a></li><li class="lsi-social-twitter"><a class="" rel="nofollow" title="Twitter" aria-label="Twitter" href="http://www.twitter.com/gadgetronicx" target="_blank"><i class="lsicon lsicon-twitter"></i></a></li><li class="lsi-social-gplus"><a class="" rel="nofollow" title="Google+" aria-label="Google+" href="https://plus.google.com/+gadgetronicx" target="_blank"><i class="lsicon lsicon-gplus"></i></a></li><li class="lsi-social-pinterest"><a class="" rel="nofollow" title="Pinterest" aria-label="Pinterest" href="http://www.pinterest.com/gadgetronicx" target="_blank"><i class="lsicon lsicon-pinterest"></i></a></li><li class="lsi-social-rss"><a class="" rel="nofollow" title="RSS" aria-label="RSS" href="http://www.gadgetronicx.com/feed/" target="_blank"><i class="lsicon lsicon-rss"></i></a></li><li class="lsi-social-youtube"><a class="" rel="nofollow" title="YouTube" aria-label="YouTube" href="http://www.youtube.com/channel/UCuW-3JhQ3HdGb8q22X972kQ" target="_blank"><i class="lsicon lsicon-youtube"></i></a></li></ul></div>    </div>
+  </div>
+<div class="footer-signature"><div class="footer-signature-content">			<div class="textwidget">Copyright © 2012 - 2015 Gadgetronicx</div>
+		</div></div></footer>  <!-- end of wrapper-footer -->
+</div> <!-- end of container-shadow -->
+</div> <!-- end of container -->
+<div id="um_upload_single" style="display:none">
+	
+</div><div id="um_view_photo" style="display:none">
+
+	<a href="http://www.gadgetronicx.com/basics-of-arm7-microcontroller-lpc2124/#" data-action="um_remove_modal" class="um-modal-close"><i class="um-faicon-times"></i></a>
+	
+	<div class="um-modal-body photo">
+	
+		<div class="um-modal-photo">
+
+		</div>
+
+	</div>
+	
+</div><style scoped="">.yuzo_related_post{}
+.yuzo_related_post .relatedthumb{}</style><link rel="stylesheet" id="lsi-style-group-css" href="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(6)" type="text/css" media="all">
+<style id="lsi-style-inline-css" type="text/css">
+
+			.icon-set-lsi_widget-2 {
+				text-align:left !important;
+			}
+			.icon-set-lsi_widget-2 a, 
+			.icon-set-lsi_widget-2 a:visited, 
+			.icon-set-lsi_widget-2 a:focus {
+				border-radius: 2px;
+				background: #3c98ff !important;
+				color: #ffffff !important;
+				font-size: 30px !important;
+			}
+			.icon-set-lsi_widget-2 a:hover {
+				background: #777777 !important;
+				color: #FFFFFF !important;
+			}
+
+			.icon-set-lsi_widget-3 {
+				text-align:left !important;
+			}
+			.icon-set-lsi_widget-3 a, 
+			.icon-set-lsi_widget-3 a:visited, 
+			.icon-set-lsi_widget-3 a:focus {
+				border-radius: 2px;
+				background: #1E72BD !important;
+				color: #FFFFFF !important;
+				font-size: 20px !important;
+			}
+			.icon-set-lsi_widget-3 a:hover {
+				background: #777777 !important;
+				color: #FFFFFF !important;
+			}
+</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.gadgetronicx.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"http:\/\/www.gadgetronicx.com\/wp-admin\/admin-ajax.php","post_id":"50","is_singular":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(7)"></script>
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/api.js"></script>
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/devicepx-jetpack.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var um_scripts = {"ajaxurl":"http:\/\/www.gadgetronicx.com\/wp-admin\/admin-ajax.php","fileupload":"http:\/\/www.gadgetronicx.com\/wp-content\/plugins\/ultimate-member\/core\/lib\/upload\/um-file-upload.php","imageupload":"http:\/\/www.gadgetronicx.com\/wp-content\/plugins\/ultimate-member\/core\/lib\/upload\/um-image-upload.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/saved_resource(8)"></script>
+<script type="text/javascript">/* <![CDATA[ */window.addEvent('domready', function(){if (typeof EnlighterJS == "undefined"){return;};EnlighterJS.Util.Init('pre.EnlighterJSRAW', 'code.EnlighterJSRAW', {"language":"c","theme":"wpcustom","indent":3,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}});});;/* ]]> */</script><script type="text/javascript" src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/e-201616.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.9.6',blog:'89461046',post:'50',tz:'5.5',srv:'www.gadgetronicx.com'} ]);
+	_stq.push([ 'clickTrackerInit', '89461046', '50' ]);
+</script>
+
+		<script type="text/javascript">jQuery( '#request' ).val( '' );</script>
+
+	    
+
+
+<!-- Dynamic page generated in 1.836 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-04-19 10:18:28 -->
+
+<!-- super cache --><img src="./Basics of ARM7 Microcontroller(LPC2124) Programming - Gadgetronicx_files/g.gif" id="wpstats"></body></html>
